@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&page=1&paged=8 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:56:38 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">29</span>
+        </div>
+<div class="bPost">
+          <span class="title">SoC, GUADEC and SystemTap</span>
+
+                        <p>Little update:<br />
+1. I got a SoC assignment, at <a href="http://www.gentoo.org/" title="Gentoo">Gentoo</a>. I'll be (actually I am) working on Gentoo's NetworkManager backend and integration into the distribution, next to more general NetworkManager hacking (although some people seem to dislike that somehow :|).<br />
+2. I might be able to come to <a href="http://www.guadec.org/" title="GUADEC">GUADEC</a>, jay!<br />
+3. Experimented with <a href="http://sources.redhat.com/systemtap" title="SystemTap">SystemTap</a> today. After seeing the DTrace demos at Fosem06, I was fairly impressed. Systemtap is no DTrace-for-Linux yet, but I the scripts I was able to run were pretty promissing.</p>
+
+<p>Little HOWTO (on Gentoo, but should work on other distributions too):<br />
+$ (cd into some project folder, I used ~/Projects/systemtap)<br />
+$ mkdir elfutils &amp;&amp; cd elfutils<br />
+$ wget ftp://sources.redhat.com/pub/systemtap/elfutils/elfutils-0.120.tar.gz ftp://sources.redhat.com/pub/systemtap/elfutils/elfutils-portability.patch<br />
+$ tar -zxf elfutils-0.120.tar.gz &amp;&amp; cd elfutils-0.120<br />
+$ cat ../elfutils-portability.patch | patch -p1<br />
+$ cd ..<br />
+$ cvs -d :pserver:anoncvs@sources.redhat.com:/cvs/systemtap login<br />
+(pass is "anoncvs", no quotes)<br />
+$ cvs -d :pserver:anoncvs@sources.redhat.com:/cvs/systemtap co systemtap<br />
+$ cd src<br />
+$ ./configure --prefix=/path/where/you/want/the/stuff --with-elfutils=/path/to/patched/elfutils<br />
+I used ~/Projects/inst as prefix (expanded), and ~/Projects/systemtap/elfutils/elfutils-0.120 as elfutils path<br />
+$ make<br />
+make failed for me (GCC4.1.1) due to usage of -Werror in elfutils. I had to add a -Wno-error in elfutils/elfutils-0.120/src/Makefile.am on the appropriate place (you should be able to do that yourself).<br />
+$ make install</p>
+
+<p>Now we need a kernel with debug info, and kprobe support.<br />
+$ cd /usr/src/linux<br />
+$ make clean<br />
+$ make menuconfig<br />
+Configure the kernel like you would normally. Make sure you change the "Local version" under "General Setup". I added -dbg to the string I already got there ("-ck1-ikke2-dbg"), so your "normal" kernel modules won't be overwritten.<br />
+Then you need these options. This list might not be complete though:<br />
+- Instrumentation Support -> Kprobes<br />
+- Kernel hacking -> Compile the kernel with debug info<br />
+- Kernel hacking -> Compile the kernel with frame pointers (this might not be necessary)<br />
+$ make<br />
+$ make modules_install<br />
+The generated kernel will be big:<br />
+# du -sh /lib/modules/2.6.16.18-ck1-ikke2-dbg/ /usr/src/linux/vmlinux<br />
+21M     /lib/modules/2.6.16.18-ck1-ikke2-dbg/<br />
+36M     /usr/src/linux/vmlinux<br />
+and compilation (actually, linking) might take longer than normally. Used diskspace will be much higher too.</p>
+
+<p>$ cp /usr/src/linux/vmlinux /lib/modules/2.6.18-ck1-ikke2-dbg/<br />
+(adjust paths!)</p>
+
+<p>Now install the kernel like you normally would. I didn't put it as my default kernel in grub.conf though.</p>
+
+<p>When you're done, reboot inside the new kernel. I booted into single user mode (by appending "1" to the GRUB line), just to be on the safe side.<br />
+Log in as your normal user on the console.</p>
+
+<p>$ cd Projects/systemtap/src/examples/small_demos/<br />
+$ ~/Projects/inst/bin/stap top.stp -v<br />
+stap will show what it's doing. In the end, sudo will be called to insmod the generated module. Enter your password. Make sure the user is allowed to use sudo with the specific program (run with one more -v to see the specific call).</p>
+
+<p>When it says everything's up and running, try switching console, type in some characters,... And see what system calls these actions generate.<br />
+As you're in single user mode, you can only use one tty. Run the stap instance in a screen session to get rid of this ;-)</p>
+
+<p>Whe done, press ^C to quit. You can play around with some other sample scripts too, or try to write one yourself. I didnt manage to get some of the scipts working on my system yet though. Didn't think too much about it either :-)</p>
+
+<p>Thats it, have fun!</p>
+
+<p>4. Started reading "<a href="http://lwn.net/Kernel/LDD3/" title="Linux Device Drivers, 3th edition">Linux Device Drivers, 3th edition</a>", at chapter 6 now. Cool stuff, concurrency and locking (ch5) seems to be a fairly difficult issue. It is in userspace (threading), seems to be even harder in kernel space imho.</p>
+
+<p>5. First exam tomorrow, "Rights of Intellectual Property". Wish me luck ;-)</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <strong><a href="ikkec055.html?cat=17" title="Browse category">Linux</a></strong>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2006/05/29/soc_guadec_and_systemtap.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2006/05/29/soc_guadec_and_systemtap.html#comments" title="Display comments / Leave a comment">2 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/05/29/soc_guadec_and_systemtap"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/05/29/soc_guadec_and_systemtap"
+  dc:title="SoC, GUADEC and SystemTap"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/473" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">16</span>
+        </div>
+<div class="bPost">
+          <span class="title">More messaging</span>
+
+                        <p>Been busy lately due to uni work, so not much hacking time. I did enhance that messaging thing a little (not working on other stuff I'd like to work on yet as they're potential SoC projects :-)).</p>
+
+<p>wall, write and other pty based communication support still isn't in there as I didn't manage to get something working (yet). Must be doing something completely wrong somehow.</p>
+
+<p>I did add a "Reply" option to the incoming messages though. Currently the reply dialog is not HIG at all, no I18N support, it's crap PyGTK code, but it does work somewhat.</p>
+
+<p><a href="http://www.eikke.com/files/gnome-messaging-0.1-sc.gif" title="Here">Here</a>'s a little demo (1MB animated GIF screencast, thanks Byzanz (and Company)!)</p>
+
+<p>I made a first "release" for people who's want to play with this. You can find the tarball <a href="http://www.eikke.com/files/gnome-messaging-0.1.tar.gz" title="here">here</a>, but note it needs work: checking for Python stuff in configure.in, fixing Python code, adding I18N support, get the dialog code inside the C daemon, as using a helper is plain stupid (I use a helper as it's pretty easy to create a GUI using PyGTK quickly).</p>
+
+<p>TODO: incoming message throttling (so one can't flood you using smbclient in a shell for loop), I18N (damn intltool 's been driving me crazy), nicer UI, other messaging "protocol" support, get a Telepathy backend out of this (jdub's idea),...</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2006/05/16/more_messaging.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2006/05/16/more_messaging.html#comments" title="Display comments / Leave a comment">11 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/05/16/more_messaging"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/05/16/more_messaging"
+  dc:title="More messaging"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/472" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">9</span>
+        </div>
+<div class="bPost">
+          <span class="title">Good old messaging</span>
+
+                        <p>Davyd talked about integrating good old messaging systems like talk, wall, write and even WinPopup into the GNOME desktop. As it looked like a fun thing to do, I got my hands down on it today.</p>
+
+<p>I still couldn't figure out how to catch wall and other pty-based messages, but I'm sure I will be able to get them working too.</p>
+
+<p>At the moment, WinPopup messages work:<br />
+<center><img src="http://www.eikke.com/files/gnome-notifications.png" title="WinPopup in GNOME" /></center></p>
+
+<p>Maybe in-time one should be able to click the message popup and get a simple window allowing the user to reply on the incoming message, but thats to be done later on, first I want to get wall and talk requests working fine.</p>
+
+<p>A little change to smb.conf is needed for this (the "message command" line should be set, I'm using a Python script to send the messages), and one file in the D-BUS system.d to allow the user Samba uses to spawn the message command ("nobody" on my system) to send messages on the system bus.<br />
+Obviously pty-based messages shouldn't need a callout anywhere.</p>
+
+<p>Current code isn't ready for release yet (at all), I'll try to get what I got into good shape asap.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke6c5d.html?cat=18" title="Browse category">Networks</a>, <strong><a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2006/05/09/good_old_messaging.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2006/05/09/good_old_messaging.html#comments" title="Display comments / Leave a comment">6 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/05/09/good_old_messaging"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/05/09/good_old_messaging"
+  dc:title="Good old messaging"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/471" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Apr</span>
+          <span class="day">30</span>
+        </div>
+<div class="bPost">
+          <span class="title">Blog spam</span>
+
+                        <p>As it starts to take over 5 minutes every day to attempt to remove all comment spam I receive on my weblog (like <a href="realnitro.html" title="RealNitro">RealNitro</a>), I added a new .htaccess rule to block the spammers if possible. Next to a referer check on post_comment.php, I denied access to everyone using pinappleproxy. I hope this doesnt cause too many issues for people visiting this (sub)domain...</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="ikke/2006/04/30/blog_spam.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2006/04/30/blog_spam.html#comments" title="Display comments / Leave a comment">5 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/04/30/blog_spam"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/04/30/blog_spam"
+  dc:title="Blog spam"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/469" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Apr</span>
+          <span class="day">26</span>
+        </div>
+<div class="bPost">
+          <span class="title">Latin coding</span>
+
+                        <p>Don't like Perl? Maybe you will now:</p>
+<pre><code>#! /usr/local/bin/perl -w
+
+use Lingua::Romana::Perligata;
+
+maximum inquementum tum biguttam egresso scribe.
+meo maximo vestibulo perlegamentum da.
+da duo tum maximum conscribementa meis listis.
+
+dum listis decapitamentum damentum nexto
+fac sic
+nextum tum novumversum scribe egresso.
+lista sic hoc recidementum nextum cis vannementa da listis.
+cis.</code></pre>
+<p>Which is translated to:</p>
+<pre><code>print STDOUT 'maximum:';<br />
+my $maxim = ;<br />
+my (@list) = (2..$maxim);<br />
+<br />
+while ($next = shift @list)<br />
+{<br />
+    print STDOUT $next,                               <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2006/04/26/latin_coding.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2006/04/26/latin_coding.html#comments" title="Display comments / Leave a comment">6 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/04/26/latin_coding"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/04/26/latin_coding"
+  dc:title="Latin coding"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/468" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                <a href="ikke58db.html?blog=5&amp;page=1&amp;paged=7">&lt;&lt; Previous Page</a> :: <a href="ikke13a4.html?blog=5&amp;page=1&amp;paged=9">Next Page &gt;&gt;</a>                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="ikke.html">All</a></li>
+<li><a href="ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="ikke/2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="ikke/2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="ikke/2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 266</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../htsrv/loginf6e5.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%3Fblog%3D5%26amp%3Bpaged%3D8%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&page=1&paged=8 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:56:40 GMT -->
+</html>

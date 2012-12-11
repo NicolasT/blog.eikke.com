@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&cat=16&page=1&paged=13 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:58:58 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Categories: Technology, Coding Corner, Docbook, Summer of Code 06, Desktop, Ivman, Linux, Networks</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Categories: Technology, Coding Corner, Docbook, Summer of Code 06, Desktop, Ivman, Linux, Networks</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jun</span>
+          <span class="day">13</span>
+        </div>
+<div class="bPost">
+          <span class="title">OPluginManager getting it's final forms</span>
+
+                        <p>I tried to stabilize the OPluginManager interface today, after a terrible exam. Look at the <a href="http://live.gnome.org/OPluginManager" title="OPluginManager page">OPluginManager page</a> at <a href="http://live.gnome.org/" title="live.gnome.org">live.gnome.org</a> to get a view of the current structure.</p>
+
+<p>I updated the test cases I got here locally (one example is the plugin code I got on that wiki page too). The directory-loader is finished too, almost everything is in place now actually, except the UI part and the "only-load-enabled-modules" feature. These things should be fairly trivial (don't we love that word, NVDB?) to implement.</p>
+
+<p>Here's a sample app:</p>
+<pre><code>#include &lt;glib.h&gt;
+
+#include "o-plugin-manager.h"
+#include "o-plugin-manager-plugin.h"
+
+gint main(guint argc, gchar *argv[]) {
+        gint cnt = 0;
+        gchar *dir = NULL, *dir2 = NULL, *modulepath = NULL;
+        const OPluginManagerPlugin *plugin = NULL;
+        OPluginManager *manager = NULL;
+
+        g_type_init();
+
+        manager = O_PLUGIN_MANAGER(o_plugin_manager_new());
+        o_plugin_manager_load_modules(manager, ".libs", "test-init-data", NULL);        
+
+        g_print("\n\nFound %d modules\n", o_plugin_manager_get_num_modules(manager));
+
+        /* Check whether we got a 0'st module, call its configure function */
+        if(o_plugin_manager_get_num_modules(manager) > 0) {
+                plugin = o_plugin_manager_get_module(manager, 0);
+                g_debug("Dumping module 0:\n");
+                o_plugin_manager_plugin_dump(plugin);
+        }
+
+        g_object_unref(manager);
+
+        return 0;
+}
+</code></pre>
+<p>As you can see, this code loads all valid modules in .libs with the string "test-init-data" as init data, then checks whether a 0st plugin is available, and dumps the plugin info.</p>
+
+<p>This is the current output:</p><pre>** (process:14246): DEBUG: Loading all modules in .libs, suffix is so
+** (process:14246): DEBUG: Suffix for .libs/libtestplugin.so is so, loading module
+** (process:14246): DEBUG: [OPluginManagerPlugin] [test-plugin] Got an init function
+** (process:14246): DEBUG: [test-plugin] Init with data "test-init-data"
+** (process:14246): DEBUG: Module .libs/libtestplugin.so is valid, adding
+
+
+Found 1 modules
+** (process:14246): DEBUG: Dumping module 0:
+
+
+================================================
+Dumping data for: .libs/libtestplugin.so
+=================
+* Name: test-plugin
+* Summary: A simple test plugin
+* Description: This is a sample test plugin, to test the OPluginManager functionality
+* Version: 0.1
+* URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+* Authors:
+        ikke
+        -----------
+                Email: eikke eikke com
+                URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+        John Doe
+        -----------
+                Email: <a href="mailto:foo@bar.com">foo@bar.com</a>
+                URI: <a href="http://www.foobar.foo/">http://www.foobar.foo</a>
+* Module got an init function
+* Module got a data free function
+* Module got a configure function
+================================================
+
+** (process:14246): DEBUG: Deleting 1 modules
+** (process:14246): DEBUG: [OPluginManagerPlugin] Freeing "test-plugin" data
+** (process:14246): DEBUG: [OPluginManagerPlugin] Running free function
+** (process:14246): DEBUG: [test-plugin] Freeing data "Test plugin data"</pre><p>Here libtestplugin.so is the plugin you can see in the live.gnome wiki.</p>
+
+<p>I also tried to implement a plugin structure in <a href="http://www.python.org/" title="Python">Python</a>, although I'm no Python-expert at all. Current code is available <a href="http://code.eikke.com/index.php?dir=misc/&amp;file=OPluginManagerPluginTest.py" title="here">here</a>.<br />
+To give a little overview: every Python-based plugin should be a class extending from OPluginManagerPlugin, in this sample PluginTest is an implementation. There should be one fixed-name function in the __main__ module that returns an instance of this plugin class. Like this we just have to call that fixed-name function in our C wrapper, get it's return value in a PyObject *, then check whether it's type descends from OPluginManagerPlugin, and if that's the case start using the object as if it's just an OPluginManagerPlugin, we don't have to care about the details.<br />
+The code needs lots of enhancements and cleanups. If you could elaborate on this, please contact me. Especially the function-pointer part (passing (int)0 if no function is given) is ugly: I need to be able to check whether the var is a real function pointer before I call it, not only checking whether it's != 0. Next to this, I should figure out how to do proper error handling. Once that's done, I should be able to write a small wrapper plugin in C so I can start using plugins written in Python from within C.</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/06/13/opluginmanager_getting_it_s_final_forms.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/06/13/opluginmanager_getting_it_s_final_forms.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/06/13/opluginmanager_getting_it_s_final_forms"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/06/13/opluginmanager_getting_it_s_final_forms"
+  dc:title="OPluginManager getting it&#039;s final forms"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/230" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jun</span>
+          <span class="day">12</span>
+        </div>
+<div class="bPost">
+          <span class="title">Using Python objects in Python-C interop</span>
+
+                        <p>As I wrote in my <a href="ikke/2005/06/11/calling_python_from_c.html" title="previous article">previous article</a>, I did not know yet how to handle Python objects, and call their member functions.</p>
+
+<p>After getting some help from Adam "adamh" Hooper, it became clear this is actually very easy to do.</p>
+
+<p>Here's some code (I'm not reposting the whole C file, just append this to the end, it should be clear):</p>
+<pre><code>g_debug("Calling pytest::test using the helper function");
+PyObject_CallMethod(ret, "test", NULL);
+
+Py_XDECREF(ret);
+ret = NULL;
+        
+g_debug("Calling pytest::test, no helper function");
+g_debug("Creating a new pytest object");
+ret = PyInstance_New(PyDict_GetItemString(dict, "" MODULE_NAME), NULL, NULL);
+g_assert(ret != NULL);
+PyObject_CallMethod(ret, "test", NULL);
+Py_XDECREF(ret);</code></pre>
+<p>Watch out: you should <b>not</b> Py_XDECREF(ret) before doing this, of course.</p>
+
+<p>As you can see there are 2 ways to achieve our goal:</p>
+<ul><li>In the first part of the snipper, we use "ret". This is the return value of the global function called "test", which is a "pytest" instance (the "test" function ends with <code>return pytest()</code>). We just call PyObject_CallMethod(object, name, args) to call the function.</li>
+<li>In the first "solution" we use some ugly hack to get a pytest instance. In the second part we use a cleaner method, by calling PyInstance_New(type, constructor_args, kw). As you can see, we get "type" in the same way we got the entry point to the global "test" function. Now again we can just call a method on the object as in the first part.</li></ul>
+
+<p>This should be the output now:</p>
+<pre>** (process:13267): DEBUG: Initializing Python
+** (process:13267): DEBUG: Setting PATH
+** (process:13267): DEBUG: Trying to import "pytest"
+** (process:13267): DEBUG: Success loading global test function
+In main test function, argument is "testarg"
+Initializing a pytest object
+** (process:13267): DEBUG: Calling pytest::test using the helper function
+In pytest's test function
+** (process:13267): DEBUG: Calling pytest::test, no helper function
+** (process:13267): DEBUG: Creating a new pytest object
+Initializing a pytest object
+In pytest's test function
+</pre>
+
+<p>Looks like Python/C interop is not that hard actually :-) You can find the final code <a href="http://code.eikke.com/index.php?dir=misc/&amp;file=pytest.c" title="here">here</a>.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/06/12/using_python_objects_in_python_c_interop.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/06/12/using_python_objects_in_python_c_interop.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/06/12/using_python_objects_in_python_c_interop"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/06/12/using_python_objects_in_python_c_interop"
+  dc:title="Using Python objects in Python-C interop"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/229" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jun</span>
+          <span class="day">11</span>
+        </div>
+<div class="bPost">
+          <span class="title">Calling Python from C</span>
+
+                        <p>As I wrote on the <a href="http://live.gnome.org/OPluginManager" title="OPluginManager overview page">OPluginManager overview page</a>, I'd like to provide functionality to write plugins in Python. To achieve this I need to be able to call Python code from C (as the base OPluginManager framework is C-based). After asking around a little and reading some code samples (mostly in the Epiphany extension loading code) I figured out the basic calls one needs.</p>
+
+<p>Here's what we need to do:<br />
+First we need some Python code. Take this as a test (pytest.py):</p>
+<pre><code> class pytest:
+        def __init__(self):
+                print "Initializing a pytest object"
+
+        def test(self):
+                print "In pytest's test function"
+
+def test(a):
+        print "In main test function, argument is \"" + a + "\""
+        return pytest()</code></pre>
+
+<p>Now we want to call some of this from C (pytest.c):</p>
+<pre><code>
+/* We want Python functionality */
+#include &lt;Python.h&gt;
+#include &lt;glib.h&gt;
+
+/* To make life easier for us */
+#define MODULE_NAME "pytest"
+
+gint main(guint argc, gchar *argv[]) {
+        /* The module object */
+        PyObject *module = NULL;
+        /* Objects we need to get a reference to a function */
+        PyObject *dict = NULL, *func = NULL;
+        /* Stuff we need to be able to load a module not in PYTHONPATH */
+        PyObject *path = NULL, *pwd = NULL;
+        /* Args we offer to the called function, and a reference to the return value */
+        PyObject *args = NULL, *ret = NULL;
+
+        /* Initialize the Python framework */
+        g_debug("Initializing Python");
+        Py_Initialize();
+
+        /* "pytest.py" is in ".", so we need to alter the module search path
+           "." is not in it by default */
+        g_debug("Setting PATH");
+        /* Get the current path (this is a list) */
+        path = PySys_GetObject("path");
+        /* Create a value to add to the list */
+        pwd = PyString_FromString(".");
+        /* And add it */
+        PyList_Insert(path, 0, pwd);
+        /* We don't need that string value anymore, so deref it */
+        Py_DECREF(pwd);
+
+        /* Load the module */
+        g_debug("Trying to import \"%s\"", MODULE_NAME);
+        module = PyImport_ImportModule("" MODULE_NAME);
+        /* Check whether we succeeded */
+        if(module == NULL) {
+                /* If not, print the error message and get out of here */
+                PyErr_Print();
+                PyErr_Clear();
+                g_warning("Failed to initialize \"%s\"", MODULE_NAME);
+                return 1;
+        }
+
+        /* Get a dict from the module
+           I should look up the API, but I presume this is something like
+           "function_name" => function_entry_point */
+        dict = PyModule_GetDict(module);
+        /* Get the entry point of our "test" function
+           This is -not- the pytest:test function */
+        func = PyDict_GetItemString(dict, "test");
+
+        /* Check again whether we succeeded, and whether the function can be called */
+        if(func != NULL &amp;&amp; PyCallable_Check(func) == TRUE) {
+                g_debug("Success loading global test function");
+        }
+        else {
+                /* Something bad occured, print out the Python error and abort */
+                g_debug("Failed loading %s", MODULE_NAME);
+                if(PyErr_Occurred()) {
+                        PyErr_Print();
+                        PyErr_Clear();
+                }
+                return 1;
+        }
+
+        /* We want to offer some args to the test(a) function
+           These args should go into a tuple */
+        /* Create a tuple with one element */
+        args = PyTuple_New(1);
+        /* Add a new element to the tuple, at position 0, a new string with content "testarg" */
+        PyTuple_SetItem(args, 0, PyString_FromString("testarg"));
+
+        /* Call the test function, with the "args" tuple as arguments */
+        ret = PyObject_CallObject(func, args);
+        /* Something went wrong.
+           I must admit I still have to figure out what the return value of CallObject actually is.
+           What would ret be if test(a) returns nothing? */
+        if(ret == NULL) {
+                /* Print error and abort */
+                PyErr_Print();
+                PyErr_Clear();
+                g_warning("Failed to call test function");
+                return 1;
+        }
+
+        /* Free the returned value, and the args tuple
+           We don't really free, we unref the objects.
+           I should look up what the difference between XDECREF and DECREF is. DECREF seems to be a standard unref thing */
+        Py_XDECREF(ret);
+        Py_DECREF(args);
+
+        return 0;
+
+        /* Maybe we should free the module too, and deinitialize Python
+           This is not done in the code I read though */
+}</code></pre>
+<p>Comments inline. This code might look huge, but actually it mostly consists of error checking ;-)</p>
+
+<p>We need a rather "large" line to compile this:</p>
+<pre>gcc -o pytest -g `pkg-config --cflags --libs glib-2.0` -I/usr/include/python2.3 -lpython2.3 pytest.c</pre><p>(You should adjust this to match your Python version if necessary)</p>
+
+<p>When we run the program, this is what we get:</p>
+<pre>** (process:30233): DEBUG: Initializing Python
+** (process:30233): DEBUG: Setting PATH
+** (process:30233): DEBUG: Trying to import "pytest"
+** (process:30233): DEBUG: Success loading global test function
+In main test function, argument is "testarg"
+Initializing a pytest object</pre>
+<p>Which is somewhat what we could expect.</p>
+
+<p>In this sample I only use a global method, I don't use any Python object (like "pytest"). I must admit I don't know how to do this yet :oops: but hey, I'm just taking my first steps :-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/06/11/calling_python_from_c.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/06/11/calling_python_from_c.html#comments" title="Display comments / Leave a comment">1 comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/06/11/calling_python_from_c"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/06/11/calling_python_from_c"
+  dc:title="Calling Python from C"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/227" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jun</span>
+          <span class="day">9</span>
+        </div>
+<div class="bPost">
+          <span class="title">Done today</span>
+
+                        <ul><li>Created an initial <a href="http://live.gnome.org/OPluginManager" title="page">page</a> on OPluginManager on <a href="http://live.gnome.org/" title="live.gnome.org">live.gnome.org</a>.</li>
+<li>Started writing a longer article on women in the FOSS community, now Gnome-Women was launched (actually, did that yesterday ;-))</li>
+<li>Sent an email to the author of <a href="http://www.gentenaar.be/Article/Detail.aspx?articleID=G1SFG4HJ" title="this article">this article</a> in our local newspaper to explain crackers are no hackers (and the other way around). <a href="http://www.wikipedia.org/" title="WikiPedia">WikiPedia</a> got some decent information on this issue.</li>
+<li>Did not study enough :-(</li></ul>
+
+<p>TODO:</p>
+<ul><li>Continue working on the OPluginManager design, then implement some more of it. Get to learn some more on GObject&lt;-&gt;Python/Mono interaction, and Python/Mono&lt;-&gt;native calling code (ie how to allow using an OPluginManager object in Python/C#, and how to allow OModuleLoader/OPluginManager to work with Python/C# based plugins).</li>
+<li>Finish the mentioned article</li>
+<li>Poke jdub to get some response (even if it's negative) ;-)</li>
+<li>Write some of my ideas on the Tag based desktop down, decide wether to send it to desktop-devel@gnome or xdg@fdo, and do so accordingly.</li>
+<li>Study!!!!</li></ul>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikkeb5e7.html?cat=15" title="Browse category">Life</a>, <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="ikke/2005/06/09/done_today_1.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/06/09/done_today_1.html#comments" title="Display comments / Leave a comment">2 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/06/09/done_today_1"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/06/09/done_today_1"
+  dc:title="Done today"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/226" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jun</span>
+          <span class="day">6</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://www.linuxcompatible.org/Debian_GNULinux_3.1r0_released_s48714.html">Debian Sarge released</a></span>
+
+                        <p>I'm not willing to offend any Debian user, but <a href="http://www.linuxcompatible.org/Debian_GNULinux_3.1r0_released_s48714.html" title="this">this</a> is just hilareous:<br />
+<code>This release includes a number of up-to-date large software packages, such as the K Desktop Environment 3.3 (KDE), the GNOME desktop environment 2.8, the GNUstep desktop, XFree86 4.3.0, GIMP 2.2.6, Mozilla 1.7.8, Galeon 1.3.20, Mozilla Thunderbird 1.0.2, Firefox 1.0.4, PostgreSQL 7.4.7, MySQL 4.0.24 and 4.1.11a, GNU Compiler Collection 3.3.5 (GCC), Linux kernel versions 2.4.27 and 2.6.8, Apache 1.3.33 and 2.0.54, Samba 3.0.14, Python 2.3.5 and 2.4.1, Perl 5.8.4 and much more.</code></p>
+
+<p>So </p><ul><li>KDE 3.3</li>
+<li>Gnome 2.8</li>
+<li>XFree86 4.3.0</li>
+<li>GCC 3.3.5</li>
+<li>Linux kernel 2.6.8</li></ul><p>are up-to-date now? Right :roll:</p>
+
+<p><font size="small">Disclaimer: I guess I could be flamed now as some some stupid Gentoo user thinking he's ultra 1337 etc etc, that's not my intention at all, I just think this is funny</font></p>
+
+<p>[edit]As just seen on IRC:<br />
+<code>17:48 &lt;Em&gt; the debian world must be in an uproar.  you know.  with gearing up for the next release in 2009</code><br />
+*grin*[/edit]</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="ikke/2005/06/06/debian_sarge_released.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/06/06/debian_sarge_released.html#comments" title="Display comments / Leave a comment">3 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/06/06/debian_sarge_released"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/06/06/debian_sarge_released"
+  dc:title="Debian Sarge released"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/221" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                <a href="ikke8189.html?blog=5&amp;cat=16&amp;page=1&amp;paged=12">&lt;&lt; Previous Page</a> :: <a href="ikke6397.html?blog=5&amp;cat=16&amp;page=1&amp;paged=14">Next Page &gt;&gt;</a>                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="ikke.html">All</a></li>
+<li><a href="ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span>*<ul><li><a href="ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span>*<ul><li><a href="ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span>*</li>
+<li><a href="ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span>*</li>
+</ul>
+</li>
+<li><a href="ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span>*</li>
+<li><a href="ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span>*</li>
+<li><a href="ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span>*</li>
+<li><a href="ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span>*</li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="ikke/2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="ikke/2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="ikke/2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 424</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../htsrv/login38ea.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%3Fblog%3D5%26amp%3Bcat%3D16%26amp%3Bpaged%3D13%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&cat=16&page=1&paged=13 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:58:59 GMT -->
+</html>

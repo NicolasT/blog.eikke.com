@@ -1,0 +1,822 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2006/02/10/hija_and_first_xgl_steps by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:22:54 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: Hija, and first XGL steps</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: Hija, and first XGL steps</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Feb</span>
+          <span class="day">10</span>
+        </div>
+<div class="bPost">
+          <span class="title">Hija, and first XGL steps</span>
+
+                        <p>First of all: hey <a href="http://planet.gnome.org/" title="Planet GNOME">Planet GNOME</a>! It's an honour to be listed between all those hackers whose work I use every day again.</p>
+
+<p>Like lots of other people (I think) I tried to get <a href="http://en.opensuse.org/XGL" title="XGL">XGL</a> + <a href="http://en.opensuse.org/Compiz" title="compiz">compiz</a> working on my desktop today. XGL was a breeze (worked yesterday too), I did have some issues with compiz (mesa-issues, to be more precise). It doesn't work yet, but I hope I'll be able to sort out all remaining issues tomorrow or this week-end (although I'm no low-level X/OpenGL guru)... The whole problem could be related to some function/constant/enum renaming sutff.</p>
+
+<p>The issue I got is this: I can start XGL/compiz and X apps, but the XWindows are empty black or white rectangles on the screen... The issue is (I think) related to some OpenGL extension call not working inside compiz:</p>
+<pre><code>Couldn't bind redirected window 0xdeadbeef to texture
+pixmap 0x12345 can't be bound to texture</code></pre>
+
+<p>Oh well, even with empty windows, the result is fairly amazing. I tried to make a little amateur video of what I got now ("scrot" refuses to work?). I'm sorry for the bad angle, I only got 2 hands ;) Get it <a href="http://zeus.ugent.be/~ikke/xgl-working1.avi" title="here">here</a> (18MB).<br />
+There's a little problem with the wobbly effect too, which leaves "traces" on the desktop (<a href="http://zeus.ugent.be/~ikke/compiz-wobbly.jpg" title="image">image</a>).</p>
+
+<p>Anyway, after working on Metacity's compositing <a href="../../../2005/12/index.html" title="some weeks ago">some weeks ago</a>, and now seeing this beauty, I think we should prepare for some more great progress regarding our beloved (hmm) graphics subsystems.</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="../../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong><a href="hija_and_first_xgl_steps.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="hija_and_first_xgl_steps.html#comments" title="Display comments / Leave a comment">29 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/02/10/hija_and_first_xgl_steps"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/02/10/hija_and_first_xgl_steps"
+  dc:title="Hija, and first XGL steps"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/456" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+			<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4835"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Philip Langdale [Visitor] &middot; <a href="http://intr.overt.org/blog" rel="nofollow">http://intr.overt.org/blog</a>			</div>
+			<div class="bCommentText">
+				I fought with this for most of yesterday and it came down to this:<br />
+<br />
+You must compile the xgl-0-0-1 branch of xorg against mesa-6.4.2 with this patch applied: http://people.freedesktop.org/~airlied/xgl/xgl-mesa-stable-180106.diff<br />
+<br />
+Then you need to apply a separate patch to proto/GL:<br />
+http://lists.freedesktop.org/archives/xorg/attachments/20060206/335f0330/glxproto.h-texture-from-pixmap-1-0001.bin<br />
+<br />
+With these, you should be able to build the right Xgl.<br />
+<br />
+Now, if you want to use compiz, you need to run it against a libGL built from Mesa CVS HEAD - the libGL from Mesa-6.4.2 will not work and will give you the black window problem.<br />
+<br />
+Crazy? You bet, but it works.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4835" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/10/06 @ 03:24			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4841"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Actually, it still doesn't :-s Digged inside the compiz core some more, mailing the results to David, as quite a lot of other (nvidia) users got the same issues...			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4841" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/10/06 @ 17:19			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4856"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				I'm having the same problem, and I wasn't abble to find other peaple with this problem, now I know it's isn't only with me and my old nvidia card :P<br />
+<br />
+If anyone find out how to solve this mail me, I'm crazy to know how this Xgl works at my desktop :P<br />
+<br />
+These are the errors I'm getting:<br />
+<br />
+root@zote:~# LD_LIBRARY_PATH=/opt/mesalibs /opt/fdo/bin/glxcompmgr shadow wobbly/opt/fdo/bin/glxcompmgr: pixmap 0x2200039 can't be bound to texture<br />
+/opt/fdo/bin/glxcompmgr: Couldn't bind redirected window 0x120001d to texture<br />
+<br />
+root@zote:~# LD_LIBRARY_PATH=/opt/mesa/lib DISPLAY=:1 /opt/fdo/bin/compiz gconf<br />
+/opt/fdo/bin/compiz: GLX_EXT_texture_from_pixmap is missing<br />
+<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4856" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/12/06 @ 01:34			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4859"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Amit Gurdasani [Visitor]			</div>
+			<div class="bCommentText">
+				<p>Yeah, I've run into the same issue with a GeForce 2 GTS using the last "legacy" NVIDIA driver (1.0.7174), and while I got Xgl from the old (Xserver/KDrive) tree working with glxcompmgr a few days ago, I had the same issue (black textures, glxcompmgr complaining it couldn't redirect windows into the textures). And now with <a href="http://battlehorse.homelinux.net/w/Wiki.jsp?page=Xgl" rel="nofollow">Riccardo Govoni's binaries</a> for Dapper Drake (Ubuntu) I get the same issue with compiz and the Xorg Xgl.</p>
+<p>Oh well. It was worth a shot.</p>
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4859" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/12/06 @ 10:51			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4860"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				@ last 2 commenters:<br />
+The problem is related to our GPU. I got a Geforce2 based card here, which has no Pixel Shader, and Mesa/Xgl needs a GPU xith pixel shaders (I assume thats for the software GLX_EXT_texture_from_pixmap implementation?). So, we'll need a new GPU (or wait for new nvidia binary drivers that implement the extension even on our old cards?)<br />
+<br />
+I think I'll go buy a Radeon 92xx somehow. Less beer next weeks ;-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4860" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/12/06 @ 11:46			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4861"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: MisterHH [Visitor]			</div>
+			<div class="bCommentText">
+				Well, where did you get this information from? As far as I understand a Pixel Shader is just used for the implementation of Xv in Xgl. But without Pixel Shader this should work as well, just a little (acutally a lot) slower. As far as I remember, I also read about success stories from GeForce 2s and of a working Xgl with GeForce4 Go (NV18M) hardware, which is the same I have. Still I do have the black window problem.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4861" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/12/06 @ 14:53			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4862"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				http://www.ubuntuforums.org/showthread.php?t=127090&amp;page=21 comment #202 and later.<br />
+And Philip Langdale said +- the same thing on IRC.<br />
+<br />
+Anyway, if you know about any success stories on a GF2, please give me any references!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4862" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/12/06 @ 16:43			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4863"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: MisterHH [Visitor]			</div>
+			<div class="bCommentText">
+				http://www.hboeck.de/item/282#comments<br />
+Comment Number 7, though I'm not sure, the author is using compiz or glxcompmgr... Other success-stories of GeForce 3 can be found in Gentoo-Forum somewhere. Working GeForce2s are also mentioned (though not refered to) in the link you posted just a few comments later...			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4863" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/12/06 @ 17:27			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4866"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Amit Gurdasani [Visitor]			</div>
+			<div class="bCommentText">
+				Well, I have Xgl + compiz functioning on an r100 Radeon LE just fine, and that's older-generation hardware than the GeForce 2, so that can't be it.<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4866" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/13/06 @ 12:03			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4867"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Amit Gurdasani [Visitor]			</div>
+			<div class="bCommentText">
+				Besides, the quote says, <b>XVideo</b> acceleration requires pixel shaders. That's pretty specific to Xv overlays. compiz itself ought to function.<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4867" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/13/06 @ 12:08			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4869"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				You're right about the pixel shader thing.<br />
+I tried some binaries from PhilipL last night, and those gave the same issues as my compiles, so I'm fairly sure it *must* be hardware related, as lots of other nvidia users got the same issues, but ATI owners don't...<br />
+<br />
+Anyway, I might start a thread about this on the xorg list as now all information about the issue isn't centralised at all :s			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4869" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/13/06 @ 18:27			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4870"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				"Seems to work fine here, on x86 and old Nvidia GeForce 2 mx.<br />
+I've noticed minor glitches, like temporary color/pattern artfiafcts when switching windows, but nothing too annoying. Xgl seems to run stable, even with gnome components. I can watch videos using totem (although totem main logo is broken), run a picture slideshow in eog, even run a opengl screensaver from rss-glx collection."<br />
+<br />
+i catch this in a gentoo blog... I'm downloading Gentoo to test now! (yes, I'm some type of lunatic)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4870" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/13/06 @ 19:37			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4871"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				I'm thinking now it's better forget Xgl..<br />
+<br />
+glxinfo | grep GLX_EXT_texture_from_pixmap doesnt return nothing with the last official drivers from Nvidia in my Geforce4 mx ... and Xgl uses this extension to render the things...<br />
+<br />
+bye bye xgl			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4871" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/13/06 @ 19:59			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4873"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				We know the nvidia-glx drivers don't have the GLX_EXT_texture_from_pixmap extension, as do none of the closed drivers as of today.<br />
+You don't need it to run Xgl though! The X server itself works fine here (well, sort of)<br />
+The problem is only related to compiz, which does needs the GLX extension, which is why one needs to use the libGL.so from MESA to run compiz (which got that extension, either patched release or from CVS).			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4873" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/13/06 @ 20:25			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4875"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Amit Gurdasani [Visitor]			</div>
+			<div class="bCommentText">
+				Both GLX_EXT_texture_from_pixmap and GLX_MESA_render_texture seem to be facilities for Xgl and compiz/glxcompmgr to talk to one another. Xgl itself uses glitz to draw, and glitz uses the system libGL, which doesn't need support for these extensions.<br />
+<br />
+I also get the feeling that the GeForce 2 GTS, GeForce 2 MX and nForce integrated graphics are different enough for some to work and others not to, so if it worked with someone's GeForce 2 MX, it's not necessarily true that it'd work if they used a GTS or Pro or nForce instead.<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4875" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/13/06 @ 22:23			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4879"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Amit Gurdasani [Visitor]			</div>
+			<div class="bCommentText">
+				Here's a clue. GeForce 2 MXes are supported by the very latest NVIDIA drivers. Other GeForce 2s and GeForces are not. Could it be a driver revision difference? If so, can someone with a GeForce 3 or higher attempt to downgrade to the 1.0.7174 driver and see if the problem surfaces?<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4879" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/14/06 @ 23:03			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4886"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				I got 1.0.8178 here, others dont work with modular xorg under Gentoo...<br />
+In a "normal" X session they do work fine:<br />
+direct rendering: Yes<br />
+server glx vendor string: NVIDIA Corporation<br />
+server glx version string: 1.3<br />
+<br />
+Just ran compiz under gdb using a debug build of both mesa-cvs and compiz, but tracing the stuff down is somewhat t			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4886" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/15/06 @ 00:09			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4887"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				hey Ikke, you installed gentoo to test this? :P I'm installing the ebuild that guy posted in his blog now.. Let's see what happens.<br />
+<br />
+At least, one good thing, glxgears in gentoo is 20~40% faster than others distros here :P 700fps			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4887" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/15/06 @ 00:25			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4897"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Amit Gurdasani [Visitor]			</div>
+			<div class="bCommentText">
+				What hardware are you using, Ikke?<br />
+<br />
+I did load compiz up in gdb using<br />
+<br />
+LD_LIBRARY_PATH=/opt/mesa/lib gdb `which compiz`<br />
+<br />
+and it came down to what appeared to be Xgl coming back with a GLX_NO_TEXTURE_EXT response instead of the expected GLX_TEXTURE_2D_EXT/GLX_TEXTURE_RECTANGLE_EXT on a glXQueryDrawable() call (or something; OpenGL/GLX is something I have very little clue about). Presumably this is a verification mechanism, and as far as compiz is concerned, it did what needed to be done; any failure might be happening silently within Xgl.<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4897" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/15/06 @ 16:54			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4898"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				now I'm waiting for the next version of the things (Xgl, compiz, nvidia driver) :P			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4898" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/15/06 @ 19:10			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4905"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: MisterHH [Visitor]			</div>
+			<div class="bCommentText">
+				Actually, the back window bug is fixed in current CVS ;-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4905" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/16/06 @ 14:54			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4906"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				<cite>back window bug is fixed</cite><br />
+<br />
+HO! Aren't you joking? Are you?<br />
+<br />
+It's not fun joke with the others fellings <br />
+<br />
+lol :P			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4906" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/16/06 @ 17:10			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4907"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: MisterHH [Visitor]			</div>
+			<div class="bCommentText">
+				No Joke, sorry. Just recompile glitz from current CVS and it will work just fine (at least it did for me and several others).			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4907" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/16/06 @ 17:29			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4908"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: liZe [Visitor] &middot; <a href="http://www.invox.org/" rel="nofollow">http://www.invox.org</a>			</div>
+			<div class="bCommentText">
+				Yeah, it works now with my (quite old) GeForce4MX and Gentoo ebuilds!!! I have two displays, one with Xorg/composite and one with Xgl, and everything seems to be fluid. That's just crazy, you weren't joking...<br />
+<br />
+Just have huge texture problems, like if they were not clipping. Maybe because of "compiz: No stencil buffer. Clipping of transformed windows is not going to be correct when screen is transformed." :). Have any clue to repair this ?			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4908" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/16/06 @ 21:11			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4909"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				thanks MisterHH! I'll try this!<br />
+<br />
+and no sorry, I was just joking :P<br />
+<br />
+you would say, these brazilians cience computer students have strange sense of humour :P			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4909" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/16/06 @ 21:51			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4910"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo Cesar [Visitor]			</div>
+			<div class="bCommentText">
+				and a bad english... :(			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4910" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/16/06 @ 21:52			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4924"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Amit Gurdasani [Visitor]			</div>
+			<div class="bCommentText">
+				WOOHOO!<br />
+<br />
+As advertised, it works with the CVS HEAD of glitz.<br />
+<br />
+CVS log:<br />
+<br />
+<blockquote><br />
+GL_ARB_texture_rectangle and GL_ARB_texture_border_clamp are no longer required for texture objects<br />
+</blockquote><br />
+<br />
+That, I think, was the crux, since unlike my Radeon LE, glitzinfo seems to indicate the GeForce2 doesn't support this.<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4924" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/17/06 @ 19:53			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4925"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo [Visitor]			</div>
+			<div class="bCommentText">
+				I'm having problems compiling Xgl from CVS.. now I have some errors like this when I start Xgl:<br />
+<br />
+Fatal server error:<br />
+No GLX modules loaded<br />
+dlopen: /usr/local/lib/modules/xgl/libglcore.so: undefined symbol: _tnl_arb_vertex_shader_stage			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4925" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/17/06 @ 23:03			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c4927"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Paulo [Visitor]			</div>
+			<div class="bCommentText">
+				Wow! Xgl is incredible! I'm running in my old computer and everything working so fine :)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="hija_and_first_xgl_steps.html#c4927" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				02/18/06 @ 17:26			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_456" id="bComment_form_id_456" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_456[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_456[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="456" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;title=hija_and_first_xgl_steps&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 468</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/login8d20.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2006%2F02%2F10%2Fhija_and_first_xgl_steps%3Fblog%3D5%26amp%3Btitle%3Dhija_and_first_xgl_steps%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2006/02/10/hija_and_first_xgl_steps by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:22:54 GMT -->
+</html>

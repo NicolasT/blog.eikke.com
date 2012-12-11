@@ -1,0 +1,508 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/06/14/one_more_status_update?blog=5&title=one_more_status_update&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:49:46 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: One more status update</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: One more status update</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jun</span>
+          <span class="day">14</span>
+        </div>
+<div class="bPost">
+          <span class="title">One more status update</span>
+
+                        <p>I implemented Python plugin loading this afternoon. It's almost finished, only calling functions does not work yet (thats only like 10 lines or so, but my eyes start to hurt). It's using the Python plugin base class I blogged about yesterday.</p>
+
+<p>The code is far from perfect, it might leak like hell etc, but hey, it's working ;-) You can't debug or clean code that is not working at all :-)</p>
+
+<p>Here's the current output of the test loader I wrote:</p>
+<pre>** (process:19360): DEBUG: Loading all modules in .libs
+** (process:19360): DEBUG: Suffix for .libs/libtestplugin1.so is valid, loading module
+** (process:19360): DEBUG: [OPluginManagerPlugin] [test-plugin1] Got an init function
+** (process:19360): DEBUG: [test-plugin1] Init with data "test-init-data"
+** (process:19360): DEBUG: Module .libs/libtestplugin1.so is valid, adding
+** (process:19360): DEBUG: Suffix for .libs/libtestplugin2.so is valid, loading module
+** (process:19360): DEBUG: Module .libs/libtestplugin2.so is valid, adding
+** (process:19360): DEBUG: Loading all modules in .
+** (process:19360): DEBUG: Suffix for ./TestPlugin.py is valid, loading module
+Creating new OPluginManagerPythonPlugin instance: PythonTest
+** (process:19360): DEBUG: Module ./TestPlugin.py is valid, adding
+
+
+Found 3 modules
+** (process:19360): DEBUG: Dumping module 0:
+
+
+================================================
+Dumping data for: .libs/libtestplugin1.so, type is "native"
+=================
+* Name: test-plugin1
+* Summary: A simple test plugin, full-featured
+* Description: This is a sample test plugin, to test the OPluginManager functionality, giving sample usage of all possibilities
+* Version: 0.1
+* URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+* Authors:
+        ikke
+        -----------
+                Email: eikke eikke com
+                URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+* Module got an init function
+* Module got a data free function
+* Module got a configure function
+================================================
+
+
+
+** (process:19360): DEBUG: Dumping module 1:
+
+
+================================================
+Dumping data for: .libs/libtestplugin2.so, type is "native"
+=================
+* Name: test-plugin2
+* Summary: A simple, small test plugin
+* Description: This is a sample test plugin, to test the OPluginManager functionality. It only offers limited functionality
+* Version: 0.1
+* URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+* Authors:
+        ikke
+        -----------
+                Email: eikke eikke com
+                URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+        John Doe
+        -----------
+                Email: <a href="mailto:foo@bar.com">foo@bar.com</a>
+                URI: <a href="http://www.foobar.foo/">http://www.foobar.foo</a>
+* Module got no init function
+* Module got no data free function
+* Module got no configure function
+================================================
+
+
+
+** (process:19360): DEBUG: Dumping module 2:
+
+
+================================================
+Dumping data for: ./TestPlugin.py, type is "Python"
+=================
+* Name: PythonTest
+* Summary: A little test plugin
+* Description: Some longer description of this test plugin
+* Version: 0.1
+* URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+* Authors:
+        Ikke
+        -----------
+                Email: eikke eikke com
+                URI: <a href="http://www.eikke.com/">http://www.eikke.com</a>
+* Module got no init function
+* Module got no data free function
+* Module got no configure function
+================================================
+
+
+
+** (process:19360): DEBUG: Deleting 3 modules
+** (process:19360): DEBUG: [OPluginManagerPlugin] Freeing "test-plugin1" data
+** (process:19360): DEBUG: [OPluginManagerPlugin] Running free function
+** (process:19360): DEBUG: [test-plugin1] Freeing data "Test plugin 1 data"
+** (process:19360): DEBUG: [OPluginManagerPlugin] Freeing "test-plugin2" data
+** (process:19360): DEBUG: [OPluginManagerPlugin] No free function provided</pre>
+
+<p>As you can see, it loads 3 modules: 2 native (C) ones in .libs, one fully fledged, one minimal, and loads one Python plugin.<br />
+The Python plugin code is very simple, but can still offer almost the same flexibility as the C interface does:</p>
+<pre>from OPluginManagerPlugin import OPluginManagerPlugin, OPluginManagerPluginAuthor
+
+class TestPlugin(OPluginManagerPlugin):
+        def __init__(self):
+                tmpauthor = OPluginManagerPluginAuthor("Ikke", "eikke eikke com", "http://www.eikke.com")
+                OPluginManagerPlugin.__init__(self, "PythonTest", "A little test plugin", tmpauthor, "Some longer description of this test plugin", "0.1", "http://www.eikke.com", self.Init, self.FreeData, self.Configure)
+
+        def Configure(self):
+                print "Configuring"
+
+        def Init(self, init_data):
+                print "Initializing with data \"" + init_data + "\""
+                return "testplugindata"
+
+        def FreeData(self, data):
+                print "Freeing \"" + data + "\""
+
+def OPluginManagerPluginInit():
+        return TestPlugin()</pre>
+
+<p>I should learn how to work with Python lists etc to be able to implement multi-author functionality etc though.</p>
+
+<p>I updated CVS heavily, so you can find (and checkout) all current code <a href="http://cvs.gnome.org/viewcvs/opluginmanager/" title="here">here</a>. Please play around with it and let me know what you think of it (as a comment here or on the live.gnome wiki page), so I know what I should enhance, add,...</p>
+
+<p>Oh, I got one more terrible exam today (part 2 of the one I got yesterday). Life's great :-p</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="../../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="one_more_status_update.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="one_more_status_update.html#comments" title="Display comments / Leave a comment">1 comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/06/14/one_more_status_update"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/06/14/one_more_status_update"
+  dc:title="One more status update"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/231" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+			<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c8209"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Joseph Smith [Visitor] &middot; <a href="http://www.fiftiesweb.com/movies/gone-with-wind.htm" rel="nofollow">http://www.fiftiesweb.com/movies/gone-with-wind.htm</a>			</div>
+			<div class="bCommentText">
+				 curious, astonishing, black nothing comparative to big: http://www.thearistocrats.com/ <a href="http://moviecourt.blogspot.com/" rel="itsok nofollow">rape love steal - that is all that chips is capable of</a> <a href="http://www.fasttrackmovies.com/" title="to compute player you should be very astonishing" rel="nofollow">        , standard, big, collective nothing compar</a>			</div>
+			<div class="bCommentSmallPrint">
+				<a href="one_more_status_update.html#c8209" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/08/06 @ 15:42			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_231" id="bComment_form_id_231" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_231[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_231[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="231" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;title=one_more_status_update&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../../2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 420</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/loginf0dc.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2005%2F06%2F14%2Fone_more_status_update%3Fblog%3D5%26amp%3Btitle%3Done_more_status_update%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/06/14/one_more_status_update?blog=5&title=one_more_status_update&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:49:46 GMT -->
+</html>

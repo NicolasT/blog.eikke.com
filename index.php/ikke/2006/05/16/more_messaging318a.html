@@ -1,0 +1,529 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2006/05/16/more_messaging?blog=5&title=more_messaging&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:44:29 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: More messaging</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: More messaging</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">16</span>
+        </div>
+<div class="bPost">
+          <span class="title">More messaging</span>
+
+                        <p>Been busy lately due to uni work, so not much hacking time. I did enhance that messaging thing a little (not working on other stuff I'd like to work on yet as they're potential SoC projects :-)).</p>
+
+<p>wall, write and other pty based communication support still isn't in there as I didn't manage to get something working (yet). Must be doing something completely wrong somehow.</p>
+
+<p>I did add a "Reply" option to the incoming messages though. Currently the reply dialog is not HIG at all, no I18N support, it's crap PyGTK code, but it does work somewhat.</p>
+
+<p><a href="http://www.eikke.com/files/gnome-messaging-0.1-sc.gif" title="Here">Here</a>'s a little demo (1MB animated GIF screencast, thanks Byzanz (and Company)!)</p>
+
+<p>I made a first "release" for people who's want to play with this. You can find the tarball <a href="http://www.eikke.com/files/gnome-messaging-0.1.tar.gz" title="here">here</a>, but note it needs work: checking for Python stuff in configure.in, fixing Python code, adding I18N support, get the dialog code inside the C daemon, as using a helper is plain stupid (I use a helper as it's pretty easy to create a GUI using PyGTK quickly).</p>
+
+<p>TODO: incoming message throttling (so one can't flood you using smbclient in a shell for loop), I18N (damn intltool 's been driving me crazy), nicer UI, other messaging "protocol" support, get a Telepathy backend out of this (jdub's idea),...</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="../../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="more_messaging.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="more_messaging.html#comments" title="Display comments / Leave a comment">11 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/05/16/more_messaging"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/05/16/more_messaging"
+  dc:title="More messaging"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/472" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+			<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9459"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: William Rea [Visitor] &middot; <a href="http://willrea.be/" rel="nofollow">http://willrea.be</a>			</div>
+			<div class="bCommentText">
+				Very awesome! Keep it up			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c9459" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/16/06 @ 16:53			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9460"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Tincan [Visitor]			</div>
+			<div class="bCommentText">
+				Cool stuff. Just keep in mind this is one of those services that is likely to be abused by malicious coders and and spammers.  That is why most pople turm off the messaging service in windows these days.  It would be nice to build in safe gaurds from the groud up rather than suffer the same fate as windows when Linux becomes mainstream.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c9460" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/16/06 @ 17:26			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9461"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Heh, first of all, one shouldn't open his SMB ports to the internet so spammers shouldn't be able to access your smbd service ;-)<br />
+I could add an option to display only incoming messages from the local network, for example.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c9461" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/16/06 @ 17:38			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9465"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Richard Stellingwerff [Visitor] &middot; <a href="http://www.stellingwerff.com/" rel="nofollow">http://www.stellingwerff.com</a>			</div>
+			<div class="bCommentText">
+				Hi, I wanted to try it out myself on ubuntu dapper drake, but it's not working for me.<br />
+<br />
+When running, I get this error message:<br />
+  File "dbus_bindings.pyx", line 1783, in dbus_bindings.bus_request_name<br />
+dbus_bindings.DBusException: Connection ":1.3" is not allowed to own the service "org.gnome.Messaging" due to security policies in the configuration file<br />
+<br />
+Any idea what's wrong?			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c9465" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/16/06 @ 19:05			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9466"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Looks like the dbus system.d authorisation file isnt at the right location, you didnt kill -HUP your system dbus service, or samba uses another user than "nobody" to spawn message command files.<br />
+Were you trying to run the "message command" helper as a normal user?			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c9466" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/16/06 @ 19:39			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9469"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Richard Stellingwerff [Visitor] &middot; <a href="http://www.stellingwerff.com/" rel="nofollow">http://www.stellingwerff.com</a>			</div>
+			<div class="bCommentText">
+				Ahhh you are right, it didn't install gnome-messaging.conf in /etc/dbus-1/system.d but /usr/etc/dbus-1/system.d. After copying it into the right place and -HUP'ing dbus, it works.<br />
+<br />
+Very cool little app, this.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c9469" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/17/06 @ 22:48			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9872"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Captcha test			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c9872" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/27/06 @ 21:32			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11449"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: gimpel [Visitor]			</div>
+			<div class="bCommentText">
+				very nice app. kould make me get rid of klinpopup and also of a bunch of kde services needed for it - linpopup doesn't work right here.<br />
+<br />
+But is there any chance to disable the close-massage-countdown and let me decide when to close it? and may it be in the source directly. 			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c11449" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				08/13/06 @ 15:40			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11569"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Kevin [Visitor] <a href="../../../../ikke6545.html?disp=msgform&amp;comment_id=11569&amp;post_id=472&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2006%2F05%2F16%2Fmore_messaging%3Fblog%3D5%26amp%3Btitle%3Dmore_messaging%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Hey,<br />
+<br />
+very nice work there. Could you list all dependencies to be installed? And where can I find documentation about this dbus and/or gnome notification api?<br />
+<br />
+thanks!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c11569" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/29/07 @ 22:53			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11657"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Cody Harris [Visitor] <a href="../../../../ikke055f.html?disp=msgform&amp;comment_id=11657&amp;post_id=472&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2006%2F05%2F16%2Fmore_messaging%3Fblog%3D5%26amp%3Btitle%3Dmore_messaging%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://blog.vectec.net/" rel="nofollow">http://blog.vectec.net</a>			</div>
+			<div class="bCommentText">
+				Any progress on this?  I've been trying to do this myself, but I can't figure it out.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c11657" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				11/08/07 @ 04:21			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11660"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Err, not really... Doing the "wall" thing didn't work out, so I gave up.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="more_messaging.html#c11660" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				11/08/07 @ 10:50			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+		<div class="moderation_msg"><p>This post has 1 feedback awaiting moderation... </p></div>		<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_472" id="bComment_form_id_472" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_472[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_472[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="472" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;title=more_messaging&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 507</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/logincad8.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2006%2F05%2F16%2Fmore_messaging%3Fblog%3D5%26amp%3Btitle%3Dmore_messaging%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2006/05/16/more_messaging?blog=5&title=more_messaging&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:44:29 GMT -->
+</html>

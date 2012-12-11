@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&cat=49&page=1&paged=2 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:07:26 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Categories: Coding Corner, Docbook, Summer of Code 06</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Categories: Coding Corner, Docbook, Summer of Code 06</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Aug</span>
+          <span class="day">15</span>
+        </div>
+<div class="bPost">
+          <span class="title">ASUS laptops, multimedia keys and INPUT</span>
+
+                        <p>For quite a while on several systems where ACPI is used to deliver key press events to the operating system (mostly laptops, that's why we got the asus_acpi, thinkpad, toshiba, sony,... drivers in the kernel). In userspace acpid was used then to fetch these commands, a callout script was used which used some application to inject the corresponding keycode (based on the ACPI event ID, which is just "randomly chosen" by the hardware manufacturers) on some input device, so applications (eg your X server) were able to see the key press events. Especially the acpid -> callout -> map scancode to keycode -> inject in input device isn't such a "nice" solution, but it worked, most of the time.</p>
+
+<p>Recently people (one of them Richard Hughes of GPM fame, you know, that power-eating applet ;-)) started to rework these in-kernel drivers to use the kernel input subsystem directly, so no more round-trip to userspace would be necessary.<br />
+There are 2 possibilities here: you can store a scancode to keycode mapping table in the driver itself, or you can remap scancodes to a keycode from userspace on some device using ioctl's.</p>
+
+<p>This last method is made easy by HAL (0.5.10 or git), which includes a callout which allows you to store the mappings in an FDI file, and then performs the remapping when a matched device is found on the system. More information about this can be found <a href="http://people.freedesktop.org/~hughsient/quirk/quirk-keymap-index.html">here</a>.</p>
+
+<p>IMHO this method is the cleanest, as it doesn't force us to store big device-specific mapping tables in the kernel driver. It's userspace so much easier to make changes, add new device information,...</p>
+
+<p>ASUS laptop owners couldn't make use of this yet as nor the in-kernel driver, asus_laptop, or it's -cvs version provide relaying to a kernel input device. Yesterday I decided to implement this, and today it got somewhat finished, after some minor issues. You can find the resulting patch <a href="http://key.nicolast.be/files/asus_acpi_to_input.patch">here</a>, it's against current acpi4asus CVS, but I think it should apply cleanly against a vanilla kernel too. I'll submit it to the acpi4asus list tomorrow. Git repository is <a href="http://git.nicolast.be/?p=acpi4asus.git;a=summary">here</a>, you want the "acpi_keys_to_input_layer_no_internal_mapping" branch.</p>
+
+<p>After compiling the driver and insmoding it (or modprobe if you install it too, make sure you don't load the old version by accident) you should see some information in dmesg: a message the driver is loaded, the name of your laptop model, and the fact a new input device called "Asus Extra Buttons" was created. Now when you press some multimedia buttons and check dmesg again, it should tell you some keys were pressed it can't map to a known keycode, also providing the scancode. You can use this information to generate an FDI file as described in the pages I linked to before.</p>
+
+<p>If you're using an "old" HAL version, you can download a small utility <a href="http://git.nicolast.be/?p=acpi4asus.git;a=blob;f=samples/set-asus-keymap.c;h=f16345124c297beb6f11259fc0ff59267be5a93d;hb=acpi_keys_to_input_layer_no_internal_mapping">here</a> to emulate HAL's behaviour using hard-coded information. You need to make a list of scancodes and their meaning using KEY_* values. You can find these constants in /usr/include/linux/input.h, or in include/linux/input.h of your local kernel source tree.<br />
+Once you know which scancodes map to which KEY_* value, you can add them to the "mappings" variable defined at the top of the C file. The format is simple: scancode1, keycode1, scancode2, keycode2,...,-1. Make sure you always add pairs of scancode/keycode values, and end the array with a -1.</p>
+
+<p>Once you entered the values, compile the program (gcc -o set-asus-keymap set-asus-keymap.c), figure out the event device node for the Asus Extra Buttons device (check /proc/bus/input/devices, where Name is Asus Extra Buttons, see which eventX is after Handlers), and run the program (as root) using ./set-asus-keymap /dev/event/eventX (now I don't want *any* comments on this entry regarding "I have no eventX node").</p>
+
+<p>When you're done with this, create a nice FDI file too, and send it to the HAL mailing list so others can enjoy your research too :-)</p>
+
+<p>That's about it, your special keys should "just work" and acpid is no longer necessary to handle them.</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2007/08/15/asus_laptops_multimedia_keys_and_input.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/08/15/asus_laptops_multimedia_keys_and_input.html#comments" title="Display comments / Leave a comment">7 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/08/15/asus_laptops_multimedia_keys_and_input"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/08/15/asus_laptops_multimedia_keys_and_input"
+  dc:title="ASUS laptops, multimedia keys and INPUT"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/503" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Aug</span>
+          <span class="day">9</span>
+        </div>
+<div class="bPost">
+          <span class="title">An introduction to the git bisect feature</span>
+
+                        <p>Recently <a href="http://git.or.cz/">git</a> is becoming a very popular revision control system for several projects. I tend to use it regularly too, both for my own projects, because it's used by a projects I hack on, or because I can get all powerful git features when working on a project which uses SVN as RCS (which is a good thing in some environments) through git-svn.</p>
+
+<p>One of the very nice features of git is "bisect", which allows you to pin down the commit which broke code (or functionality) pretty easily. I used it eg. some days ago to figure out which commit in the "avivo" driver caused the driver to break on my system.</p>
+
+<p>How does it work? Basicly, you clone a git repository, you start a bisect session, say "this commit did work", "this one doesnt work", and that's it. git will checkout a commit "in the middle" of the good and bad revisions, you compile/run/test the result, and tell git whether this version did work as expected or not. If it did work, git will checkout the revision between the current one (which was already at the middle between good and bad) and bad for you to test. If it did not work you'll get the revision in the middle of the "good" revision and the current one.<br />
+Think about binary search, it's similar (actually, bisect *is* a binary search).</p>
+
+<p>This way you're able to figure out which commit broke the app in a very short time (unless it crashes your system and it takes 3minutes to boot ;-)).</p>
+
+<p>There is even more: if your application got a nice test suite consisting of unit test and alike, you're able to automate the whole process. The only thing you need is some script/tool/... which runs the test suites and returns a 0 exit code on success, or something else on failure. If you got this, git will do the whole bisect automagicly and tell you without any intervention what broke your application.</p>
+
+<p>To demonstrate this I wrote a simple script. You can find it <a href="http://git.nicolast.be/?p=git-bisect-sample.git;a=tree">here</a> using gitweb, or git-clone <a href="http://git.nicolast.be/git-bisect-sample.git">http://git.nicolast.be/git-bisect-sample.git</a>.</p>
+
+<p>Once you got the script on your system, you can test it. It takes 2 arguments: the number of commits to make, and which commit should break the application. The script will create a branch, then start creating a simple bash script. All this script does is assign 0 to i, increment i and decrement i. Every revision one increment and one decrement will be added. At the "bad" revision, one more increment will be added though. At the end i is used as return value.<br />
+As you can see, before the bad revision the script will return 0, after it it will return 1, so it's a test suite on its own ;-)</p>
+
+<p>Here's a sample run:</p>
+<pre>$ sh createrepo.sh 20 16
+Switched to a new branch "git_bisect_test"
+Doing commit number 1
+Created commit 9ce7f50f937b4e0e82c9c7fe143bb0483eb8e308
+ 1 files changed, 5 insertions(+), 0 deletions(-)
+ create mode 100755 testcase.sh
+Creating good_tag
+Doing commit number 2
+.....
+
+Doing commit number 20
+Created commit 0298fc50cb61eca005053a1c948f8651b2a346eb
+ 1 files changed, 2 insertions(+), 0 deletions(-)
+Creating bad_tag</pre>
+<p>So, it created a branch called "git_bisect_test" (just to keep our repository clean), did a first commit, tagged this as "good_tag" (we assume our first commit is a working application here. The good and bad revisions shouldn't be tagged, but this makes it easier for us further on). Then the script is created/updated and committed 20 times, breaking at the 16th commit. At the end, "bad_tag" is created. Once again, this is not necessary at all.</p>
+
+<p>Now we found out our application is broken, so we'll bisect to figure out where it broke.</p>
+<pre>$ git-bisect start
+$ git-bisect good good_tag
+$ git-bisect bad bad_tag 
+Bisecting: 10 revisions left to test after this
+[632c9c04b97578d674a2980648ee4ab748a8b147] commit number 11</pre>
+<p>We're at "revision #11".</p>
+
+<p>No the magic can start:</p>
+<pre>$ git-bisect run ./testcase.sh
+running ./testcase.sh
+Bisecting: 5 revisions left to test after this
+[d6514e8d9fe55827fe78d650548d948a4647fc50] commit number 16
+running ./testcase.sh
+Bisecting: 3 revisions left to test after this
+[79e4ce719557e53c203789e1991f1ec00be823f7] commit number 14
+running ./testcase.sh
+Bisecting: 1 revisions left to test after this
+[09f09d9a4e322a49b40de3f9d595f5132198c9b3] commit number 15
+running ./testcase.sh
+d6514e8d9fe55827fe78d650548d948a4647fc50 is first bad commit
+commit d6514e8d9fe55827fe78d650548d948a4647fc50
+Author: Nicolas Trangez &lt; &gt;
+Date:   Thu Aug 9 23:43:48 2007 +0200
+
+    commit number 16
+
+:100755 100755 bd66b47cf24d9d3d00ac289395851d436b404774 ba01220423f64ea8b92a9df75c36a1a7ddda89ac M      testcase.sh
+bisect run success</pre>
+
+<p>Exactly, like it should, it figured out commit 16 (well, git got no commit numbers, this is just the commit message to keep things understandable easily) broke our application.</p>
+
+<p>All we got to do now is stop the bisect process</p>
+<pre>$ git-bisect reset</pre>
+<p>and fix our application by looking up a diff of the bad revision.</p>
+
+<p>In this sample case we should also clear the cruft the createrepo.sh script created:</p>
+<pre>$ git-tag -d good_tag
+$ git-tag -d bad_tag
+$ git-checkout master
+$ git-branch -D git_bisect_test</pre>
+
+<p>That's it. More information can be found in the <a href="http://www.kernel.org/pub/software/scm/git/docs/user-manual.html">git manual</a> and in the <a href="http://www.kernel.org/pub/software/scm/git/docs/git-bisect.html">git bisect manpage</a>.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2007/08/09/an_introduction_to_the_git_bisect_featur.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/08/09/an_introduction_to_the_git_bisect_featur.html#comments" title="Display comments / Leave a comment">2 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/08/09/an_introduction_to_the_git_bisect_featur"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/08/09/an_introduction_to_the_git_bisect_featur"
+  dc:title="An introduction to the git bisect feature"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/502" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Apr</span>
+          <span class="day">28</span>
+        </div>
+<div class="bPost">
+          <span class="title">How to fix your ACPI buttons, the hackish way</span>
+
+                        <p>Some time ago my ACPI-driven laptop keyboard buttons (volume control, music player controls,...) stopped working. I'm using the acpi-support package (although not running a Debian derivate) driven by acpid.<br />
+Today I decided I wanted my buttons back, so I started to find out what was going wrong.</p>
+
+<p>The issue: acpi_fakekey checks all /dev/input/eventX devices whether or not it's a keyboard device, and if it finds one, it writes the necessary scancode to this device. Since some recent kernel, /dev/input/event0 is no longer my AT keyboard, but one of these ACPI buttons, so writing scancodes to the device won't work: my X server keyboard driver won't see them.</p>
+
+<p>/proc/bus/input/devices told me I need event4 (or use this command: hal-get-property --udi `hal-find-by-capability --capability input | grep KBD` --key input.device | sed "s:/dev/input/event::g"<br />
+). Patching acpi_fakekey.c is pretty trivial:</p>
+
+<pre><code>--- acpi-support-0.94/acpi_fakekey.c.orig       2007-04-28 18:09:37.078953488 +0200
++++ acpi-support-0.94/acpi_fakekey.c    2007-04-28 18:09:49.578470914 +0200
+@@ -13,7 +13,7 @@
+         char filename[32];
+         char key_bitmask[(KEY_MAX + 7) / 8];
+ 
+-        for (i=0; i&lt;32; i++) {
++        for (i=4; i&lt;32; i++) {
+                 snprintf(filename,sizeof(filename), "/dev/input/event%d", i);
+ 
+                 fd = open(filename, O_RDWR);
+</code></pre>
+<p>Replace the 4 with the correct number on your system.</p>
+
+<p>Now my buttons "work" again. Patching acpi_fakekey so it uses HAL to figure out the correct device to write to might be somewhat more reasonable though :-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2007/04/28/how_to_fix_your_acpi_buttons_the_hackish.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/04/28/how_to_fix_your_acpi_buttons_the_hackish.html#comments" title="Display comments / Leave a comment">1 comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/04/28/how_to_fix_your_acpi_buttons_the_hackish"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/04/28/how_to_fix_your_acpi_buttons_the_hackish"
+  dc:title="How to fix your ACPI buttons, the hackish way"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/499" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Apr</span>
+          <span class="day">15</span>
+        </div>
+<div class="bPost">
+          <span class="title">About the lack of Java-style interfaces in Python</span>
+
+                        <p>Just had some discussion about OO concepts, abstract classes and interfaces in Java and Python in #gnome-nl. I still dislike the fact Python and other interpreted languages got no enforced interface implementation support.</p>
+
+<p>A little comparison (not meant to be disrespectful againt anyone):<br />
+When you're living in a Java world, you can go out on friday night, meet some person implementing the Girl interface, invite her at your place and have some fun (you know ;-)).</p>
+
+<p>When you're Python, you might go out on friday night, meet some person who tells you "it" implements the Girl interface and at a first sight does so, as get_voice_timbre returns "girl" and has_boobs returns true. Then you take the person home, to your bedroom, and find out, well, it's a shemale.</p>
+
+<p>Got the picture? :-)</p>
+
+<p>Anyway... SoC news will follow later on!</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2007/04/15/about_the_lack_of_java_style_interfaces_.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/04/15/about_the_lack_of_java_style_interfaces_.html#comments" title="Display comments / Leave a comment">18 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/04/15/about_the_lack_of_java_style_interfaces_"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/04/15/about_the_lack_of_java_style_interfaces_"
+  dc:title="About the lack of Java-style interfaces in Python"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/498" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Feb</span>
+          <span class="day">17</span>
+        </div>
+<div class="bPost">
+          <span class="title">Python, Cairo, XShape and clocks</span>
+
+                        <p>Tonight I wrote some little Python application to play around with Cairo (PyCairo that is), and XShape. The result? Something similar to MacSlow's Cairo-Clock, although much more basic.</p>
+
+<p><img src="http://key.nicolast.be/files/pycairoshapeclock.png" title="The clock" alt="Application image" /></p>
+
+<p>You can find the <a href="http://code.eikke.com/index.php?dir=misc/&amp;file=pycairoshape-clock1.py">result</a> in my <a href="http://code.eikke.com/">code section</a>.</p>
+
+<p>Just start it in some terminal. Clicking on the clock allows you to move it, clicking it while pressing a shift keys starts resizing mode. When running on top of a terminal/browser/whatever with scrollbars, try to move your pointer close to the clock's circle, inside the area that's normally covered by the clock's window/frame, then use your scrollwheel. As you should notice, the scroll events are not sent to the clock window, but to the underlying window: it's really a circle, not a transparant rectangular window which still catches all events anyway.</p>
+
+<p>Have fun with it!</p>
+
+<p>Edit: there's a little <a href="http://key.nicolast.be/files/pycairoxshapeclock.gif">screencast</a> online. Warning: colors look bad, this is caused by the recording software.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2007/02/17/python_cairo_xshape_and_clocks.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/02/17/python_cairo_xshape_and_clocks.html#comments" title="Display comments / Leave a comment">3 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/02/17/python_cairo_xshape_and_clocks"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/02/17/python_cairo_xshape_and_clocks"
+  dc:title="Python, Cairo, XShape and clocks"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/489" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                <a href="ikke9052.html?blog=5&amp;cat=49&amp;page=1&amp;paged=1">&lt;&lt; Previous Page</a> :: <a href="ikked2c1.html?blog=5&amp;cat=49&amp;page=1&amp;paged=3">Next Page &gt;&gt;</a>                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="ikke.html">All</a></li>
+<li><a href="ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span>*<ul><li><a href="ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span>*</li>
+<li><a href="ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span>*</li>
+</ul>
+</li>
+<li><a href="ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="ikke/2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="ikke/2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="ikke/2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 109</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../htsrv/login2665.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%3Fblog%3D5%26amp%3Bcat%3D49%26amp%3Bpaged%3D2%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&cat=49&page=1&paged=2 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:07:28 GMT -->
+</html>

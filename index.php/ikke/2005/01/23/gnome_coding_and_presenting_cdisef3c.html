@@ -1,0 +1,944 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/01/23/gnome_coding_and_presenting_cdis?blog=5&title=gnome_coding_and_presenting_cdis&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:49:50 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: Gnome coding, and presenting CDIS</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: Gnome coding, and presenting CDIS</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jan</span>
+          <span class="day">23</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://developer.gnome.org/doc/tutorials/">Gnome coding, and presenting CDIS</a></span>
+
+                        <p>I started looking into <a href="http://www.gnome.org/" title="Gnome">Gnome</a> coding last days, by reading some of the great <a href="http://developer.gnome.org/doc/tutorials/" title="tutorials">tutorials</a> in the <a href="http://developer.gnome.org/" title="Developer section">Developer section</a> of the Gnome site. Currently I'm reading the <a href="http://le-hacker.org/papers/gobject/" title="stuff on GObjects">stuff on GObjects</a>, which is very interesting. I first read the <a href="http://www-106.ibm.com/developerworks/linux/library/l-wrap/" title="article">article</a> on <a href="http://www-136.ibm.com/developerworks/" title="IBM DeveloperWorks">IBM DeveloperWorks</a> regarding "Wrapping GObjects in Python", which is a neat way to use C code in Python. It's also written by <a href="http://www.burtonini.com/" title="Ross Burton">Ross Burton</a>, as you might remember the author of the Contact Lookup Applet.<br />
+Regarding that applet: Ross is not willing to incorporate <a href="../20/contact_lookup_applet_with_gaim_integrat.html" title="my Gaim patch">my Gaim patch</a>, because it is too much bound to Gaim, and requires a patched version of Gaim. Too bad, Cdis should provide a solution for this.</p>
+
+<p>Now what is Cdis? It's the new name for what I previously called DAL. Cdis stands for "Common Desktop Integration Standard", a name proposed by <a href="http://www.martianrock.com/" title="John "J5" Palmieri">John "J5" Palmieri</a>. Some information regarding it I sent to the Xdg list at <a href="http://www.freedesktop.org/" title="freedesktop.org">freedesktop.org</a> is available <a href="http://lists.freedesktop.org/archives/xdg/2005-January/005783.html" title="here">here</a>. Beware, the thread got corrupted somewhere and is attached to the pkgconfig2 thread, so it continues <a href="http://lists.freedesktop.org/archives/xdg/2005-January/005801.html" title="here">here</a></p>
+
+<p>I had some talkings on IRC with JakobS, the <a href="http://www.kde.org/" title="KDE">KDE</a> maintainer of the <a href="http://www.multicastdns.org/" title="MulticastDNS">MulticastDNS</a> features coming in KDE 3.4, regarding automatic code generation. It will be fun to get this working (XML2C, XML2GObject, XML2KObject,...). It should be possible to do this without writing real code, just using XML and XSLT, which generates the necessary code for various platforms, based on a CdisInterface description file.</p>
+
+<p>For the GObject creation, which is a very tedious task, I've been looking into <a href="http://www.5z.com/jirka/gob.html" title="Gob">Gob</a>, the GObject builder. It just rocks. This is a sample Gob file:</p>
+<blockquote><pre>requires 2.0.0
+
+%{
+//This should not be necessary, but well...
+#include &lt;stdio.h&gt;
+%}
+
+class Ikke:GobTestOne from G:Object
+{
+        private int test=1;
+        property INT test
+                (nick = "test",
+                 blurb = "Testje",
+                 export,
+                 link);
+
+        public void
+        printtest (self)
+        {
+                g_printf("%d\n", self->_priv->test);
+        }
+
+        public GObject *
+        new (void)
+        {
+                return (GObject *) GET_NEW;
+        }
+}
+</pre></blockquote>
+
+<p>As you can see, a very simple format.<br />
+If I process this file using gob, this is what I get:</p>
+<blockquote><p>$gob2 gobtest1.gob<br />
+$ ls<br />
+gobtest1.gob  ikke-gobtestone-private.h  ikke-gobtestone.h<br />
+ikke-gobtestone.c<br />
+$ wc -l ikke-gobtestone*<br />
+  22 ikke-gobtestone-private.h<br />
+ 276 ikke-gobtestone.c<br />
+  75 ikke-gobtestone.h<br />
+ 373 total</p>
+</blockquote><p>which is rather impressive. The generated code is also very usefull.</p>
+
+<p>A "bigger" Gob file (just a sample) can be seen <a href="http://dwi.sourceforge.net/biker/bike-calc.gob.html" title="here">here</a>, whilst <a href="http://dwi.sourceforge.net/biker/biker.c.html" title="this">this</a> is a sample C file "using" the object. Impressive, huh?</p>
+
+<p><a href="http://gnome.org/start/2.9/" title="Gnome 2.10.0">Gnome 2.10.0</a> beta1 tarball creation tomorrow, launch on wednesday. Jay! I got the <a href="webcal://www.gnome.org/start/2.9/schedule.ics" title="webcal">webcal</a> in my <a href="http://gnome.org/projects/evolution/" title="Evolution">Evolution</a> Calendar ;-)</p>
+
+<p>That's it for now, maybe I'll have some usefull stuff to say soon ;-)</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="gnome_coding_and_presenting_cdis.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="gnome_coding_and_presenting_cdis.html#comments" title="Display comments / Leave a comment">43 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/01/23/gnome_coding_and_presenting_cdis"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/01/23/gnome_coding_and_presenting_cdis"
+  dc:title="Gnome coding, and presenting CDIS"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/78" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+			<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9003"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: norvasc negative side effects [Visitor] &middot; <a href="http://norvasc-dizzy.ultramegahot.com/norvasc-negative-side-effects.html" rel="nofollow">http://norvasc-dizzy.ultramegahot.com/norvasc-negative-side-effects.html</a>			</div>
+			<div class="bCommentText">
+				Links: http://norvasc-dizzy.ultramegahot.com/norvasc-negative-side-effects.html <a href="http://norvasc-dizzy.ultramegahot.com/norvasc-negative-side-effects.html" rel="nofollow">norvasc negative side effects</a> [url=http://norvasc-dizzy.ultramegahot.com/norvasc-negative-side-effects.html]norvasc negative side effects[/url]			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9003" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/19/06 @ 20:07			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9043"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: 3d chess set [Visitor] &middot; <a href="http://glass-chess-set.allthebestdirectory.com/3d-chess-set.html" rel="nofollow">http://glass-chess-set.allthebestdirectory.com/3d-chess-set.html</a>			</div>
+			<div class="bCommentText">
+				<a href="http://pet-pride-doors.megaplayonline.com/pet-door-installation-steel-door.html" rel="nofollow">pet door installation steel door</a> [url=http://pet-pride-doors.megaplayonline.com/pet-door-installation-steel-door.html]pet door installation steel door[/url] <a href="http://chess-set.allthebestdirectory.com/viking-chess-sets.html" rel="nofollow">viking chess sets</a> [url=http://chess-set.allthebestdirectory.com/viking-chess-sets.html]viking chess sets[/url] <a href="http://pet-doors.megaplayonline.com/moore-pet-door.html" rel="nofollow">moore pet door</a> [url=http://pet-doors.megaplayonline.com/moore-pet-door.html]moore pet door[/url]			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9043" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/20/06 @ 12:16			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9088"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: hitachi lcd projection rear television [Visitor] &middot; <a href="http://lcd-television-forums.allthebestdirectory.com/hitachi-lcd-projection-rear-television.html" rel="nofollow">http://lcd-television-forums.allthebestdirectory.com/hitachi-lcd-projection-rear-television.html</a>			</div>
+			<div class="bCommentText">
+				Links: http://lcd-television-forums.allthebestdirectory.com/hitachi-lcd-projection-rear-television.html <a href="http://lcd-television-forums.allthebestdirectory.com/hitachi-lcd-projection-rear-television.html" rel="nofollow">hitachi lcd projection rear television</a> [url=http://lcd-television-forums.allthebestdirectory.com/hitachi-lcd-projection-rear-television.html]hitachi lcd projection rear television[/url]			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9088" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/21/06 @ 07:36			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9098"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: moccasins [Visitor] &middot; <a href="http://cletopas.blogspot.com/" rel="nofollow">http://cletopas.blogspot.com</a>			</div>
+			<div class="bCommentText">
+				Pharmacy sites! <a href='http://cletopas.blogspot.com/' rel="nofollow">moccasins</a>. <a href='http://cletopas.blogspot.com/' rel="nofollow">moccasins online</a>: moccasins online, play moccasins. More link <a href='http://cletopas.blogspot.com/' rel="nofollow">play moccasins</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9098" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/22/06 @ 00:14			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9104"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: txley@abv.com [Visitor] &middot; <a href="http://www.hotel-bangkok.ws/bankok41_en/United_States/Florida/Miami_Beach-hotels.html" rel="nofollow">http://www.hotel-bangkok.ws/bankok41_en/United_States/Florida/Miami_Beach-hotels.html</a>			</div>
+			<div class="bCommentText">
+				Miami Beach hotels			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9104" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/22/06 @ 14:07			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9157"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Boris Eltsin [Visitor] &middot; <a href="http://libe.htmlplanet.com/rubber-mat.htm" rel="nofollow">http://libe.htmlplanet.com/rubber-mat.htm</a>			</div>
+			<div class="bCommentText">
+				I thik you're right. So go on.
+Boris.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9157" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/24/06 @ 15:05			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9213"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: aaliyah [Visitor] &middot; <a href="http://a-j-i.org/aaliyah/" rel="nofollow">http://a-j-i.org/aaliyah/</a>			</div>
+			<div class="bCommentText">
+				<a href = 'http://a-j-i.org/aaliyah/' rel="nofollow">aaliyah</a> http://a-j-i.org/aaliyah/ ; <a href = 'http://a-j-i.org/aaliyah/aaliyah.html' rel="nofollow">aaliyah</a> http://a-j-i.org/aaliyah/aaliyah.html ; <a href = 'http://a-j-i.org/aaliyah/aaliyah_poster.html' rel="nofollow">aaliyah poster</a> http://a-j-i.org/aaliyah/aaliyah_poster.html ; <a href = 'http://a-j-i.org/aaliyah/aaliyah_picture.html' rel="nofollow">aaliyah picture</a> http://a-j-i.org/aaliyah/aaliyah_picture.html ; <a href = 'http://a-j-i.org/aaliyah/aaliyah_cds.html' rel="nofollow">aaliyah cds</a> http://a-j-i.org/aaliyah/aaliyah_cds.html ;  Thanks!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9213" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/26/06 @ 17:12			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9247"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: adam frost [Visitor] &middot; <a href="http://a-j-i.org/adam_frost/" rel="nofollow">http://a-j-i.org/adam_frost/</a>			</div>
+			<div class="bCommentText">
+				<a href = 'http://a-j-i.org/adam_frost/' rel="nofollow">adam frost</a> http://a-j-i.org/adam_frost/ ; <a href = 'http://a-j-i.org/adam_frost/adam_frost.html' rel="nofollow">adam frost</a> http://a-j-i.org/adam_frost/adam_frost.html ;  Thanks!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9247" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/28/06 @ 09:31			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9300"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: ritalin online [Visitor] &middot; <a href="http://ricricvi.blogs.eurosport.es/images/index.html" rel="nofollow">http://ricricvi.blogs.eurosport.es/images/index.html</a>			</div>
+			<div class="bCommentText">
+				Thanks. <a href='http://ricricvi.blogs.eurosport.es/images/index.html' rel="nofollow">ritalin online</a>. <a href='http://ricricvi.blogs.eurosport.es/images/index.html' rel="nofollow">ritalin</a>: ritalin, buy ritalin, generic ritalin. Also <a href='http://ricricvi.blogs.eurosport.es/images/index.html' rel="nofollow">buy ritalin</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9300" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/30/06 @ 18:29			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9301"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: valtrex online [Visitor] &middot; <a href="http://ererchi.blogs.eurosport.es/images/index.html" rel="nofollow">http://ererchi.blogs.eurosport.es/images/index.html</a>			</div>
+			<div class="bCommentText">
+				Very good site! <a href='http://ererchi.blogs.eurosport.es/images/index.html' rel="nofollow">valtrex online</a>. <a href='http://ererchi.blogs.eurosport.es/images/index.html' rel="nofollow">buy valtrex</a>: valtrex, buy valtrex, generic valtrex.  <a href='http://ererchi.blogs.eurosport.es/images/index.html' rel="nofollow">generic valtrex</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9301" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/30/06 @ 18:30			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9345"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: order zyban [Visitor] &middot; <a href="http://fixer.0pi.com/data/zyban.html" rel="nofollow">http://fixer.0pi.com/data/zyban.html</a>			</div>
+			<div class="bCommentText">
+				Very good site! <a href='http://fixer.0pi.com/data/zyban.html' rel="nofollow">order zyban</a>. <a href='http://fixer.0pi.com/data/zyban.html' rel="nofollow">zyban</a>: buy zyban, generic zyban, order zyban.  <a href='http://fixer.0pi.com/data/zyban.html' rel="nofollow">buy zyban</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9345" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/05/06 @ 14:45			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9346"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: order amoxicillin [Visitor] &middot; <a href="http://fixdir.itgo.com/data/amoxicillin.html" rel="nofollow">http://fixdir.itgo.com/data/amoxicillin.html</a>			</div>
+			<div class="bCommentText">
+				Pharmacy sites! <a href='http://fixdir.itgo.com/data/amoxicillin.html' rel="nofollow">order amoxicillin</a>. <a href='http://fixdir.itgo.com/data/amoxicillin.html' rel="nofollow">amoxicillin</a>: buy amoxicillin, generic amoxicillin, order amoxicillin.  <a href='http://fixdir.itgo.com/data/amoxicillin.html' rel="nofollow">buy amoxicillin</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9346" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/05/06 @ 14:46			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9397"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: hvac software [Visitor] &middot; <a href="http://www.insulate.org/frameset.php?thePage=http://trcadronla.proboards99.com" rel="nofollow">http://www.insulate.org/frameset.php?thePage=http://trcadronla.proboards99.com</a>			</div>
+			<div class="bCommentText">
+				Pharmacy sites! <a href='http://www.insulate.org/frameset.php?thePage=http://trcadronla.proboards99.com' rel="nofollow">hvac software</a>. <a href='http://www.insulate.org/frameset.php?thePage=http://trcadronla.proboards99.com' rel="nofollow">hvac software online</a>: hvac software online, play hvac software. See also <a href='http://www.insulate.org/frameset.php?thePage=http://trcadronla.proboards99.com' rel="nofollow">play hvac software</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9397" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/10/06 @ 12:59			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9398"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: insurance quote [Visitor] &middot; <a href="http://www.insulate.org/frameset.php?thePage=http://domletobastr.proboards77.com" rel="nofollow">http://www.insulate.org/frameset.php?thePage=http://domletobastr.proboards77.com</a>			</div>
+			<div class="bCommentText">
+				Greetings!. <a href='http://www.insulate.org/frameset.php?thePage=http://domletobastr.proboards77.com' rel="nofollow">insurance quote</a>. <a href='http://www.insulate.org/frameset.php?thePage=http://domletobastr.proboards77.com' rel="nofollow">insurance quote online</a>: insurance quote online, play insurance quote. Also <a href='http://www.insulate.org/frameset.php?thePage=http://domletobastr.proboards77.com' rel="nofollow">play insurance quote</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9398" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/10/06 @ 13:03			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9399"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: internet edi [Visitor] &middot; <a href="http://www.insulate.org/frameset.php?thePage=http://notrocvipas.proboards98.com" rel="nofollow">http://www.insulate.org/frameset.php?thePage=http://notrocvipas.proboards98.com</a>			</div>
+			<div class="bCommentText">
+				Thanks!.. <a href='http://www.insulate.org/frameset.php?thePage=http://notrocvipas.proboards98.com' rel="nofollow">internet edi</a>. <a href='http://www.insulate.org/frameset.php?thePage=http://notrocvipas.proboards98.com' rel="nofollow">internet edi online</a>: internet edi online, play internet edi.  <a href='http://www.insulate.org/frameset.php?thePage=http://notrocvipas.proboards98.com' rel="nofollow">play internet edi</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9399" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/10/06 @ 13:04			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9400"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: internet phone [Visitor] &middot; <a href="http://www.insulate.org/frameset.php?thePage=http://racbocdrondom.proboards92.com" rel="nofollow">http://www.insulate.org/frameset.php?thePage=http://racbocdrondom.proboards92.com</a>			</div>
+			<div class="bCommentText">
+				Google! <a href='http://www.insulate.org/frameset.php?thePage=http://racbocdrondom.proboards92.com' rel="nofollow">internet phone</a>. <a href='http://www.insulate.org/frameset.php?thePage=http://racbocdrondom.proboards92.com' rel="nofollow">internet phone online</a>: internet phone online, play internet phone. More link <a href='http://www.insulate.org/frameset.php?thePage=http://racbocdrondom.proboards92.com' rel="nofollow">play internet phone</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9400" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/10/06 @ 13:05			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9434"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: generic sildenafil [Visitor] &middot; <a href="http://fixer.ls1fun.com/data/sildenafil.html" rel="nofollow">http://fixer.ls1fun.com/data/sildenafil.html</a>			</div>
+			<div class="bCommentText">
+				Greetings from <a href='http://fixer.ls1fun.com/data/sildenafil.html' rel="nofollow">generic sildenafil</a>. <a href='http://fixer.ls1fun.com/data/sildenafil.html' rel="nofollow">buy sildenafil</a>: sildenafil, buy sildenafil, generic sildenafil.  <a href='http://fixer.ls1fun.com/data/sildenafil.html' rel="nofollow">generic sildenafil</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9434" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:34			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9435"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: tenuate online [Visitor] &middot; <a href="http://fixer.ls1fun.com/data/tenuate.html" rel="nofollow">http://fixer.ls1fun.com/data/tenuate.html</a>			</div>
+			<div class="bCommentText">
+				Awesome site! <a href='http://fixer.ls1fun.com/data/tenuate.html' rel="nofollow">tenuate online</a>. <a href='http://fixer.ls1fun.com/data/tenuate.html' rel="nofollow">tenuate</a>: tenuate, buy tenuate, generic tenuate.  <a href='http://fixer.ls1fun.com/data/tenuate.html' rel="nofollow">buy tenuate</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9435" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:35			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9436"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: cheap ultracet [Visitor] &middot; <a href="http://fixer.ls1fun.com/data/ultracet.html" rel="nofollow">http://fixer.ls1fun.com/data/ultracet.html</a>			</div>
+			<div class="bCommentText">
+				Cool!.. Nice work. <a href='http://fixer.ls1fun.com/data/ultracet.html' rel="nofollow">cheap ultracet</a>. <a href='http://fixer.ls1fun.com/data/ultracet.html' rel="nofollow">buy ultracet</a>: buy ultracet, generic ultracet, order ultracet.  <a href='http://fixer.ls1fun.com/data/ultracet.html' rel="nofollow">generic ultracet</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9436" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:35			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9437"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: cheap zyban [Visitor] &middot; <a href="http://fixer.ls1fun.com/data/zyban.html" rel="nofollow">http://fixer.ls1fun.com/data/zyban.html</a>			</div>
+			<div class="bCommentText">
+				Nice site <a href='http://fixer.ls1fun.com/data/zyban.html' rel="nofollow">cheap zyban</a>. <a href='http://fixer.ls1fun.com/data/zyban.html' rel="nofollow">generic zyban</a>: zyban, buy zyban, generic zyban. See also <a href='http://fixer.ls1fun.com/data/zyban.html' rel="nofollow">order zyban</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9437" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:37			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9438"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: zyprexa online [Visitor] &middot; <a href="http://fixer.ls1fun.com/data/zyprexa.html" rel="nofollow">http://fixer.ls1fun.com/data/zyprexa.html</a>			</div>
+			<div class="bCommentText">
+				Super site. <a href='http://fixer.ls1fun.com/data/zyprexa.html' rel="nofollow">zyprexa online</a>. <a href='http://fixer.ls1fun.com/data/zyprexa.html' rel="nofollow">zyprexa</a>: zyprexa, buy zyprexa, generic zyprexa.  <a href='http://fixer.ls1fun.com/data/zyprexa.html' rel="nofollow">buy zyprexa</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9438" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:37			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9439"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: generic actos [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/actos.html" rel="nofollow">http://fixer.mysitehq.com/data/actos.html</a>			</div>
+			<div class="bCommentText">
+				Good luck! <a href='http://fixer.mysitehq.com/data/actos.html' rel="nofollow">generic actos</a>. <a href='http://fixer.mysitehq.com/data/actos.html' rel="nofollow">buy actos</a>: actos, buy actos, generic actos. See also <a href='http://fixer.mysitehq.com/data/actos.html' rel="nofollow">generic actos</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9439" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:37			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9440"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: generic adderall [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/adderall.html" rel="nofollow">http://fixer.mysitehq.com/data/adderall.html</a>			</div>
+			<div class="bCommentText">
+				Dating sites... <a href='http://fixer.mysitehq.com/data/adderall.html' rel="nofollow">generic adderall</a>. <a href='http://fixer.mysitehq.com/data/adderall.html' rel="nofollow">generic adderall</a>: adderall, buy adderall, generic adderall. Also <a href='http://fixer.mysitehq.com/data/adderall.html' rel="nofollow">order adderall</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9440" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:37			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9441"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: ativan online [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/ativan.html" rel="nofollow">http://fixer.mysitehq.com/data/ativan.html</a>			</div>
+			<div class="bCommentText">
+				Greetings!. <a href='http://fixer.mysitehq.com/data/ativan.html' rel="nofollow">ativan online</a>. <a href='http://fixer.mysitehq.com/data/ativan.html' rel="nofollow">ativan</a>: ativan, buy ativan, generic ativan. Also <a href='http://fixer.mysitehq.com/data/ativan.html' rel="nofollow">buy ativan</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9441" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:38			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9442"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: generic bontril [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/bontril.html" rel="nofollow">http://fixer.mysitehq.com/data/bontril.html</a>			</div>
+			<div class="bCommentText">
+				Hello! <a href='http://fixer.mysitehq.com/data/bontril.html' rel="nofollow">generic bontril</a>. <a href='http://fixer.mysitehq.com/data/bontril.html' rel="nofollow">generic bontril</a>: bontril, buy bontril, generic bontril. See also <a href='http://fixer.mysitehq.com/data/bontril.html' rel="nofollow">order bontril</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9442" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:38			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9443"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: cheap buspar [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/buspar.html" rel="nofollow">http://fixer.mysitehq.com/data/buspar.html</a>			</div>
+			<div class="bCommentText">
+				Good luck! <a href='http://fixer.mysitehq.com/data/buspar.html' rel="nofollow">cheap buspar</a>. <a href='http://fixer.mysitehq.com/data/buspar.html' rel="nofollow">buspar</a>: buspar, buy buspar, generic buspar. More link <a href='http://fixer.mysitehq.com/data/buspar.html' rel="nofollow">buy buspar</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9443" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:38			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9444"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: generic clonazepam [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/clonazepam.html" rel="nofollow">http://fixer.mysitehq.com/data/clonazepam.html</a>			</div>
+			<div class="bCommentText">
+				Have a nice day! <a href='http://fixer.mysitehq.com/data/clonazepam.html' rel="nofollow">generic clonazepam</a>. <a href='http://fixer.mysitehq.com/data/clonazepam.html' rel="nofollow">buy clonazepam</a>: clonazepam, buy clonazepam, generic clonazepam. See also <a href='http://fixer.mysitehq.com/data/clonazepam.html' rel="nofollow">generic clonazepam</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9444" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:40			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9445"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: order codeine [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/codeine.html" rel="nofollow">http://fixer.mysitehq.com/data/codeine.html</a>			</div>
+			<div class="bCommentText">
+				Cool site <a href='http://fixer.mysitehq.com/data/codeine.html' rel="nofollow">order codeine</a>. <a href='http://fixer.mysitehq.com/data/codeine.html' rel="nofollow">codeine</a>: buy codeine, generic codeine, order codeine.  <a href='http://fixer.mysitehq.com/data/codeine.html' rel="nofollow">buy codeine</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9445" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:40			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9446"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: generic cyclobenzaprine [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/cyclobenzaprine.html" rel="nofollow">http://fixer.mysitehq.com/data/cyclobenzaprine.html</a>			</div>
+			<div class="bCommentText">
+				Have a nice day! <a href='http://fixer.mysitehq.com/data/cyclobenzaprine.html' rel="nofollow">generic cyclobenzaprine</a>. <a href='http://fixer.mysitehq.com/data/cyclobenzaprine.html' rel="nofollow">buy cyclobenzaprine</a>: cyclobenzaprine, buy cyclobenzaprine, generic cyclobenzaprine. See also <a href='http://fixer.mysitehq.com/data/cyclobenzaprine.html' rel="nofollow">generic cyclobenzaprine</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9446" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:40			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9447"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: dianabol online [Visitor] &middot; <a href="http://fixer.mysitehq.com/data/dianabol.html" rel="nofollow">http://fixer.mysitehq.com/data/dianabol.html</a>			</div>
+			<div class="bCommentText">
+				Greetings from <a href='http://fixer.mysitehq.com/data/dianabol.html' rel="nofollow">dianabol online</a>. <a href='http://fixer.mysitehq.com/data/dianabol.html' rel="nofollow">buy dianabol</a>: buy dianabol, generic dianabol, order dianabol. More link <a href='http://fixer.mysitehq.com/data/dianabol.html' rel="nofollow">generic dianabol</a> from us.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9447" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/12/06 @ 22:40			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9451"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: ephedra online [Visitor] &middot; <a href="http://rme20-ephedra.blogspot.com/" rel="nofollow">http://rme20-ephedra.blogspot.com</a>			</div>
+			<div class="bCommentText">
+				<a href='http://rme20-ephedra.blogspot.com/' rel="nofollow">ephedra online</a>. ephedra, buy ephedra, generic ephedra. More link <a href='http://rme20-ephedra.blogspot.com/' rel="nofollow">buy ephedra</a>. Hello guys.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9451" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/15/06 @ 23:13			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9452"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: order hgh [Visitor] &middot; <a href="http://rme20-hgh.blogspot.com/" rel="nofollow">http://rme20-hgh.blogspot.com</a>			</div>
+			<div class="bCommentText">
+				<a href='http://rme20-hgh.blogspot.com/' rel="nofollow">order hgh</a>. buy hgh, generic hgh, order hgh.  <a href='http://rme20-hgh.blogspot.com/' rel="nofollow">buy hgh</a>. Good job !			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9452" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/15/06 @ 23:15			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9453"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: reductil online [Visitor] &middot; <a href="http://rme20-reductil.blogspot.com/" rel="nofollow">http://rme20-reductil.blogspot.com</a>			</div>
+			<div class="bCommentText">
+				<a href='http://rme20-reductil.blogspot.com/' rel="nofollow">reductil online</a>. reductil, buy reductil, generic reductil. Also <a href='http://rme20-reductil.blogspot.com/' rel="nofollow">buy reductil</a>. Great web site!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9453" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/15/06 @ 23:20			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9454"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: cheap vardenafil [Visitor] &middot; <a href="http://rme20-vardenafil.blogspot.com/" rel="nofollow">http://rme20-vardenafil.blogspot.com</a>			</div>
+			<div class="bCommentText">
+				<a href='http://rme20-vardenafil.blogspot.com/' rel="nofollow">cheap vardenafil</a>. buy vardenafil, generic vardenafil, order vardenafil. More link <a href='http://rme20-vardenafil.blogspot.com/' rel="nofollow">order vardenafil</a>. Hello guys.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9454" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/15/06 @ 23:23			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9455"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: generic venlafaxine [Visitor] &middot; <a href="http://rme20-venlafaxine.blogspot.com/" rel="nofollow">http://rme20-venlafaxine.blogspot.com</a>			</div>
+			<div class="bCommentText">
+				<a href='http://rme20-venlafaxine.blogspot.com/' rel="nofollow">generic venlafaxine</a>. venlafaxine, buy venlafaxine, generic venlafaxine. See also <a href='http://rme20-venlafaxine.blogspot.com/' rel="nofollow">order venlafaxine</a>. Web site!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9455" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/15/06 @ 23:23			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9662"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: latin ringtones [Visitor] &middot; <a href="http://oloboboc.blogs-de-voyage.fr/images/index.html" rel="nofollow">http://oloboboc.blogs-de-voyage.fr/images/index.html</a>			</div>
+			<div class="bCommentText">
+				<a href='http://oloboboc.blogs-de-voyage.fr/images/index.html' rel="nofollow">latin ringtones</a>. latin ringtone, latin ringtones, free latin ringtone. Also <a href='http://oloboboc.blogs-de-voyage.fr/images/index.html' rel="nofollow">latin ringtones</a>. Google!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9662" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/21/06 @ 15:24			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9663"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: lg ringtones [Visitor] &middot; <a href="http://darliel.blogs-de-voyage.fr/images/index.html" rel="nofollow">http://darliel.blogs-de-voyage.fr/images/index.html</a>			</div>
+			<div class="bCommentText">
+				<a href='http://darliel.blogs-de-voyage.fr/images/index.html' rel="nofollow">lg ringtones</a>. lg ringtone, lg ringtones, free lg ringtone.  <a href='http://darliel.blogs-de-voyage.fr/images/index.html' rel="nofollow">lg ringtones</a>. Good job !			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9663" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/21/06 @ 15:24			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9664"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: free midi ringtone [Visitor] &middot; <a href="http://ortarol.blogs-de-voyage.fr/images/index.html" rel="nofollow">http://ortarol.blogs-de-voyage.fr/images/index.html</a>			</div>
+			<div class="bCommentText">
+				<a href='http://ortarol.blogs-de-voyage.fr/images/index.html' rel="nofollow">free midi ringtone</a>. midi ringtone, midi ringtones, free midi ringtone. Also <a href='http://ortarol.blogs-de-voyage.fr/images/index.html' rel="nofollow">midi ringtones</a>. Hello!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9664" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/21/06 @ 15:25			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9665"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: free monophonic ringtone [Visitor] &middot; <a href="http://pasborel.blogs-de-voyage.fr/images/index.html" rel="nofollow">http://pasborel.blogs-de-voyage.fr/images/index.html</a>			</div>
+			<div class="bCommentText">
+				<a href='http://pasborel.blogs-de-voyage.fr/images/index.html' rel="nofollow">free monophonic ringtone</a>. monophonic ringtone, monophonic ringtones, free monophonic ringtone.  <a href='http://pasborel.blogs-de-voyage.fr/images/index.html' rel="nofollow">monophonic ringtones</a>. Thanks!..			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9665" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/21/06 @ 15:25			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9666"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: free nextel ringtone [Visitor] &middot; <a href="http://lapasvar.blogs-de-voyage.fr/images/index.html" rel="nofollow">http://lapasvar.blogs-de-voyage.fr/images/index.html</a>			</div>
+			<div class="bCommentText">
+				<a href='http://lapasvar.blogs-de-voyage.fr/images/index.html' rel="nofollow">free nextel ringtone</a>. nextel ringtone, nextel ringtones, free nextel ringtone. See also <a href='http://lapasvar.blogs-de-voyage.fr/images/index.html' rel="nofollow">nextel ringtones</a>. Dating sites...			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9666" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/21/06 @ 15:26			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9667"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: free retro ringtone [Visitor] &middot; <a href="http://notrel.blogs-de-voyage.fr/images/index.html" rel="nofollow">http://notrel.blogs-de-voyage.fr/images/index.html</a>			</div>
+			<div class="bCommentText">
+				<a href='http://notrel.blogs-de-voyage.fr/images/index.html' rel="nofollow">free retro ringtone</a>. retro ringtone, retro ringtones, free retro ringtone. See also <a href='http://notrel.blogs-de-voyage.fr/images/index.html' rel="nofollow">retro ringtones</a>. Nice site			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9667" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/21/06 @ 15:29			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9668"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: free samsung ringtone [Visitor] &middot; <a href="http://eltacelac.blogs-de-voyage.fr/images/index.html" rel="nofollow">http://eltacelac.blogs-de-voyage.fr/images/index.html</a>			</div>
+			<div class="bCommentText">
+				<a href='http://eltacelac.blogs-de-voyage.fr/images/index.html' rel="nofollow">free samsung ringtone</a>. samsung ringtone, samsung ringtones, free samsung ringtone. More link <a href='http://eltacelac.blogs-de-voyage.fr/images/index.html' rel="nofollow">samsung ringtones</a>. Have a nice day!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9668" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/21/06 @ 15:29			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c9782"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: herbal alternative viagra [Visitor] &middot; <a href="http://wiki.teraflowtestbed.net:8080/teraflow/6" rel="nofollow">http://wiki.teraflowtestbed.net:8080/teraflow/6</a>			</div>
+			<div class="bCommentText">
+				online prescription soma herbal alternative viagra buy meridia xenical sale loss pill weight xenical cialis story <br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="gnome_coding_and_presenting_cdis.html#c9782" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				05/26/06 @ 23:05			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_78" id="bComment_form_id_78" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_78[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_78[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="78" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;title=gnome_coding_and_presenting_cdis&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../../2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 439</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/logine284.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2005%2F01%2F23%2Fgnome_coding_and_presenting_cdis%3Fblog%3D5%26amp%3Btitle%3Dgnome_coding_and_presenting_cdis%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/01/23/gnome_coding_and_presenting_cdis?blog=5&title=gnome_coding_and_presenting_cdis&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:49:51 GMT -->
+</html>

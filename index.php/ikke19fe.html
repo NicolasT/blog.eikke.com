@@ -1,0 +1,476 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&cat=19&page=1&paged=18 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 20:00:19 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Category: Desktop</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Category: Desktop</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jan</span>
+          <span class="day">11</span>
+        </div>
+<div class="bPost">
+          <span class="title">Session Bus working, Gentoo GDM patch and Xscreensaver jay'ness</span>
+
+                        <blockquote><p>signal interface=com.eikke.DesktopEventNotification; member=XScreensaverEvent; sender=:1.58<br />
+string:ScreensaverStarted<br />
+signal interface=com.eikke.DesktopEventNotification; member=XScreensaverEvent; sender=:1.58<br />
+string:ScreensaverStopped</p></blockquote>
+
+<p>Next to this, I got my session bus working thanks to the nice guys on the DBUS mailing list, Ross' IBM article and some custom hacking.</p>
+
+<p>Now my session bus is started when I log in, patch for GDM's Xsession file <a href="http://bugs.gentoo.org/show_bug.cgi?id=77504" title="submitted">submitted</a> into the <a href="http://bugs.gentoo.org/" title="Gentoo Bugzilla">Gentoo Bugzilla</a></p>
+
+<p>Next task: simple DBUS listener to test the Xscreensaver notification stuff, and write the Gaim plugin.</p>
+
+<p>[edit]<br />
+DBUS test listener is done:</p>
+<blockquote><p>./dbus-watch-test<br />
+Event received: ScreensaverStarted<br />
+Event received: ScreensaverStopped</p>
+</blockquote>
+
+<p>TODO:<br />
+- Gaim plugin (get DBUS inside Gaim's Glib mainloop)<br />
+- Daemonize the event submitter</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong><a href="ikke/2005/01/11/session_bus_working_gentoo_gdm_patch_and.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/01/11/session_bus_working_gentoo_gdm_patch_and.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/01/11/session_bus_working_gentoo_gdm_patch_and"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/01/11/session_bus_working_gentoo_gdm_patch_and"
+  dc:title="Session Bus working, Gentoo GDM patch and Xscreensaver jay&#039;ness"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/68" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jan</span>
+          <span class="day">9</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://code.eikke.com/">New subdomain UI, me on dbus@lists.fgo, and XScreensaver security considerations</a></span>
+
+                        <p>I got a (IMHO) nice UI on <a href="http://code.eikke.com/" title="code.eikke.com">code.eikke.com</a>, using <a href="http://autoindex.sourceforge.net/" title="AutoIndex">AutoIndex</a>. It still needs some hacking: I want to get some mod_rewrite working, so I can use links like <a href="http://code.eikke.com/adir/foofile">http://code.eikke.com/adir/foofile</a>, which will then be interpreted as <a href="http://code.eikke.com/index.php?dir=adir&amp;file=foofile">http://code.eikke.com/index.php?dir=adir&amp;file=foofile</a>. AutoIndex should generate similar code too then. This way, <a href="http://www.google.com/" title="Google">Google</a> (which doesn't like GET arguments) will index my pages too.<br />
+Oh, and I want a <a href="http://www.gnome.org/" title="GNOME">GNOME</a> iconset. I had to choose between WinXP and <a href="http://www.kde.org/" title="KDE">KDE</a>...</p>
+
+<p>Started a discussion on kobject-uevents and <a href="http://www.freedesktop.org/Software/dbus" title="DBUS">DBUS</a> on the <a href="http://lists.freedesktop.org/mailman/listinfo/dbus/" title="mailing list">mailing list</a> today (<a href="http://lists.freedesktop.org/archives/dbus/2005-January/001866.html" title="link">link</a>). I've been thinking about it last hours, and my proposition is stupid. Kernel events shouldn't be sent out by the DBUS daemon itself. This should be done by some separate daemon.</p>
+
+<p>If only I could get my <a href="http://lists.freedesktop.org/archives/dbus/2005-January/001865.html" title="session bus">session bus</a> working :-(</p>
+
+<p>Normally I should be allowed to create a <a href="http://subversion.tigris.org/" title="Subversion">Subversion</a> repository on my domain once more. Jay :-)</p>
+
+<p>After my <a href="ikke/2005/01/08/dbus_ified_xscreensaver.html" title="blog post about xscreensaver and DBUS">blog post about xscreensaver and DBUS</a>, jwz, the <a href="http://www.jwz.org/xscreensaver/" title="xscreensaver">xscreensaver</a> developer, posted a <a href="ikke/2005/01/08/dbus_ified_xscreensaver.html#comments" title="comment">comment</a>. I mailed him regarding this issue, check <a href="ikke/2005/01/09/p66.html#more66" title=""More"">"More"</a> for a digest of our discussion.</p>
+
+
+<p>Had a performance with my <a href="http://www.gao.be/" title="orchestra">orchestra</a> today. We played the first part of the "New World Symphony" by Dvorak, and the Ouverture from "The Barber of Seville" by Rosinni. Some minor mistakes, but it was pretty good. The public was enthousiastic.<br />
+Next performance: April 23, Conservatorium Ghent, Belgium.</p>
+
+<p class="bMore"><a href="ikke/2005/01/09/p66.html#more66">=> Read more!</a></p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikkeb5e7.html?cat=15" title="Browse category">Life</a>, <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="ikke/2005/01/09/new_subdomain_ui_me_on_dbus_lists_fgo_an.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/01/09/new_subdomain_ui_me_on_dbus_lists_fgo_an.html#comments" title="Display comments / Leave a comment">1 comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/01/09/new_subdomain_ui_me_on_dbus_lists_fgo_an"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/01/09/new_subdomain_ui_me_on_dbus_lists_fgo_an"
+  dc:title="New subdomain UI, me on dbus@lists.fgo, and XScreensaver security considerations"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/66" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jan</span>
+          <span class="day">8</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://code.eikke.com/xscreensaver/xscreensaver-4.19-dbus.patch">DBUS'ified XScreensaver</a></span>
+
+                        <p>Didn't have much time to code today, had to visit some family. Had a good meal ;-)</p>
+
+<p>I hacked some <a href="http://www.freedesktop.org/Software/dbus" title="DBUS">DBUS</a> support into <a href="http://www.jwz.org/xscreensaver/" title="XScreensaver">XScreensaver</a> today. Xscreensaver *should* send out a signal on the session bus now when the screensaver starts, or when it stops. Now guess what: it doesn't work (for now). Some security thing which disables me from sending events on my session bus :-(</p>
+
+<p>Patch is <a href="http://code.eikke.com/xscreensaver/xscreensaver-4.19-dbus.patch" title="here">here</a>.</p>
+
+<p>When this works, I will write a plugin for <a href="http://gaim.sf.net/" title="Gaim">Gaim</a>, which listens to the session bus. If it catches a screensaver event, it'll set your status to "Away" when the screensaver is started, and make you "Available" when the screensaver is stopped, if you were so when it started.</p>
+
+<p>I created a new subdomain, <a href="http://code.eikke.com/">http://code.eikke.com</a>, where coding stuff will be hosted. I'd need some fancy "index" script, because <a href="http://httpd.apache.org/" title="Apache">Apache</a> indexing doesn't work :-( I'd also need a decent <a href="http://subversion.tigris.org/" title="Subversion">Subversion</a> repository. Maybe I should ask the guys who are so kind to host me (you know who you are).</p>
+
+<p>Got some other new DBUS-based idea too, I'll discuss it on the dbus and gnome-desktop mailing lists when I get time.</p>
+
+<p>Sent the mail to the dbus list regarding the kernel events stuff. Now it looks like I wasn't subscribed on that list anymore, and I need moderation... Hope they'll read and allow it soon.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong><a href="ikke/2005/01/08/dbus_ified_xscreensaver.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/01/08/dbus_ified_xscreensaver.html#comments" title="Display comments / Leave a comment">3 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/01/08/dbus_ified_xscreensaver"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/01/08/dbus_ified_xscreensaver"
+  dc:title="DBUS&#039;ified XScreensaver"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/65" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jan</span>
+          <span class="day">7</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://gnometux.blogspot.com/2004/12/gaim-under-hood.html">Gnome, kernel work and Gaim</a></span>
+
+                        <p>Currently busy catching up woth new <a href="http://www.gnome.org/" title="Gnome">Gnome</a> improvements. Gnome 2.10 (dev 2.9) looks promising once again :-)<br />
+I've been on GimpNet (irc.gnome.org) for a while too now, just met scapor who owns <a href="http://gnometux.blogspot.com/" title="this blog">this blog</a>. Great source for new Linux-desktop users, and even advanced users can learn new stuff :-) Keep going!</p>
+
+<p><a href="http://www.kernel.org/pub/linux/kernel/people/rml/events/v2.6/kernel-events-rml-2.6.9-rc1-1.patch" title="Kernel">Kernel</a> <a href="http://vrfy.org/projects/kevents/" title="events">events</a> were merged into the <a href="http://www.kernel.org/" title="Linux kernel">Linux kernel</a>, which should simplify kernel&lt;-&gt;userland interaction a lot. There's a small utility called <a href="http://vrfy.org/projects/kdbusd/" title="kdbusd">kdbusd</a> which shows a prototype of listening to these kernel messages, and sends them to the <a href="http://freedesktop.org/wiki/Software_2fdbus" title="DBus">DBus</a> System Daemon. kdbusd could be broken now tough: I didn't test it yet, but it looks like the 2.6.10 uevent implementation is somewhat different than the one <a href="http://people.redhat.com/arjanv/" title="Arjan Van Der Ven">Arjan Van Der Ven</a>, <a href="http://tech9.net/rml/log/" title="Robert M. Love">Robert M. Love</a> and <a href="http://vrfy.org/" title="Kay Sievers">Kay Sievers</a> wrote.<br />
+I started hacking more uevent calls into the vanilla kernel...</p>
+
+<p>One nifty feature in <a href="http://gaim.sf.net/" title="Gaim">Gaim</a> I wanted to blog about some time ago is the "Expand" feature. I was too lazy to make screenshots in that time tough ;-)<br />
+Now I found a nice screenie and explanation of it in the <a href="http://gnometux.blogspot.com/" title="GnomeTux">GnomeTux</a> blog I mentioned at the beginnning of this post. Check it <a href="http://gnometux.blogspot.com/2004/12/gaim-under-hood.html" title="here">here</a>. This is the screenshot:<br />
+<center><img src="http://student.vub.ac.be/~kmdemeye/blog/gaim_expanded.jpg" /></center></p>
+
+<p>Stuff on my TODO list:<br />
+- <a href="http://www.gphoto.org/" title="Gphoto2">Gphoto2</a> <a href="http://developer.gnome.org/doc/API/gnome-vfs/" title="Gnome-VFS">Gnome-VFS</a> provider, so I can browse my Canon Ixus 500 files in Nautilus. The camera does not support usb-storage, so it can't be mounted. Gphoto2 supports it perfectly tough. But I dislike <a href="http://gthumb.sourceforge.net/" title="Gthumb">Gthumb</a>...<br />
+- Work on <a href="http://gaim.sf.net/" title="Gaim">Gaim</a> - <a href="http://www.gnome.org/projects/evolution/" title="Evolution">Evolution</a> links.<br />
+- Make some program/plugin/... that enables syncing my new Nokia 3100's Agenda to <a href="http://www.gnome.org/projects/evolution/" title="Evolution's">Evolution's</a> Calendar. There is a lib called <a href="http://www.mwiacek.com/gsm/soft/gammu.html" title="Gammu">Gammu</a> that is capable of extracting data out of this phone, but there is no Evolution link. I'd need to test Gammu first tough (anyone got a DKU5 datacable?).<br />
+- Some more stuff I forgot now.</p>
+
+<p>Got to study some more now, bloody chemistry.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikkeb5e7.html?cat=15" title="Browse category">Life</a>, <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong><a href="ikke/2005/01/07/gnome_kernel_work_and_gaim.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/01/07/gnome_kernel_work_and_gaim.html#comments" title="Display comments / Leave a comment">1 comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/01/07/gnome_kernel_work_and_gaim"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/01/07/gnome_kernel_work_and_gaim"
+  dc:title="Gnome, kernel work and Gaim"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/62" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Dec</span>
+          <span class="day">13</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://www.advogato.org/person/bolsh/diary.html?start=53">Gnome inside</a></span>
+
+                        <p><a href="http://www.advogato.org/person/bolsh/diary.html?start=53" title="This">This</a> is nice.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikkec055.html?cat=17" title="Browse category">Linux</a></strong>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="ikke/2004/12/13/gnome_inside.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2004/12/13/gnome_inside.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2004/12/13/gnome_inside"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2004/12/13/gnome_inside"
+  dc:title="Gnome inside"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/49" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                <a href="ikke487a.html?blog=5&amp;cat=19&amp;page=1&amp;paged=17">&lt;&lt; Previous Page</a> :: <a href="ikke1d80.html?blog=5&amp;cat=19&amp;page=1&amp;paged=19">Next Page &gt;&gt;</a>                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="ikke.html">All</a></li>
+<li><a href="ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span>*</li>
+<li><a href="ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="ikke/2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="ikke/2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="ikke/2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 502</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../htsrv/login6578.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%3Fblog%3D5%26amp%3Bcat%3D19%26amp%3Bpaged%3D18%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&cat=19&page=1&paged=18 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 20:00:20 GMT -->
+</html>

@@ -1,0 +1,1081 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2007/09/02/seam_carving_content_aware_image_resizin by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:07:47 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: Seam Carving: Content-aware image resizing</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: Seam Carving: Content-aware image resizing</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Sep</span>
+          <span class="day">2</span>
+        </div>
+<div class="bPost">
+          <span class="title">Seam Carving: Content-aware image resizing</span>
+
+                        <p>Most people most likely saw the YouTube movie on content-aware image resizing which got blogged quite a lot lately. I read the corresponding paper, and wrote an implementation (not finished/perfect at all, but well) in Python. If it would ever become "production quality" a Gimp and/or GEGL plugin would be nice.</p>
+
+<p>Here's a sample:<br />
+<u>Original image</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_original.jpg" title="Original" alt="Original" /></p>
+
+<p><u>Resized using Gimp, cubic interpolation, 150px</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_gimp_150px.jpg" title="Resized using Gimp" alt="Resized using Gimp" /></p>
+
+<p><u>Resized image, 150px</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_150px.jpg" title="Resized using seam carving" alt="Resized using seam carving" /></p>
+
+<p><u>Overview of removed pixels</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_cutouts.jpg" title="Removed pixels" alt="Removed pixels" /></p>
+
+<p>This transformation is done in about 2 seconds (mainly because of some calculations in pure Python. For most calculations I use the Python Imaging Library and SciPy/NumPy, which are mainly C modules and much faster). As you can see the implementation still needs lots of love.</p>
+
+<p>You can see another sample (image resized from 1000 to 250px in 8 seconds) <a href="http://key.nicolast.be/files/seam_carving_6.png">here</a>.</p>
+
+<p>Git repository is <a href="http://git.nicolast.be/?p=scarving.git;a=summary">here</a>. Please email any patches!</p>
+
+<p>The algorithm itself is surprisingly "simple" and easy to understand, great job by the researchers! More on that later. I should be studying mathematical analysis now, 2nd time I got to redo this exam, bloody university :-(</p>
+
+<p>Update:<br />
+<u>Using very expensive algorithm</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_expensive_150px.jpg" title="Expensive algorithm" alt="Expensive algorithm" /><br />
+This image was generated by:</p>
+<ul>
+<li>Loading the input image</li>
+<li>150 times:<br />
+  <ul>
+  <li>Calculate energy and cost of current working picture</li>
+  <li>For every pixel in the top row, calculate the cost of the "best path" starting at this pixel</li>
+  <li>Figure out which path is the cheapest</li>
+  <li>Create an image which is the working image, minus this best path</li>
+  <li>Replace the working image with the image generated in the previous step</li>
+  </ul>
+</li></ul>
+<p>This took 273 seconds on my system, as the complexity is something like O(150*N*N*N*N*N*N*M) where M is the complexity of the gradient magnitude calculation.<br />
+Conclusion: not a workable solution :D<br />
+Do notice there are significant changes between this image and the one posted above. As I wrote this as a quick hack, I didn't include code to show which paths were removed from the original image.</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="seam_carving_content_aware_image_resizin.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="seam_carving_content_aware_image_resizin.html#comments" title="Display comments / Leave a comment">47 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/09/02/seam_carving_content_aware_image_resizin"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/09/02/seam_carving_content_aware_image_resizin"
+  dc:title="Seam Carving: Content-aware image resizing"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/506" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+			<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11588"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Daniele Medri [Visitor] <a href="../../../../ikke795e.html?disp=msgform&amp;comment_id=11588&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://daniele.wordpress.com/" rel="nofollow">http://daniele.wordpress.com</a>			</div>
+			<div class="bCommentText">
+				Take a look: http://www.thegedanken.com/retarget/			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11588" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 12:58			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11589"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Major difference: closed source vs open source ;-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11589" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 13:02			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11590"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: John Drinkwater [Visitor] <a href="../../../../ikke9b32.html?disp=msgform&amp;comment_id=11590&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://johndrinkwater.name/" rel="nofollow">http://johndrinkwater.name/</a>			</div>
+			<div class="bCommentText">
+				Broadway tower ftw :)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11590" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 13:28			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11591"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Could be, got this from a "Creative Commons" search on Flickr :-) Thanks to the original author ;-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11591" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 13:45			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11592"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: dhon [Visitor] <a href="../../../../ikkeaf07.html?disp=msgform&amp;comment_id=11592&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Wonder what the hard lines are caused by?<br />
+<br />
+Are you recalculating the colour gradient on each loop?<br />
+<br />
+Are you using both horizontal and vertical gradients?			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11592" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 13:52			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11593"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Path choosing algorithm isn't very good yet. Colour gradients are only calculated once, both horizontal and vertical, and the gradient magnitude is calculated to do the edge detection (image of that is in the image I link to, the 2 towers). Gradients are calculated using convolution with the Sobel matrices.<br />
+<br />
+Only, once gradients and costs are calculated, the mechanism to find out where to start a path just sucks (it's 2-line based now), this needs to be reworked.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11593" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 14:18			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11594"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: dhon [Visitor] <a href="../../../../ikke6c76.html?disp=msgform&amp;comment_id=11594&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Indeed running the program 200 times removing only 1 px each time over the castle image eliminates the hard lines in the grass/snow but takes chunks out of the castle.<br />
+<br />
+I wonder if you could adjust the gradient of nearby pixels when you choose a path. This should be faster than recalculating the gradient on each iteration.<br />
+<br />
+Eg if the gradient looks like <br />
+3 2 5 (choosing 2 as the path) then split the grad to the adjacent pixels gives<br />
+4 * 6			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11594" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 14:59			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11595"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Not gradient, gradient magnitude.<br />
+The problem is this magnitude is calculated using 9 pixels (the pixel itself and the 8 pixels around it) so I don't think you can just add it to the 2 next to it. I'll investigate this further later on, unless someone got great ideas/patches right now ;-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11595" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 15:06			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11596"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Giacomo [Visitor] <a href="../../../../ikkecdb8.html?disp=msgform&amp;comment_id=11596&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				<i>I should be studying mathematical analysis now, 2nd time I got to redo this exam, bloody university :-(</i><br />
+<br />
+D'oh. Same here (but third time I try this exam), then I can finally take my master of science in telecommunications engineering.<br />
+I hate non-applied mathematics.<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11596" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 15:41			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11597"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				*Grin* 2nd time I have to redo it == 3rd time I do it ;-)<br />
+<br />
+And yeah, non-applied maths suck most of the time. Like, I had a course on convolution and gradients once, and I never understood what it was all about. They used fluids in the examples etc.<br />
+Now I worked on this application thingy, got in contact with image manipulation, the energy functions (which is a pure application of gradients and convolution), and I finally understand what it's all about, and it's actually so easy to understand.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11597" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 15:44			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11598"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Giacomo [Visitor] <a href="../../../../ikkead23.html?disp=msgform&amp;comment_id=11598&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				<i>*Grin* 2nd time I have to redo it == 3rd time I do it ;-)</i><br />
+<br />
+Ah, well... Same here, I understood convolutions and Fourier transform only after my Digital signals processing (mostly audio, 1-d signals) and Digital image processing courses. :)<br />
+With a more practical approach I arrived to "like" probability theory and Markov chains too, but my first contact with those things was a NIGHTMARE.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11598" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 15:54			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11599"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Hehe, I did a "choice-subject" on sound, music and sound processing too this year, it was very understandable.<br />
+I did have classes on Fourier before too in math classes, which were kinda hard, but luckily I had some (practical) pre-knowledge as when I was 16-17 I used to write quite a lot of sound DSP code, including the use of the DFT(FFT). I didn't completely understand how it worked (although I understood the basics, thanks to a great article, "The DFT a pied", should be possible to find that somewhere on the net), but I knew what the result of the operation was, I could hear the result of playing with it (and doing an ifft afterwards, obviously) which made everything so much easier to understand.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11599" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 15:58			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11600"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Giacomo [Visitor] <a href="../../../../ikked354.html?disp=msgform&amp;comment_id=11600&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				That was a good thing, I had absolutely no previous knowledge of pretty much everything I studied at the university.<br />
+<br />
+To tell the truth, I went to the Liceo Classico, which is a "humanistic" high school, I studied ancient greek and latin for 5 years, and I saw my first limits, derivatives and integrals in my first university course. <br />
+<br />
+It was hard, really hard, until the first practical courses, but I had them only at the end of the second year.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11600" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 16:08			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11601"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				/me studied Latin 4 years long too, then switched to sciences - mathematics (8h of math each week), as I wanted to continue my studies in the sciences field. Luckily, in highschool maths an sciences were fun: easy to understand, easy to derive your own proofs when necessary, not necessary to learn them stupidly by heart, etc.<br />
+Somewhat different at uni :-/			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11601" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 16:11			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11602"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Giacomo [Visitor] <a href="../../../../ikkef716.html?disp=msgform&amp;comment_id=11602&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Here in Italy you can't easily change (or at least you could not change easily, it seems there's a school reform every year so I'm not sure of how things are now): I started the Liceo Classico, I had to end it, so in my last year in the high school I had 2 hours a week of trigonometry, 3 hours a week of physics and stop.<br />
+I still don't understand how we could study physics without limits, derivatives and integrals.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11602" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 16:36			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11603"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: tim [Visitor] <a href="../../../../ikke9be3.html?disp=msgform&amp;comment_id=11603&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				The DFT &#224; Pied:<br />
+http://www.dspdimension.com/index.html?dftapied.html<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11603" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 19:42			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11604"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				That's the one. The author got some other very well written and interesting articles too. If you're interested in audio DSP, check them out!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11604" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 19:45			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11605"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Raphael Slinckx [Visitor] <a href="../../../../ikke88d2.html?disp=msgform&amp;comment_id=11605&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://raphael.slinckx.net/" rel="nofollow">http://raphael.slinckx.net</a>			</div>
+			<div class="bCommentText">
+				Dude ! That's amazing, i can't wait to be able to use this in gimp, you rock !			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11605" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 21:58			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11606"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Actually I just noticed there's a severe bug in the implementation, implementing 2 days after reading the paper is not a good idea :-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11606" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 22:15			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11607"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: qhartman [Visitor] <a href="../../../../ikke72b2.html?disp=msgform&amp;comment_id=11607&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Keep up the good work!!! I would _love_ to see this implemented as a GIMP plugin!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11607" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/02/07 @ 23:27			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11608"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: CODE NOW [Visitor] <a href="../../../../ikke2041.html?disp=msgform&amp;comment_id=11608&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Show the code			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11608" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 03:31			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11609"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Alexander Larsson [Visitor] <a href="../../../../ikke908b.html?disp=msgform&amp;comment_id=11609&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				The obvious way to do this efficiently is to go backwards from the bottom and then keep all intermediate best-path and its cost for each pixel in the row.<br />
+<br />
+Something like this:<br />
+1) For each pixel in the bottom row, its best path is empty and its cost is the energy of the pixel<br />
+<br />
+2) For each row from the next-to-bottom and up to the top do: For each pixel in the row, the best path is the pixel plus the cheapest path of the three pixels below it. <br />
+<br />
+3) When you're at the top you have the costs for all paths, pick the cheapest one and remove.<br />
+<br />
+You never have to store more than two rows of costs and paths, and paths are not that large, as you just need 2 bits to store each pixel choice (since there are only three possible choices: sw, s, se).<br />
+<br />
+Total time complexity per pixel column removed is:<br />
+O(w * h), total space complexity is O (h * w)<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11609" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 08:07			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11610"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Calvin Spealman [Visitor] <a href="../../../../ikkec10b.html?disp=msgform&amp;comment_id=11610&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://www.ironfroggy.com/blog/" rel="nofollow">http://www.ironfroggy.com/blog/</a>			</div>
+			<div class="bCommentText">
+				Still looking forward to getting involved, but boy does git suck! Hah, I kid. Sort of...<br />
+<br />
+My wife is a photographer and is excited by using this in some of her digital work, when the weighting tool is implemented. That is what I'm mostly interested in. I'd probably end up branching off a bit, but what do you think about defining a format for the precalculated data?			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11610" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 08:16			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11611"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Sean B. Palmer [Visitor] <a href="../../../../ikkea5dc.html?disp=msgform&amp;comment_id=11611&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://inamidst.com/sbp/" rel="nofollow">http://inamidst.com/sbp/</a>			</div>
+			<div class="bCommentText">
+				I wrote (well, upgraded) a thing in C which does seam carving pretty fast and effectively, though it segfaults on some large images. Nice to see a Python implementation; hope you can optimise it somewhat!<br />
+<br />
+Source here: http://inamidst.com/code/seamless.c<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11611" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 09:18			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11612"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Roderik [Visitor] <a href="../../../../ikke2921.html?disp=msgform&amp;comment_id=11612&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				http://www.faculty.idc.ac.il/arik/<br />
+<br />
+I cannot seem to download the original paper from the authors website (above). Could you maybe email it to me?<br />
+<br />
+Great work on the implementation. If I would be able to make a little more time I would have also tried implementing it. Keep up the good work.<br />
+<br />
+BTW If you are interested in some other great implementations (this is 3D rendering related) look at this site: http://graphics.stanford.edu/~fedkiw/			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11612" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 09:42			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11613"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				@CODE NOW: read before you yell<br />
+<br />
+@Alexander: indeed, that's the original way I did it, although from top to bottom. Later changes changed this quite a lot (and not always "correct") as I forgot what I was actually doing.<br />
+Major issue is: once you delete one seam, everything needs to be recomputed.<br />
+<br />
+@Calvin: once you're familiar with it it's ok :-)<br />
+<br />
+@Sean: I use Python for prototyping, when the algorithm is working "reasonably well", writing a C version (non-segfaulting ;-)) is pretty straight-forward.<br />
+<br />
+@Roderik: it's 20MB, kinda large to email... There are some torrents of it IIRC, Google is your friend :-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11613" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 13:11			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11614"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Thomas [Visitor] <a href="../../../../ikke59d7.html?disp=msgform&amp;comment_id=11614&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Fascinating algorithm indeed.<br />
+<br />
+Got a partial implementation myself, written in C#/.NET. Currently does only carve vertical seams for downscaling in the horizontal direction. I have done no speed measurements, because downscaling happens in (as close as possible to) realtime, while you resize the window containing the image.<br />
+<br />
+I think, if you want this to be efficient for resizing in both directions at the same time, for a useful GIMP plugin you'd have to switch to C. No idea how difficult to use the interface to GIMP is though.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11614" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 14:22			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11615"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				GIMP plugin will come when the python implementation is completely done :-) Shouldn't be that hard...			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11615" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 15:03			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11616"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: cwillu [Visitor] <a href="../../../../ikke6d31.html?disp=msgform&amp;comment_id=11616&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Wonder how much effect psyco would have			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11616" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 17:23			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11617"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Palmax [Visitor] <a href="../../../../ikkeeedf.html?disp=msgform&amp;comment_id=11617&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				It can be a so good idea. Can you develop a GUI? I think that it will be so interesting for use this code.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11617" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/03/07 @ 20:16			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11621"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ray Strode [Visitor] <a href="../../../../ikke5505.html?disp=msgform&amp;comment_id=11621&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Another interesting idea (in addition to a gimp plugin) would be to offer a "Smart Scaling" option in the background tab of the appearance capplet.<br />
+<br />
+Distros could pick default backgrounds that behave well with the algorithm, and then the whole widescreen versus 4:3 aspect ratio issue could be side stepped.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11621" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/04/07 @ 03:45			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11622"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Alfred Milgrom [Visitor] <a href="../../../../ikkea08b.html?disp=msgform&amp;comment_id=11622&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				I think it is fascinating that in the first implementation the castle is shifted from a position in the original image of about 35% in from the left to a position 20% in from the left.<br />
+<br />
+On the other hand the more expensive implementation moves the castle to about the middle of the image.<br />
+<br />
+Maybe the algorithm needs to keep track of the position of the paths removed to try to maintain most of the original composition?<br />
+<br />
+As well, rather than just removing the least-cost path in each iteration, maybe the pixels on either side of the removed path could be adjusted to take into consideration the removal of the missing path?			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11622" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/04/07 @ 08:35			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11624"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				@Ray: that might be easily possible when a library version (or GEGL) of this exist, I do not intend to work on that though.<br />
+<br />
+@Alfred: It tries to maintain as much as possible automaticly. The problem with the first implementation is it doesn't take changes into account, ie: you calculate everything, then remove seams, whilst this is not correct as after removing one seam you got a new images and all calculations should be redone (as in the last example).<br />
+About pixels around the seam: in the first implementation I interpolated the colorspace when removing a seam, it'd be easy to add that to the later versions too, IIRC is't also done in the last version.<br />
+Current GIT uses the last algorithm (always recalculating before removing one seam) which is kinda slow, but Psyco actually does a good job.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11624" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/04/07 @ 11:58			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11625"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Where is the source code? [Visitor] <a href="../../../../ikke9214.html?disp=msgform&amp;comment_id=11625&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				You screamed at "code now" to read the page but I too do not see any source code.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11625" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/04/07 @ 14:44			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11626"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Zif: there's a link to the GIT repository containing all code (gitweb interface, clone URI is in there) in the post. I won't post source code in a blog post ;-)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11626" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/04/07 @ 15:06			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11627"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Mariano [Visitor] <a href="../../../../ikkef055.html?disp=msgform&amp;comment_id=11627&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				I have a C++ implementation of the algorithm which works out your image in less than 2 seconds.<br />
+<br />
+A couple of suggestions:<br />
+1.- Use dynamic programing for the shortest path<br />
+2.- Don't compute the ENTIRE gradient every single time, you know what pixels you are changing, then change also the gradient!<br />
+3.- I'm using an idea for the energy function that preserves the global energy of the image as you treat it. Currently I'm testing with nice results 'retouching' the gradient by merging whatever energy was in the pixel to be eliminated into its two neighbours (50% each) give it a try.<br />
+<br />
+I'm thinking on doing a plain C implementation to make a GIMP plugin out of it, since it might be faster than python.<br />
+<br />
+If you want to see my code, mail me; it's working for shrinking in both dimensions (will start working on the expansion as soon as I get some free time).<br />
+<br />
+Mariano.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11627" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/05/07 @ 21:32			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11628"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: carlobaldassi [Visitor] <a href="../../../../ikke72a4.html?disp=msgform&amp;comment_id=11628&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				I also have done an implementation, in C++ turned to C, and then tuned it into a GIMP plugin. It can be downloaded at the GIMP plugin registry http://registry.gimp.org under the name "Liquid rescale" in category "Transforms".<br />
+<br />
+It installs under the Image menu. It scales in both directions. It uses the original algorithm as described in the paper, with the gradient from the 4 nearest neighbors. The code is rather complete, it mainily misses a good GUI, and some options to play with. And maybe an extension of the energy function to let it be more flexible.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11628" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/06/07 @ 07:04			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11630"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Tim Wintle [Visitor] <a href="../../../../ikked1fe.html?disp=msgform&amp;comment_id=11630&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://www.timwintle.co.uk/" rel="nofollow">http://www.timwintle.co.uk</a>			</div>
+			<div class="bCommentText">
+				I have been working on a python implementation too, and am suffering from the inefficiency of python too.<br />
+<br />
+Once the seams are discovered it works really fast, though. I will post results on my blog when I have implemented a faster algorithm for seam creation.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11630" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/08/07 @ 21:32			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11631"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Serge [Visitor] <a href="../../../../ikkef4b6.html?disp=msgform&amp;comment_id=11631&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				I have created the experimental one, you may download it here: http://www.intuimage.com			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11631" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/11/07 @ 16:09			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11634"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Tim Wintle [Visitor] <a href="../../../../ikke4f52.html?disp=msgform&amp;comment_id=11634&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://www.timwintle.co.uk/" rel="nofollow">http://www.timwintle.co.uk</a>			</div>
+			<div class="bCommentText">
+				Hi again, I am currently trying to get people who have written their own versions of this together to compare results on a standard set of images. If anyone reading is interested contact me via my blog.<br />
+<br />
+Tim			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11634" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/13/07 @ 15:21			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11645"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Nick [Visitor] <a href="../../../../ikkeb3c1.html?disp=msgform&amp;comment_id=11645&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				Ditch Python. Seriously. It's like driving a Ferrari with the handbrake on.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11645" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/18/07 @ 09:22			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11649"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Will [Visitor] <a href="../../../../ikke06cd.html?disp=msgform&amp;comment_id=11649&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://rsizr.com/" rel="nofollow">http://rsizr.com/</a>			</div>
+			<div class="bCommentText">
+				Check out rsizr.com for a Flash-based implementation of seam carving that lets you resize images, both in height and width simultaneously, in real time. (You can rescale and crop images too!) Can't beat the speed of a desktop app, but it can get the job done...			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11649" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				09/29/07 @ 06:31			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11653"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: yaniv [Visitor] <a href="../../../../ikke855b.html?disp=msgform&amp;comment_id=11653&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://yaniv.leviathanonline.com/" rel="nofollow">http://yaniv.leviathanonline.com/</a>			</div>
+			<div class="bCommentText">
+				Check out <b>http://yaniv.leviathanonline.com/blog/math/seam-carving/</b>			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11653" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				10/25/07 @ 19:42			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11654"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Brain_ReCall [Visitor] <a href="../../../../ikke4a4c.html?disp=msgform&amp;comment_id=11654&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://sourceforge.net/projects/c-a-i-r/" rel="nofollow">http://sourceforge.net/projects/c-a-i-r/</a>			</div>
+			<div class="bCommentText">
+				Unfortunetly, a really fast implimention needs a different language. I've been working on this in C++ with some pthread multi-threading goodness. I don't have exact times for determining each individual seam removal, however scaling an image down from 1024x678 to 800x600 takes about 15 seconds.<br />
+<br />
+Some things that can be done to increase speed:<br />
+1. Don't recalculate the edge detection image every time. You can get away with only calculating it every so often and still get good results.<br />
+2. Resize the grayscale of the image along with everything else. Saves one extra step for edge detection.<br />
+3. Minimize the times when you need to do bounds-checking. Optimize your loops so areas that need bounds checking are handled separately. <br />
+<br />
+Attempting to preserve unchanged portions of the energy map may be more costly than actually fully recalculating it. Depending on where a seam was removed, you may only be left with less than 1/3 of the energy map unchanged. Coding to repair the map might be more costly than just blindly recalculating.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11654" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				10/29/07 @ 01:47			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11668"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: yaniv [Visitor] &middot; <a href="http://yaniv.leviathanonline.com/" rel="nofollow">http://yaniv.leviathanonline.com</a>			</div>
+			<div class="bCommentText">
+				Cool post.<br />
+I also have a python implementation (many people posted interesting ideas on my post).			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11668" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				11/23/07 @ 17:07			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11669"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Lazar [Visitor] <a href="../../../../ikkea709.html?disp=msgform&amp;comment_id=11669&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a>  &middot; <a href="http://www.inverudio.com/" rel="nofollow">http://www.inverudio.com</a>			</div>
+			<div class="bCommentText">
+				I was gonna ask you about source code, but then I read comments...			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11669" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				11/26/07 @ 01:30			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c11676"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: hou k [Visitor] <a href="../../../../ikke060e.html?disp=msgform&amp;comment_id=11676&amp;post_id=506&amp;redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Send email to comment author"><img src="../../../../../rsc/icons/envelope.gif" border="0" align="top" width="13" height="10"  class="middle" title="Send email to comment author" alt="Email"/></a> 			</div>
+			<div class="bCommentText">
+				I am very interested in this algorithm. Could you send me a copy of the source code? Thanks a lot.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="seam_carving_content_aware_image_resizin.html#c11676" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				12/13/07 @ 09:12			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+		<div class="moderation_msg"><p>This post has 4 feedbacks awaiting moderation... </p></div>		<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_506" id="bComment_form_id_506" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_506[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_506[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="506" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;title=seam_carving_content_aware_image_resizin&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../../2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 132</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/login95d6.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2007%2F09%2F02%2Fseam_carving_content_aware_image_resizin%3Fblog%3D5%26amp%3Btitle%3Dseam_carving_content_aware_image_resizin%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2007/09/02/seam_carving_content_aware_image_resizin by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:08:06 GMT -->
+</html>

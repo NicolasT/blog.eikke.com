@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&page=1&paged=25 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 20:02:00 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">17</span>
+        </div>
+<div class="bPost">
+          <span class="title">Sysstats.sh</span>
+
+                        <p>I wrote a little Bash script this morning, which gives a quick overview of your system.<br />
+As mentioned in the help text, this can be very usefull for server administrators, eg allowing you to let an overview be sent to your mailbox every 24h using a cronjob.</p>
+
+<p>This is a sample of the current output:</p>
+<pre>================================================================
+* System statistics for:        foo.baar.be
+* Generated on:                 Tue May 17 15:00:49 CEST 2005
+* Running as:                   root
+
+=================== Uptime =====================================
+* Uptime:                       4 days, 04:37:29
+* High score:                   151 days, 19:15:18
+* Load average:                 0.32 0.24 0.22
+
+=================== Users ======================================
+* Active users:                 2
+* User information
+        USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+        someone pts/0     12:15    2.00s  0.62s  0.05s sshd: ntrangez [priv]
+        someone pts/1     13:30    5:19   1.17s  0.05s sshd: ntrangez [priv]
+
+=================== Tasks ======================================
+* Number of running tasks:      62
+* Running programs:
+agetty          events/0        kjournald       lockd           portmap         sh
+aio/0           fcron           kseriod         mysqld          ps              sshd
+apache2         init            ksoftirqd/0     mysqld_safe     rpc.mountd      su
+bash            kblockd/0       kswapd0         nfsd            rpc.statd       syslog-ng
+boa             khelper         kthread         pdflush         rpciod/0        uptimed
+
+* CPU load:                     2%
+* Process state:
+        Running:                1
+        Sleeping:               60
+        Zombie:                 0
+        Stopped:                0
+
+=================== Networking ================================
+* Routing table:
+        Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+        192.168.2.0     wifi.vtk.ugent. 255.255.255.0   UG    0      0        0 eth0
+        192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+        loopback        webvtk.vtk.ugen 255.0.0.0       UG    0      0        0 lo
+        default         fire.vtk.ugent. 0.0.0.0         UG    0      0        0 eth0
+
+=================== Hard Disc =================================
+* Disk Information:
+        Filesystem            Size  Used Avail Use% Mounted on
+        /dev/hdc4             4.5G  3.2G  1.1G  75% /
+        /dev/hdc5              14G   11G  2.4G  82% /var/www
+
+* Mounts:
+        /dev/hdc4 on / type ext3 (rw,noatime)
+        none on /proc type proc (rw)
+        none on /sys type sysfs (rw)
+        none on /dev type ramfs (rw)
+        none on /dev/pts type devpts (rw)
+        /dev/hdc5 on /var/www type ext3 (rw,noexec,nosuid,nodev,noatime,acl)
+        none on /dev/shm type tmpfs (rw)
+        nfsd on /proc/fs/nfs type nfsd (rw)
+
+=================== MD5Sum Check ==============================
+* Checking MD5 Sums
+        /etc/passwd:                            [OK]
+        /etc/shadow:                            [OK]
+        /etc/group:                             [OK]
+
+===============================================================
+* Brought to you by Ikke - <a href="http://www.eikke.com/">http://www.eikke.com</a></pre>
+
+<p>A TODO is included in the script source.</p>
+
+<p>I made the script available <a href="http://code.eikke.com/index.php?dir=bash/&amp;file=sysstats.sh" title="here">here</a> (enscript version <a href="http://code.eikke.com/index.php?dir=bash/&amp;file=sysstats.sh.html" title="here">here</a>). If you use it, please let me know something :-) Or even better, if you add more support, please send me a patch so everyone can make use of it :-)</p>
+
+<p>It has no special dependencies, next to Bash and some standard utilities like wc, bc, tail, md5sum, awk and grep.<br />
+The "record uptime" is only displayed if you got uprecords (/usr/bin/uprecords) installed.<br />
+Make sure you check the md5sum part, can be very usefull :-)</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="ikke6c5d.html?cat=18" title="Browse category">Networks</a>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2005/05/17/sysstats_sh.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/17/sysstats_sh.html#comments" title="Display comments / Leave a comment">6 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/17/sysstats_sh"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/17/sysstats_sh"
+  dc:title="Sysstats.sh"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/189" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">16</span>
+        </div>
+<div class="bPost">
+          <span class="title">Anjuta 2</span>
+
+                        <p>A 2.x alpha release of <a href="http://www.anjuta.org/" title="Anjuta">Anjuta</a>, the GTK/Gnome-oriented IDE, has been released.<br />
+I must admit the <a href="http://www.anjuta.org/anjuta.php?page=screenshots" title="screenshots">screenshots</a> and <a href="http://sourceforge.net/forum/forum.php?forum_id=466744" title="features">features</a> look nice: integrated debugger (GDB based), glade3 support, GObject class building wizard, member completion,...</p>
+
+<p>Maybe time to give it another test drive. Although I doubt it can beat gVim :-) What do you think, <a href="realnitro.html" title="Realnitro">Realnitro</a>?</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2005/05/16/anjuta_2.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/16/anjuta_2.html#comments" title="Display comments / Leave a comment">4 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/16/anjuta_2"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/16/anjuta_2"
+  dc:title="Anjuta 2"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/188" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">15</span>
+        </div>
+<div class="bPost">
+          <span class="title">ContactFS working</span>
+
+                        <p><center><a href="http://gallery.eikke.com/albums/userpics/Xnest-ContactFS.png" target="_blank"><img src="http://gallery.eikke.com/albums/userpics/normal_Xnest-ContactFS.png" title="ContactFS in Nautilus" /></a><br />
+(Thumbnail is link to original image)</center></p>
+
+<p>Needs no comment I guess :-)</p>
+
+<p>Still some problems left:</p><ul><li>Files with spaces in the filename (ie almost every file in this case) don't work :-( This shouldn't be too hard to solve though (edit: fixed)</li>
+<li>Read-only</li>
+<li>No VCard as output. This can be easily solved though (edit: fixed)</li>
+<li>The init func creating a Node tree from your contacts is blocking, which is bad</li>
+<li>The Icon issue. Looks like vcards can contain picture information, so I could just write a vcard-thumbnailer and add it to Nautilus.</li></ul>
+
+<p>Now guess what the problem was... Not my code, but the fact I use autotools to compile the thing. Autotools seems to add some fancy compiler flags which made the module crashy as hell, just using "gcc -Wall $(pkg-config --cflags --libs gnome-vfs-module-2.0 libebook-1.2) -shared -fPIC ContactFS.c -o libContactFS.so" worked fine. Guess I'll have to tweak my Makefile.am somehow. (edit: this wasn't autotools fault, but (of course) mine. I added some flags to Makefile.am I got from an official GnomeVFS module's Makefile.am, looks like those weren't nice)</p>
+
+<p>Huge thanks to "gicmo" for all the help.</p>
+
+<p>Oh, and XNest rocks :-)</p>
+
+<p>[update]<br />
+<center><a href="http://gallery.eikke.com/albums/userpics/Xnest-ContactFS2.png" target="_blank"><img src="http://gallery.eikke.com/albums/userpics/normal_Xnest-ContactFS2.png" title="ContactFS with VCard support" /></a></center></p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/05/15/contactfs_working.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/15/contactfs_working.html#comments" title="Display comments / Leave a comment">2 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_working"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_working"
+  dc:title="ContactFS working"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/187" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">15</span>
+        </div>
+<div class="bPost">
+          <span class="title">ContactFS progress</span>
+
+                        <p><center><img src="http://gallery.eikke.com/albums/userpics/ContactFS2.png" title="ContactFS 2" /></center></p>
+
+<p>Screenshot shows some progress I made with ContactFS. If I "browse" to contact:/, I get 2 "directories", Personal and Test, which are my 2 Evolution address books. I can "cd" into "Test", "ls" all "files" (contacts) in there, and if I try to "cat" one of them, I get some information on that contact (just plaintext for now, this should become a FOAF or VCard formatted string).</p>
+
+<p>In GnomeVFS' test-shell application the module works fine, but if I try to open contact: in Nautilus, it crashes. Maybe I should send an email to Alex to beg for a little help here ;-)<br />
+I'll also need his help on how to set file thumbnails once it works in Nautilus (the actual file is just plain text, but I'd like to have the contact's picture as icon in Nautilus, or if no picture is set, /usr/share/pixmaps/nobody.png).</p>
+
+<p>Moving "files" between "directories" would be nice too, but I don't know whether EDS allows writing, need to figure that out.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2005/05/15/contactfs_progress.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/15/contactfs_progress.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_progress"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_progress"
+  dc:title="ContactFS progress"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/185" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">13</span>
+        </div>
+<div class="bPost">
+          <span class="title">ContactFS</span>
+
+                        <p>I got the insane (well, not really ;-)) idea today to write a GnomeVFS module that allows you to browse your Evolution EDS contacts using any GnomeVFS-capable application, like Nautilus, as a Proof Of Concept. This is the first GnomeVFS module I write.</p>
+
+<p>Started working on it, and I got a basic module working. It does not get any information from EDS yet, only contains one "file" named JohnDoe, can be very instable,... but well ;-)</p>
+
+<p><a href="http://gallery.eikke.com/displayimage.php?album=lastup&amp;cat=0&amp;pos=0" title="Here">Here</a>'s a little screenshot:<br />
+<center><img src="http://gallery.eikke.com/albums/userpics/contactfs1part.png" title="ContactFS 1" /></center></p>
+
+<p>Currently the "contact files" only have "test" as content, this <em>should</em> become a VCard string, or maybe a FOAF document.</p>
+
+<p>Other things to do:</p><ul><li>assign a proper MIME type, so I can take advantage of Evo's "Picture" contact-property (so you see the picture as "icon" of the "file", if this is possible at all).</li>
+<li>assign a proper handler to the "open" action (e.g. open a Mailto: window)</li>
+<li>Fetch real information from Evo, of course</li>
+<li>Make it stable (the current tree contains dead pointers, I need to learn using GNode's) and thread-safe</li>
+<li>...</li></ul>
+
+<p>Maybe this won't be really <em>usefull</em>, but someone suggested to have some VFS module for Soylent too, so I'm gaining some experience here :-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/05/13/contactfs.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/13/contactfs.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/13/contactfs"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/13/contactfs"
+  dc:title="ContactFS"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/183" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                <a href="ikke8e9a.html?blog=5&amp;page=1&amp;paged=24">&lt;&lt; Previous Page</a> :: <a href="ikkeaad8.html?blog=5&amp;page=1&amp;paged=26">Next Page &gt;&gt;</a>                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="ikke.html">All</a></li>
+<li><a href="ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="ikke/2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="ikke/2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="ikke/2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 526</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../htsrv/login02ad.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%3Fblog%3D5%26amp%3Bpaged%3D25%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&page=1&paged=25 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 20:02:03 GMT -->
+</html>

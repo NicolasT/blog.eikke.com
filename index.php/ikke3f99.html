@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?cat=16 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:02:15 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Categories: Technology, Coding Corner, Docbook, Summer of Code 06, Desktop, Ivman, Linux, Networks</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Categories: Technology, Coding Corner, Docbook, Summer of Code 06, Desktop, Ivman, Linux, Networks</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Oct</span>
+          <span class="day">29</span>
+        </div>
+<div class="bPost">
+          <span class="title">Using your belgian eID for SSL authentication</span>
+
+                        <p>Some time ago I got a very basic cardreader to use with my eID. It was fairly easy to get this working under Linux, only had to create one ebuild for the acr38 driver. Looks like you don't even need the Zetes/FedICT tools to do authentication in Firefox, the standard OpenSC libs work too.</p>
+
+<p>For the record: what you need is opensc, pcsc, and the acr38 driver, that's about it to start playing around. The FedICT tools are nice to play around and view which data is stored on the card.</p>
+
+<p>Anyway, on-topic now :-) In my previous post I wondered whether it'd be possible to get an SSL certificate, using the key on my card. Looks like this is easier than I thought :-)</p>
+
+<p>You need to have openssl (du-uh) and engine-pkcs11 installed to do this.</p>
+
+<p>To generate a request, open a console and launch openssh. Once at the OpenSSL prompt, issue these 2 commands:<br />
+<code>engine -t dynamic -pre SO_PATH:/usr/lib/engines/engine_pkcs11.so -pre ID:pkcs11 -pre LIST_ADD:1 -pre LOAD -pre MODULE_PATH:/usr/lib/opensc-pkcs11.so</code><br />
+Adjust paths if necessary, of course. This loads the pkcs11 engine inside OpenSSL.<br />
+<code>req -engine pkcs11 -new -days 100 -key id_02 -keyform engine -out myrequest.csr -subj "/C=BE/ST=O-VL/O=My Organisation/CN=My Name/emailAddress=my@email.tld"</code><br />
+Adjust the days, out and subj parameters, at least. The key ID can be found using<br />
+<code>pkcs15-tool -c</code>Use the ID of the Authentication X509 certificate.</p>
+
+<p>You'll be asked to enter your PIN code, once this is done your certificate signing request will be stored in myrequest.csr (or whatever filename you chose), ready to be sent to some CA administrator, after which he can sign the request (added code to do this to CAAdmin some minutes ago, about to commit), send back the certificate, and you're all set.</p>
+
+<p>How to use the certificate depends on your application, of course. You can add the pkcs11 authentication provider to Firefox, OpenVPN got some pkcs11-related settings, etc.</p>
+
+<p>I'll try the OpenVPN stuff in a minute :-)</p>
+
+<p>Pretty cool stuff, if this'd work... Both VPN and SSH authentication will be done using my eID if this turns out well.</p>
+
+<p>Edit: right, I was able to sign my generated request (using my eID's authentication certificate) using our VPN's CA, but now I got some issue with issuer certificates: OpenVPN seems to look for an issuer certificate matching the C/CN/SN/GN/serialNumber of the certificate on my eID. This is, obviously, not the way I'd want it to work... Isn't it possible to tell OpenVPN to use some_file.crt as certificate, but use the key in some slot on my eID as key? Using PKCS11 seems to disable the ability to use file-based certificates :-(</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="ikke/2007/10/29/using_your_belgian_eid_for_ssl_authentic.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/10/29/using_your_belgian_eid_for_ssl_authentic.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/10/29/using_your_belgian_eid_for_ssl_authentic"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/10/29/using_your_belgian_eid_for_ssl_authentic"
+  dc:title="Using your belgian eID for SSL authentication"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/510" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Oct</span>
+          <span class="day">29</span>
+        </div>
+<div class="bPost">
+          <span class="title">Being a Certificate Authority made easier than ever</span>
+
+                        <p>Lately at <a href="http://www.vtk.ugent.be/">VTK</a> we started to use SSL (and X509 keys) at more places than just one webserver. We figured out using a central CA (and not one per server) and managing keys centralised would be A Good Thing.</p>
+
+<p>So I created a LUKS volume on one of our servers (which is only usable by us admins) to store CA data. OpenSSL is kinda tough to work with though (well, lots of commands with lots of command line parameters ;-)), so I decided to create some sort of text-based interface around it, inspired by OpenVPN's EasyRSA scripts.</p>
+
+<p>I titled the end result CAAdmin. You can find a gitweb view (including pull URL) <a href="http://www.vtk.ugent.be:83/git/?p=users/ntrangez/caadmin.git;a=summary">here</a> if interested. Fixes or patches to add functionality are very welcome (email :-)).</p>
+
+<p>Currently it allows you to:</p>
+<ul><li>Create a new CA</li>
+<li>Generate server keys and certificates</li>
+<li>Generate client keys and certificates (both password protected and without password)</li>
+<li>List your CA's CRL</li>
+<li>Create a CRL file to distribute to your servers</li>
+<li>Revoke a certificate</li></ul>
+
+<p>Functionality to sign an incoming certificate request should be added. I'd love to figure out whether it's possible to use my (belgian) eID card (and reader): I can read the data on it and use it for SSH authentication, but I didn't figure out yet whether it's possible to pull out a signature request out of it, so I can use the private key stored on it to access some of our key-based SSL services... Any pointers?</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2007/10/29/being_a_certificate_authority_made_easie.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/10/29/being_a_certificate_authority_made_easie.html#comments" title="Display comments / Leave a comment">2 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/10/29/being_a_certificate_authority_made_easie"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/10/29/being_a_certificate_authority_made_easie"
+  dc:title="Being a Certificate Authority made easier than ever"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/509" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Sep</span>
+          <span class="day">2</span>
+        </div>
+<div class="bPost">
+          <span class="title">Seam Carving: Content-aware image resizing</span>
+
+                        <p>Most people most likely saw the YouTube movie on content-aware image resizing which got blogged quite a lot lately. I read the corresponding paper, and wrote an implementation (not finished/perfect at all, but well) in Python. If it would ever become "production quality" a Gimp and/or GEGL plugin would be nice.</p>
+
+<p>Here's a sample:<br />
+<u>Original image</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_original.jpg" title="Original" alt="Original" /></p>
+
+<p><u>Resized using Gimp, cubic interpolation, 150px</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_gimp_150px.jpg" title="Resized using Gimp" alt="Resized using Gimp" /></p>
+
+<p><u>Resized image, 150px</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_150px.jpg" title="Resized using seam carving" alt="Resized using seam carving" /></p>
+
+<p><u>Overview of removed pixels</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_cutouts.jpg" title="Removed pixels" alt="Removed pixels" /></p>
+
+<p>This transformation is done in about 2 seconds (mainly because of some calculations in pure Python. For most calculations I use the Python Imaging Library and SciPy/NumPy, which are mainly C modules and much faster). As you can see the implementation still needs lots of love.</p>
+
+<p>You can see another sample (image resized from 1000 to 250px in 8 seconds) <a href="http://key.nicolast.be/files/seam_carving_6.png">here</a>.</p>
+
+<p>Git repository is <a href="http://git.nicolast.be/?p=scarving.git;a=summary">here</a>. Please email any patches!</p>
+
+<p>The algorithm itself is surprisingly "simple" and easy to understand, great job by the researchers! More on that later. I should be studying mathematical analysis now, 2nd time I got to redo this exam, bloody university :-(</p>
+
+<p>Update:<br />
+<u>Using very expensive algorithm</u><br />
+<img src="http://key.nicolast.be/files/seam_carving/castle_expensive_150px.jpg" title="Expensive algorithm" alt="Expensive algorithm" /><br />
+This image was generated by:</p>
+<ul>
+<li>Loading the input image</li>
+<li>150 times:<br />
+  <ul>
+  <li>Calculate energy and cost of current working picture</li>
+  <li>For every pixel in the top row, calculate the cost of the "best path" starting at this pixel</li>
+  <li>Figure out which path is the cheapest</li>
+  <li>Create an image which is the working image, minus this best path</li>
+  <li>Replace the working image with the image generated in the previous step</li>
+  </ul>
+</li></ul>
+<p>This took 273 seconds on my system, as the complexity is something like O(150*N*N*N*N*N*N*M) where M is the complexity of the gradient magnitude calculation.<br />
+Conclusion: not a workable solution :D<br />
+Do notice there are significant changes between this image and the one posted above. As I wrote this as a quick hack, I didn't include code to show which paths were removed from the original image.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="ikke/2007/09/02/seam_carving_content_aware_image_resizin.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/09/02/seam_carving_content_aware_image_resizin.html#comments" title="Display comments / Leave a comment">47 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/09/02/seam_carving_content_aware_image_resizin"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/09/02/seam_carving_content_aware_image_resizin"
+  dc:title="Seam Carving: Content-aware image resizing"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/506" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Aug</span>
+          <span class="day">22</span>
+        </div>
+<div class="bPost">
+          <span class="title">ReST + git + hooks = useful</span>
+
+                        <p>Recently I had to write some article. There are several formats to write articles: one can use plain text, some use something like OOo Writer or MS Word, others use LaTeX, some XML fanatics use DocBook, etc. Personally I like writing texts in plain text format, especially using the ReST (ReStructured Text) markup, so the text document is very easy to read, including some basic formatting, and you can transform the text format to XHTML, LaTeX/PDF and several other formats using some simple tools provided by the DocUtils project.</p>
+
+<p>As I'm using a plain text format, it's pretty useful to make use of some revision control system. And guess what, once again Git is a good choice ;-)</p>
+
+<p>Now in this specific case, I got to have this article online too on my webserver. I got a bunch of public git repositories on that machine, including the one containing the article, but obviously this is not very useful as the HTML file rendered from the ReST source file should not be in Git.</p>
+
+<p>So here's what I did: first I created a very basic Makefile which does the output file generation. Here it is:</p>
+<pre><code>RSTOPTS=--time --strict --language=en
+RSTHTMLOPTS=--embed-stylesheet
+
+txt_SOURCES=myinputfile.txt
+HTML=$(foreach t,$(filter %.txt,$(txt_SOURCES)),$(basename $(t)).html)
+PDF=$(foreach t,$(filter %.txt,$(txt_SOURCES)),$(basename $(t)).pdf)
+TMPS=$(foreach t,$(filter %.txt,$(txt_SOURCES)),$(basename $(t)).txt.tmp)
+
+COMMIT_DATE=$(shell git-show | grep ^Date | sed "s/^Date: *//")
+COMMIT_REV=$(shell git-show | grep ^commit | sed "s/^commit *//")
+
+default: all
+
+%.txt.tmp: %.txt
+        @sed -e "s/@DATE@/$(COMMIT_DATE)/" -e "s/@REV@/$(COMMIT_REV)/" $^ > $@
+
+%.html: %.txt.tmp
+        rst2html.py $(RSTOPTS) $(RSTHTMLOPTS) $^ > $@
+
+%.pdf: %.txt.tmp
+        rst2latex.py $(RSTOPTS) $^ > $(basename $@).tex
+        pdflatex $(basename $@).tex
+        rm -f $(basename $@).log $(basename $@).out $(basename $@).tex $(basename $@).aux
+
+html: $(HTML)
+pdf: $(PDF)
+
+all: html pdf
+
+clean:
+        rm -f $(HTML)
+        rm -f $(PDF)
+        rm -f $(TMPS)</code></pre>
+<p>There are 3 variables on top you should/could edit: RSTOPTS which are the options passed to all rst2* tools, RSTHTMLOPTS which are the options passed to rst2html.py and txt_SOURCES, which is a simple list of all input files.</p>
+
+<p>I also added functionality to add @DATE@ and @REV@ tags in your source files. These will be expanded to the commit date and commit/revision SHA1 sum of the tree you're working with. In ReST this is useful in the top part of your document where you define the author, contact address, version information, date,...</p>
+
+<p>I committed this Makefile and my input ReST text file to some bare repository on my server (eg. /home/me/public_git/myarticle.git). Once this was done, I created a directory in my htdocs directory (let's call it "/home/me/public_html/myarticle"), chdir'ed into it, and made a clone of the repository: git-clone /home/me/public_git/myarticle.git</p>
+
+<p>Now the Makefile and ReST file were in place, and I could run make html. After making a symlink to generate an index.html file which points to myarticle.html, it was available online.</p>
+
+<p>Now one more feature had to be added: I want the public article HTML to be up-to-date with my repository, whenever I push new changes from my laptop to my server. This is very easy to achieve using git's hook script support. In /home/me/public_git/myarticle.git/hooks I created a file called post-update and ran chmod +x on it. Here's the content:</p>
+<pre><code>CODIR="/home/me/public_html/myarticle"
+export GIT_DIR=$CODIR/.git
+pushd $CODIR > /dev/null
+/usr/bin/git-pull > /dev/null 2>&amp;1
+make html > /dev/null
+popd > /dev/null
+
+exec git-update-server-info</code></pre>
+
+<p>Now whenever I run git-push myserver in my local tree, this script is executed. When it runs, the checkout I got inside my public_html directory is updated, and the HTML file is rerendered, so the last version is online.</p>
+
+<p>Pretty useful!</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="ikke/2007/08/22/rest_git_hooks_useful.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/08/22/rest_git_hooks_useful.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/08/22/rest_git_hooks_useful"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/08/22/rest_git_hooks_useful"
+  dc:title="ReST + git + hooks = useful"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/505" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Aug</span>
+          <span class="day">15</span>
+        </div>
+<div class="bPost">
+          <span class="title">XKCD "Compiling"</span>
+
+                        <p>Today's <a href="http://xkcd.com/">XKCD</a> is just hilareous:<br />
+<a href="http://xkcd.com/303/"><img src="http://imgs.xkcd.com/comics/compiling.png" alt="" title="XKCD: Compiling" /></a></p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="ikke/2007/08/15/xkcd_compiling.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2007/08/15/xkcd_compiling.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2007/08/15/xkcd_compiling"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2007/08/15/xkcd_compiling"
+  dc:title="XKCD &quot;Compiling&quot;"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/504" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                 :: <a href="ikkece4e.html?blog=5&amp;cat=16&amp;page=1&amp;paged=2">Next Page &gt;&gt;</a>                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="ikke.html">All</a></li>
+<li><a href="ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span>*<ul><li><a href="ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span>*<ul><li><a href="ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span>*</li>
+<li><a href="ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span>*</li>
+</ul>
+</li>
+<li><a href="ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span>*</li>
+<li><a href="ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span>*</li>
+<li><a href="ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span>*</li>
+<li><a href="ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span>*</li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="ikke/2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="ikke/2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="ikke/2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 20</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../htsrv/login8fe9.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%3Fblog%3D5%26amp%3Bcat%3D16%26amp%3Bpaged%3D1%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?cat=16 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:02:19 GMT -->
+</html>

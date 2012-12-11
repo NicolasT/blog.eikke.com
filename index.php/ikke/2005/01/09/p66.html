@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/01/09/p66 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:24:32 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: New subdomain UI, me on dbus@lists.fgo, and XScreensaver security considerations</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: New subdomain UI, me on dbus@lists.fgo, and XScreensaver security considerations</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Jan</span>
+          <span class="day">9</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://code.eikke.com/">New subdomain UI, me on dbus@lists.fgo, and XScreensaver security considerations</a></span>
+
+                        <p>I got a (IMHO) nice UI on <a href="http://code.eikke.com/" title="code.eikke.com">code.eikke.com</a>, using <a href="http://autoindex.sourceforge.net/" title="AutoIndex">AutoIndex</a>. It still needs some hacking: I want to get some mod_rewrite working, so I can use links like <a href="http://code.eikke.com/adir/foofile">http://code.eikke.com/adir/foofile</a>, which will then be interpreted as <a href="http://code.eikke.com/index.php?dir=adir&amp;file=foofile">http://code.eikke.com/index.php?dir=adir&amp;file=foofile</a>. AutoIndex should generate similar code too then. This way, <a href="http://www.google.com/" title="Google">Google</a> (which doesn't like GET arguments) will index my pages too.<br />
+Oh, and I want a <a href="http://www.gnome.org/" title="GNOME">GNOME</a> iconset. I had to choose between WinXP and <a href="http://www.kde.org/" title="KDE">KDE</a>...</p>
+
+<p>Started a discussion on kobject-uevents and <a href="http://www.freedesktop.org/Software/dbus" title="DBUS">DBUS</a> on the <a href="http://lists.freedesktop.org/mailman/listinfo/dbus/" title="mailing list">mailing list</a> today (<a href="http://lists.freedesktop.org/archives/dbus/2005-January/001866.html" title="link">link</a>). I've been thinking about it last hours, and my proposition is stupid. Kernel events shouldn't be sent out by the DBUS daemon itself. This should be done by some separate daemon.</p>
+
+<p>If only I could get my <a href="http://lists.freedesktop.org/archives/dbus/2005-January/001865.html" title="session bus">session bus</a> working :-(</p>
+
+<p>Normally I should be allowed to create a <a href="http://subversion.tigris.org/" title="Subversion">Subversion</a> repository on my domain once more. Jay :-)</p>
+
+<p>After my <a href="../08/dbus_ified_xscreensaver.html" title="blog post about xscreensaver and DBUS">blog post about xscreensaver and DBUS</a>, jwz, the <a href="http://www.jwz.org/xscreensaver/" title="xscreensaver">xscreensaver</a> developer, posted a <a href="../08/dbus_ified_xscreensaver.html#comments" title="comment">comment</a>. I mailed him regarding this issue, check <a href="p66.html#more66" title=""More"">"More"</a> for a digest of our discussion.</p>
+
+
+<p>Had a performance with my <a href="http://www.gao.be/" title="orchestra">orchestra</a> today. We played the first part of the "New World Symphony" by Dvorak, and the Ouverture from "The Barber of Seville" by Rosinni. Some minor mistakes, but it was pretty good. The public was enthousiastic.<br />
+Next performance: April 23, Conservatorium Ghent, Belgium.</p>
+
+<p class="bMore"><a id="more66" name="more66"></a>[More:]</p>
+<p>A digest of my discussion on xscreensaver linked to DBUS with jwz:<br />
+Ikke:</p><blockquote>
+<p>Hi,</p>
+
+<p>I read your comment on the blog entry I made on my patch against<br />
+xscreensaver to dbus-able it.<br />
+I read both URL's you pointed to, and here are some comments:</p>
+
+<p>1. Using xscreensaver-command -watch is not really a good idea, because<br />
+this would require even one more daemon running :-S</p>
+
+<p>2. On the extra library: I do know security is an important feature.<br />
+Sometimes usability should be taken into account too, IMHO. Adding DBUS<br />
+support to xscreensaver would fit nicely into the "integrated desktop":<br />
+it can be used for instant messengers (like Gaim), fits nicely into<br />
+Galago (galago.sf.net),...<br />
+DBUS is meant to be a robust framework, with good exception handling,<br />
+and whatsoever. And the code in my patch is, well, very low level. And<br />
+DBUS support is completely optional (./configure option). I think it's<br />
+up to the user: loosen the security a little bit, and gain a nicer<br />
+desktop experience, or disable it, and still get the "normal"<br />
+xscreensaver, as we know it now.<br />
+I dont intend this patch to be into the xscreensaver distribution at all<br />
+(yet), it's just some testing stuff, me playing around a little (hey,<br />
+what's hacking? ;-)). This patch resides completely outside of<br />
+xscreensaver, and should (for now) only be used by me and maybe some<br />
+adventurous hackers.<br />
+Using my patch, only one more lib is linked to the xscreensaver<br />
+executable: libdbus-1.so.0.0.0, which is linked to:<br />
+ldd /usr/lib/libdbus-1.so.0.0.0<br />
+        linux-gate.so.1 =>  (0xffffe000)<br />
+        libnsl.so.1 => /lib/libnsl.so.1 (0xb7f8c000)<br />
+        libc.so.6 => /lib/libc.so.6 (0xb7e78000)<br />
+        /lib/ld-linux.so.2 (0x80000000)<br />
+All of them reasonably secure libs, I guess? :-)</p>
+
+
+<p>I'm not intending to break any security measures in xscreensaver or<br />
+whatsoever. Just trying to add some extras.</p>
+
+
+<p>I'd like to report about this email message and possible replies, and<br />
+could discuss this with some DBUS guys. If you object against this,<br />
+please let me know.</p>
+
+<p>By the way: thanks for xscreensaver ;-)</p></blockquote>
+
+<p>jwz:</p><blockquote>
+<p>> 1. Using xscreensaver-command -watch is not really a good idea, because<br />
+> this would require even one more daemon running :-S</p>
+
+<p>So what?</p>
+
+<p>> 2. On the extra library: I do know security is an important feature.<br />
+> Sometimes usability should be taken into account too, IMHO. </p>
+
+<p>If you think usability trumps security, then you're not qualified to<br />
+hack on critical security software.</p>
+
+<p>I have no objection to you finding a way to make xscreensaver interact<br />
+with DBUS, but I will never, ever accept a patch to xscreensaver that<br />
+involves linking additional libraries into the xscreensaver daemon for<br />
+this, and neither will the responsible Gnome or Linux-distro people,<br />
+because they also understand and agree with my security policy for<br />
+xscreensaver.  So, by pursuing this type of implementation, you're<br />
+wasting your time, because it will never be used by anyone but you.</p>
+
+<p>You'd be better off finding a *safe* way to accomplish what you want.</p>
+
+<p>> Adding DBUS support to xscreensaver would fit nicely into the<br />
+> "integrated desktop":</p>
+
+<p>Again, I am not arguing against your desire to have it talk to DBUS.<br />
+I am arguing against your implementation, which is unacceptably<br />
+dangerous.</p></blockquote>
+
+<p>Ikke:</p><blockquote>
+<p>OK, I got the picture.</p>
+
+<p>Maybe stuff like this should get into Galago or some new<br />
+desktop-events-daemon anyway.</p>
+
+<p>Could you tell me how xscreensaver-command interacts with the<br />
+xscreensaver daemon? A socket?... This way I could get the code poll'ing<br />
+this socket. Watching the stdout of an xscreensaver-command process<br />
+isn't really nice...</p></blockquote>
+
+<p>jwz:</p><blockquote>
+<p>> Could you tell me how xscreensaver-command interacts with the<br />
+> xscreensaver daemon? A socket?...</p>
+
+<p>X window properties and ClientMessages.</p>
+
+<p>> This way I could get the code poll'ing this socket. Watching the<br />
+> stdout of an xscreensaver-command process isn't really nice...</p>
+
+<p>I think it's perfectly nice, because it means you can trivially write<br />
+your daemon in a high level language like perl or python or whatever<br />
+instead of C.  Also it keeps the low level protocol details hidden.</p></blockquote>
+
+<p>Ikke:</p><blockquote>
+<p>&lt;snip&gt;<br />
+> I think it's perfectly nice, because it means you can trivially write<br />
+> your daemon in a high level language like perl or python or whatever<br />
+> instead of C.  Also it keeps the low level protocol details hidden.<br />
+Nah, I dislike the tought of Python daemons, and dont know Perl. C is a<br />
+nice thing ;-)</p>
+
+<p>I don't know low-level X programming, but I guess I'll be able to strip<br />
+the necessary code out of the xs-commander sources :-)</p>
+
+<p>Anyway: thanks!!!</p></blockquote>
+
+<p>jwz:</p><blockquote>
+<p>> I don't know low-level X programming,</p>
+
+<p>Then you might consider hacking on something less critical to the system<br />
+than xscreensaver :-(</p></blockquote>
+
+<p>Ikke:</p><blockquote>
+<p>> Then you might consider hacking on something less critical to the system<br />
+> than xscreensaver :-(<br />
+I wasn't really hacking into the low-level xscreensaver code either. As<br />
+you can see in my (deprecated? ;)) patch, I just added some simple<br />
+functionality, separated from the xscreensaver graphics/security/...<br />
+code.</p></blockquote>
+
+<p>That's it... for now :-)</p>
+
+<p>(I definately need to find a way to blog email conversations in a better way)</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../../ikkeb5e7.html?cat=15" title="Browse category">Life</a>, <strong><a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="new_subdomain_ui_me_on_dbus_lists_fgo_an.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="new_subdomain_ui_me_on_dbus_lists_fgo_an.html#comments" title="Display comments / Leave a comment">1 comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/01/09/new_subdomain_ui_me_on_dbus_lists_fgo_an"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/01/09/new_subdomain_ui_me_on_dbus_lists_fgo_an"
+  dc:title="New subdomain UI, me on dbus@lists.fgo, and XScreensaver security considerations"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/66" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+			<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c131"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: satellite tv [Visitor] &middot; <a href="http://satellite-tv.acol-online.com/satellite-tv-online.html" rel="nofollow">http://satellite-tv.acol-online.com/satellite-tv-online.html</a>			</div>
+			<div class="bCommentText">
+				 I understand their usefulness. Often, a formalised <a href="http://direcway.acol-online.com/direcway.html" rel="nofollow">direcway</a> exercise helps me to crack a block of some kind, <a href="http://direct-tv.acol-online.com/direct-tv.html" rel="nofollow">direct tv</a> and often affords a new way to see something. It's <a href="http://dishnetwork.acol-online.com/dishnetwork.html" rel="nofollow">dishnetwork</a> a way of playing with the process of creation - <a href="http://dish-network.acol-online.com/dish-network.html" rel="nofollow">dish network</a> if one lets it serve that purpose. Another example: <a href="http://directtv.acol-online.com/directtv.html" rel="nofollow">directtv</a> a lot of modern composers who use Finale or similar directtv programs to score their music, either on the <a href="http://directv.acol-online.com/directv.html" rel="nofollow">directv internet</a> fly or by means of the scrivner approach, employ <a href="http://satellite.acol-online.com/satellite.html" rel="nofollow">satellite free</a> the cut 			</div>
+			<div class="bCommentSmallPrint">
+				<a href="new_subdomain_ui_me_on_dbus_lists_fgo_an.html#c131" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				03/06/05 @ 02:02			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_66" id="bComment_form_id_66" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_66[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_66[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="66" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;p=66&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../../2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 409</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/loginb10c.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2005%2F01%2F09%2Fp66%3Fblog%3D5%26amp%3Bp%3D66%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/01/09/p66 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:24:32 GMT -->
+</html>

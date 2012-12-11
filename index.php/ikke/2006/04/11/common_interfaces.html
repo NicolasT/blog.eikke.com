@@ -1,0 +1,493 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2006/04/11/common_interfaces by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:22:53 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: Common interfaces</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: Common interfaces</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">Apr</span>
+          <span class="day">11</span>
+        </div>
+<div class="bPost">
+          <span class="title">Common interfaces</span>
+
+                        <p>The recent discussion on <a href="http://mail.gnome.org/mailman/listinfo/desktop-devel-list" title="desktop-devel">desktop-devel</a> on the inclusion of <a href="http://www.gnome.org/projects/gnome-power-manager/" title="GNOME Power Manager">GNOME Power Manager</a> into the 2.16 desktop release (big thanks to the developers for this software, it took a while to get suspension working on my desktop but now it does, I really like GPM even if it's no laptop) ended up in two completely different discussions: the usage of notifications (libnotify) and the notification area versus normal applets, and sharing a base daemon with eg the KDE power manager (somewhat related to what <a href="http://www.gnome.org/projects/NetworkManager/" title="NetworkManager">NetworkManager</a> does: a central daemon running as root, and a client applet on top of that, using DBus for IPC, although the power management daemon should not run as root, as all privileged tasks are handled by hald, which runs as root).</p>
+
+<p>The second issue is one which interests me a lot, as more than a year ago (IIRC I was still using Windows as main desktop at that time :oops: as my Linux machine was too slow to run any desktop app) I sent an email to the <a href="http://lists.freedesktop.org/archives/xdg" title="XDG">XDG</a> list about what was to become <a href="http://lists.freedesktop.org/archives/xdg/2005-January/005687.html" title="CDIS">CDIS</a>, the Common Desktop Interface Specification (the email I link to is just the first of bunch of long threads, from the initial idea almost nothing was kept). Lots of email on the list later, no actual result came out of it (which is mainly due to me).</p>
+
+<p>Shared interfaces are, just like open file formats etc, very important. We got some great desktop specifications that ensure a developer his/her code and application will work on all platforms supporting the specification. Think of the notification area spec, autostart spec, .desktop files,...<br />
+Shared IPC interfaces (think DBus) are very important too. In the case of a power management app like GPM or it's K* equivalent, they should both use the same interface for several functions, eg "DontHibernateNext5Minutes" (dumb and useless example, but hey). If I write an application that doesn't need user input, but does a lot of work (think of a CD burning app), I don't want the machine my software runs on hibernates during the burning process, whilst it's perfectly possible the user leaves the machine and his sessions idles out. But I don't want some construct like</p>
+<pre>if(user_runs_gnome)
+    do_gpm_dont_suspend_call();
+if(user_runs_kde)
+    do_kde_power_manager_dont_suspend_call();</pre>
+<p>or something alike. Maybe this isn't a big issue for some simple program, but think of a large app that should be cross-desktop made by some ISV...<br />
+Same thing for a DVD player: I don't want to notify both gnome-screensaver, kde-screensaver and whatever they shouldn't pop up next minute, I just want to notify the org.freedesktop.ScreenSaver service it shouldn't take control of the desktop.</p>
+
+<p>Another sample: I'm a VoIP softphone (think <a href="http://www.ekiga.net/" title="Ekiga">Ekiga</a>), and I get an incoming call. Obviously, I'd like all media players that might run on the current console/desktop to pause. I don't want to send one signal to PlayerA using some custom socket, one to PlayerB using his own DBus interface! I just want to notify all media players they should pause, and send a "Pause" signal to (eg) org.freedesktop.CDIS.MediaPlayer. When the call is ended, I could send a "Resume" signal to the same object path.</p>
+
+<p>I don't know whether all this is possible using DBus, still need to read the docs once again (there's some black magic in there, really!), but I guess you get the idea.<br />
+Obviously, an application implementing a CDIS interface can also implement extra functionality, and if multiple applications start implementing the same extra functions, this functionality might be added to the a new version of that interface spec. Like this, we never limit the service developers. There can even be "NotImplemented" errors etc.</p>
+
+<p>The only thing we need is getting some developers together in all fields to write down such a spec in some standard format. Not too many people though, so there's less chance of huge flamewars and more results.</p>
+
+<p>Some application types I think of now that can use a shared interface:</p>
+<ul><li>Screensavers</li>
+<li>Power management</li>
+<li>Media players</li>
+<li>Instant Messaging apps ("SetStatus(STATUS_AWAY)",...)</li>
+<li>Email clients ("NewMailArrived")</li>
+<li>...</li></ul>
+
+<p>Maybe it's time to get this on XDG again...</p>
+
+<hr />
+<p>Completely unrelated: dear lazyweb, within a month or so (at least, I hope) I should get a laptop computer (<a href="http://www.asus.com/products4.aspx?modelmenu=2&amp;model=1072&amp;l1=5&amp;l2=26&amp;l3=0" title="Asus W3J">Asus W3J</a>, dualcore 2*1.83Ghz, 1GB, 80GB, pretty cool stuff). Obviously I'd like to run Linux on the machine (oops, GNU/Linux, sorry!) once I can, as it got an ATI X1600 GPU which is completely unsupported today.<br />
+I was thinking to run both <a href="http://www.gentoo.org/" title="Gentoo Linux">Gentoo Linux</a> (like I do now on my dekstop) and <a href="http://www.ubuntu.com/" title="Ubuntu">Ubuntu</a> on it: Gentoo for development things and just playing around, Ubuntu as "serious" desktop and university stuff. Next to that I also need Windows on it (some university soft is Windows-only).<br />
+I wrote down <a href="http://www.eikke.com/files/laptopparts.txt" title="a possible partition layout">a possible partition layout</a> for this setup today, and got some questions about it:</p>
+<ul><li>Will this work? The Gentoo part will, as that's +- what I run now, but will Ubuntu be able to handle a foreign bootloader, and the LVM stuff?</li>
+<li>Won't I get in trouble by sharing my homedir between both distributions? I shouldn't, but there are no more certainties in life these days</li></ul>
+<p>Thanks!</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="../../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong><a href="common_interfaces.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="common_interfaces.html#comments" title="Display comments / Leave a comment">6 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2006/04/11/common_interfaces"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2006/04/11/common_interfaces"
+  dc:title="Common interfaces"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/461" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+			<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c8255"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: RubenV [Visitor] &middot; <a href="http://www.lambda1.be/" rel="nofollow">http://www.Lambda1.be/</a>			</div>
+			<div class="bCommentText">
+				As you might (or might not) remember, I was a very big fan of this idea and I'm glad that it's back. This is a huge thing to ISVs, highly desired!			</div>
+			<div class="bCommentSmallPrint">
+				<a href="common_interfaces.html#c8255" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/11/06 @ 20:45			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c8256"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: David Mills [Visitor]			</div>
+			<div class="bCommentText">
+				OK, Lazy web here :-P<br />
+<br />
+-Ubuntu should be able to handle a foreign bootloader, and as far as lvms are concerned, just tell the partitioner to handle a partition as a lvm and you're laughing :).<br />
+<br />
+-For the lvms: the system lvm won't be able to grow more than 512M, since it's partition is more or less that size, I'd use just 1 lvm for everything, like that you can grow or shrink any section as needed.<br />
+<br />
+<br />
+HTH<br />
+<br />
+David<br />
+			</div>
+			<div class="bCommentSmallPrint">
+				<a href="common_interfaces.html#c8256" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/11/06 @ 22:14			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c8258"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Visitor] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				As mentioned in the document, vg-system will be 10GB bigger than the necessary space, so I can grow as necessary.<br />
+I made the split into 2 VGs so I can eg drop all Ubuntu lv's if I want to get rid of ubuntu on my system, and then doing a vgresize without the risk of losing any real data...			</div>
+			<div class="bCommentSmallPrint">
+				<a href="common_interfaces.html#c8258" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/11/06 @ 23:58			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c8264"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ali [Visitor] &middot; <a href="http://hybrid.tuxfamily.org/" rel="nofollow">http://hybrid.tuxfamily.org</a>			</div>
+			<div class="bCommentText">
+				This might be a very good idea, and it's not that hard to implement, FreeDesktop should define a set of DBus interfaces (org.freedesktop._media, ._screensaver, ._power, ._im, ._mail ...) and every application that relate to some category should bind on them. This will have really huge benefits on the desktop usability.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="common_interfaces.html#c8264" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/12/06 @ 08:24			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c8280"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: luis gutierrez [Visitor]			</div>
+			<div class="bCommentText">
+				Hi Ikke,<br />
+you shouldn't have serious issues for sharing your home folder between ubuntu and gentoo (just make sure they share the same user ID ##).<br />
+My problem has been with grub configuration, particullary ubuntu being a nasty player and erasing the gentoo configs.			</div>
+			<div class="bCommentSmallPrint">
+				<a href="common_interfaces.html#c8280" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/12/06 @ 22:40			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+				<!-- ========== START of a COMMENT/TB/PB ========== -->
+		<a name="c8353"></a>		<div class="bComment">
+			<div class="bCommentTitle">
+			Comment from: Ikke [Member] &middot; <a href="http://www.eikke.com/" rel="nofollow">http://www.eikke.com</a>			</div>
+			<div class="bCommentText">
+				Good catch about the UID, I should take care about that indeed.<br />
+Maybe I could just let ubuntu access my Gentoo /boot too, and use Ubuntu's grub unstead of Gentoo's, which would solve all problems :)			</div>
+			<div class="bCommentSmallPrint">
+				<a href="common_interfaces.html#c8353" title="Permanent link to this comment" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/>Permalink</a>
+								
+				04/17/06 @ 00:36			</div>
+		</div>
+		<!-- ========== END of a COMMENT/TB/PB ========== -->
+		<div class="moderation_msg"><p>This post has 3 feedbacks awaiting moderation... </p></div>		<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_461" id="bComment_form_id_461" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_461[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_461[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="461" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;title=common_interfaces&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 468</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/login2471.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2006%2F04%2F11%2Fcommon_interfaces%3Fblog%3D5%26amp%3Btitle%3Dcommon_interfaces%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2006/04/11/common_interfaces by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:22:53 GMT -->
+</html>

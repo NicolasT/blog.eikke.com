@@ -1,0 +1,1688 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/05/?blog=5&m=200505&page=1 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:43:02 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Archives for: May  2005</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Archives for: May  <a href="../index.html">2005</a></h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">29</span>
+        </div>
+<div class="bPost">
+          <span class="title">OPluginManager</span>
+
+                        <p>I've been working on my OPluginManager lately (not too much, got to study too, and watched the Queen Elisabeth concours of course ;-)).</p>
+
+<p>This is what I got now (it's my first GTK code ever, so I'm quite happy with it):<br />
+<center><img src="http://eikke.com/files/opluginmanager-ui-test.png" title="OPluginManager" /></center></p>
+
+<p>This is the "plugin" code:</p>
+<pre><code>#include "plugins/o-plugin-manager-plugin.h"
+#include "plugins/o-plugin-manager-plugin-data.h"
+
+#define TEST_PLUGIN_MSG "[test-plugin] "
+
+static gpointer plugin_init(gpointer d, GError **e) {
+        g_debug("" TEST_PLUGIN_MSG "Init");
+        return (gpointer) g_strdup("Test plugin data");
+}
+
+static void free_data(gpointer d) {
+        g_debug("" TEST_PLUGIN_MSG "Freeing data \"%s\"", (gchar *) d);
+
+        g_free(d);
+}
+
+static OPluginManagerPluginAuthorData author = {
+        O_PLUGIN_MANAGER_PLUGIN_DATA_AUTHOR_MAGIC,
+        "ikke",
+        "eikke eikke com"
+};
+
+static OPluginManagerPluginData plugininfo = {
+        O_PLUGIN_MANAGER_PLUGIN_DATA_MAGIC,
+        "test-plugin",
+        "A simple test plugin",
+        "This is a sample test plugin, to test the OPluginManager functionality",
+        "0.1",
+        "http://www.eikke.com",
+        &amp;author,
+
+        NULL,
+        plugin_init,
+        free_data
+};
+
+O_PLUGIN_MANAGER_PLUGIN_REGISTER(plugininfo);</code></pre>
+<p>As you can see it's braindead easy to write a plugin :-)</p>
+
+<p>The code is quite a mess at the moment, the UI is just plain ugly and inaccessible, there's no I18N support, but well, as you can see, one day it might work :-)</p>
+
+<p>Lots of guys I know are in Stuttgart right now, visiting GUADEC. I wish I could be there too :-( Have a great time!!!</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="29/opluginmanager.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="29/opluginmanager.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/29/opluginmanager"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/29/opluginmanager"
+  dc:title="OPluginManager"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/211" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">29</span>
+        </div>
+<div class="bPost">
+          <span class="title">GVim</span>
+
+                        <p>Just had a little chat with <a href="http://www.lambda1.be/" title="Ruben">Ruben</a> on <a href="http://www.vim.org/" title="Vim">Vim</a>, where he suggested me to put my .vimrc etc online.</p>
+
+<p>So I did, this is my current GVim setup:<br />
+<center><a href="http://gallery.eikke.com/albums/userpics/opm-gvim.png"><img src="http://gallery.eikke.com/albums/userpics/normal_opm-gvim.png" title="GVim" /></a><br />(Thumbnail is link to original image)</center></p>
+
+<p>And <a href="http://www.eikke.com/files/vimrc-052905" title="here">here</a>'s my current .vimrc. If you know any other fancy tricks I could use, please let me know :-)</p>
+
+<p>A lot of useful information on configuring your Vim is available <a href="http://dev.gentoo.org/~ciaranm/docs/vim-guide/" title="here">here</a>.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="29/gvim.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="29/gvim.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/29/gvim"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/29/gvim"
+  dc:title="GVim"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/210" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">25</span>
+        </div>
+<div class="bPost">
+          <span class="title">Nokia</span>
+
+                        <p>Ok, I admit, I also want <a href="http://www.nokia.com/nokia/0,,74866,00.html" title="one">one</a>. Just check <a href="http://planet.gnome.org/" title="Planet Gnome">Planet Gnome</a> if you don't know what I'm talking about.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="25/nokia.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="25/nokia.html#comments" title="Display comments / Leave a comment">4 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/25/nokia"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/25/nokia"
+  dc:title="Nokia"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/207" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">24</span>
+        </div>
+<div class="bPost">
+          <span class="title">Gnome stuff</span>
+
+                        <p>Some new <a href="http://live.gnome.org/ThreePointZero" title="Topaz">Topaz</a> <a href="http://browserbookapp.sourceforge.net/topaz/" title="mockups">mockups</a> were created, showing another (more radical IMHO) view on what Gnome3 should become, like <a href="http://software.xkopex.com/gnome/gnome3.html" title="these">these</a> before. If you want to comment on them, <a href="http://mail.gnome.org/archives/desktop-devel-list/2005-May/msg00126.html" title="desktop-devel">desktop-devel</a> is the place to be.</p>
+
+<p>Since today, I got write access to Gnome CVS, mostly thanks to <a href="http://pvanhoof.be/" title="Philip">Philip</a> and <a href="http://ronald.bitfreak.net/" title="Ronald">Ronald</a>. Thank you guys! Just got the documentation building of <a href="http://cvs.gnome.org/viewcvs/asyncworker/" title="asyncworker">asyncworker</a> working (I hope at least ;-)), patch submitted (edit: and committed. My first one :-)). I'll import my first work on OPluginManager somewhere later this week.</p>
+
+<p>And I may not forget to send out some emails to find some holiday job. As I'm a lazy bum, I still didn't send them :oops:</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikkeb5e7.html?cat=15" title="Browse category">Life</a>, <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="24/gnome_stuff.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="24/gnome_stuff.html#comments" title="Display comments / Leave a comment">4 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/24/gnome_stuff"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/24/gnome_stuff"
+  dc:title="Gnome stuff"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/206" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">24</span>
+        </div>
+<div class="bPost">
+          <span class="title">OModuleLoader</span>
+
+                        <p>It looks like I have to release the current code I got for OModuleLoader/OPluginManager. Well, <a href="http://www.eikke.com/files/OModuleLoader-0.1.1.tar.bz2" title="here">here</a> it is. Still needs a lot of love, but hey ;-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="24/omoduleloader.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="24/omoduleloader.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/24/omoduleloader"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/24/omoduleloader"
+  dc:title="OModuleLoader"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/204" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">22</span>
+        </div>
+<div class="bPost">
+          <span class="title">C preprocessor magic</span>
+
+                        <p>Did you ever run in this situation where you need to #define some string, and use it both as a function name and as a string? As you might have discovered it is not easily possible to do this.</p>
+
+<p>I ran into this problem today, and found out you got to solve it using 2 extra macro's (thanks to <a href="http://www.ugcs.caltech.edu/info/gcc/cpp_3.html" title="this page">this page</a>):</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+#define xstr(s) str(s)
+#define str(s) #s
+
+#define FOO foobar
+
+void FOO() {
+        printf("In %s\n" xstr(FOO));
+}
+
+int main() {
+        /* This won't work because FOO is no string */
+        /* printf("FOO is \"%s\"\n", FOO); */
+        printf("FOO is \"%s\"\n", xstr(FOO));
+        FOO();
+        return 0;
+}</code></pre>
+
+<p>which gives the desired result:</p>
+<pre>FOO is "foobar"
+In foobar</pre>
+<p>and inspecting the output of nm, the function is correctly called "foobar", not "FOO". Jay!</p>
+
+<p>[edit] Once more I just got blown away by what glib offers you. G_STRINGIFY is defined by default when you include glib.h (in glib/gmacros.h more precisely).</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="22/c_preprocessor_magic.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="22/c_preprocessor_magic.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/22/c_preprocessor_magic"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/22/c_preprocessor_magic"
+  dc:title="C preprocessor magic"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/201" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">21</span>
+        </div>
+<div class="bPost">
+          <span class="title">GModuleLoader</span>
+
+                        <p>After <a href="http://www.pvanhoof.be/" title="Philip">Philip</a> was talking about his <a href="http://cvs.gnome.org/viewcvs/asyncworker" title="GQueueThread/ASyncWorker">GQueueThread/ASyncWorker</a> on #gnome-nl, I was tempted to write some Glib-extension too, and so I did.</p>
+
+<p>You might remember the extra exercise in my <a href="19/gmodules_and_vtables.html" title="article">article</a> on GModules and vtables, about loading all modules in the current directory and use them. Well, I created a generic object to handle this, because it's a functionality needed quite frequently in plugin-based programs.</p>
+
+<p>I called this "GModuleLoader" ;-)</p>
+
+<p>Here's a sample client application, loading 2 modules:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "g-module-loader.h"
+#include "g-module-loader-module.h"
+
+gint main(gint argc, gchar *argv[]) {
+        GModuleLoader *l = NULL;
+        guint cnt = 0;
+        GPtrArray *modules = NULL;
+
+        g_type_init();
+
+        /* Create a new GModuleLoader */
+        l = (GModuleLoader *) g_module_loader_new();
+        g_assert(l != NULL);
+
+        /* Load all modules in ".libs", with "simple-test" as data.
+         * We do not want any error reporting (yet) */
+        g_module_loader_load(l, ".libs", "simple-test", NULL);
+
+        g_print("\n\nLooping through all loaded modules, printing the data\n");
+        /* Get the list of all modules */
+        modules = g_module_loader_get_modules(l);
+        if(modules == NULL) {
+                g_object_unref(l);
+                g_error("No modules in list, aborting");
+                return 1;
+        }
+        
+        /* Loop */
+        for(cnt = 0; cnt &lt; modules-&gt;len; cnt++) {
+                GModuleLoaderModule *m = NULL;
+                gchar *data = NULL;
+                GModule *mod = NULL;
+
+                /* Get the GModuleLoaderModule */
+                m = (GModuleLoaderModule *) g_ptr_array_index(modules, cnt);
+                /* Normally we don't ever need the real GModule,
+                 * because we use a vtable with all tables we need as returned
+                 * data from the init function */
+                mod = g_module_loader_module_get_module(m);
+                if(m == NULL) {
+                        g_error("Module in a GModuleLoaderModule should never be null");
+                        return 1;
+                }
+                /* This is the data returned by the module init function.
+                 * Most times this will be a vtable/struct */
+                data = g_module_loader_module_get_module_data(m);
+
+                g_print("%s:\t%s\n", g_module_name(mod), data);
+        }
+        g_print("\n");
+        
+        /* Clean up */
+        g_object_unref(l);
+        
+        return 0;
+}</code></pre><p>I hope this is understandable :-)</p>
+
+<p>Here's the code for "module1.c", the source for libmodule1.so. "module2.c" is almost the same: s/M1/M2 and s/module1/module2:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+/* This is a fixed name, the module init function
+ * It takes a pointer (given by the client code)
+ * and can return some data (most of the time a vtable/struct, we keep it 
+ * simple here) */
+G_MODULE_EXPORT gpointer module_get_data(gpointer data) {
+        gchar *s = NULL;
+        
+        s = (gchar *) data;
+        if(s != NULL) {
+                g_print("\n[M1] Module1 loaded with data \"%s\"\n\n", s);
+        }
+
+        return g_strdup("[M1] module1data");
+}
+
+/* Same thing, fixed name.
+ * This function takes a pointer to the data given by module_get_data
+ * and is called when this data should be freed */
+G_MODULE_EXPORT void module_free_data(gpointer data) {
+        gchar *s = NULL;
+        
+        s = (gchar *) data;
+        if(s != NULL) {
+                g_print("\n[M1] Freeing module1 data \"%s\"\n\n", s);
+                g_free(data);
+        }
+
+        return;
+}</code></pre>
+
+<p>As you can see I'm using fixed names in the plugins, I don't think there's any other way to do this kind of things. None of these 2 functions are required though.</p>
+
+<p>Here's the output of the test application:</p>
+<pre># ./simple-test
+** (process:24094): DEBUG: Loading all modules in .libs, suffix is so
+** (process:24094): DEBUG: Suffix for .libs/libmodule1.so is so, loading module
+** (process:24094): DEBUG: Loading data for .libs/libmodule1.so
+
+[M1] Module1 loaded with data "simple-test"
+
+** (process:24094): DEBUG: Module .libs/libmodule1.so is valid, adding
+** (process:24094): DEBUG: Suffix for .libs/libmodule2.so is so, loading module
+** (process:24094): DEBUG: Loading data for .libs/libmodule2.so
+
+[M2] Module2 loaded with data "simple-test"
+
+** (process:24094): DEBUG: Module .libs/libmodule2.so is valid, adding
+
+
+Looping through all loaded modules, printing the data
+.libs/libmodule1.so:    [M1] module1data
+.libs/libmodule2.so:    [M2] module2data
+
+** (process:24094): DEBUG: Deleting 2 modules
+** (process:24094): DEBUG: Freeing data for .libs/libmodule1.so
+
+[M1] Freeing module1 data "[M1] module1data"
+
+** (process:24094): DEBUG: Closing module .libs/libmodule1.so
+** (process:24094): DEBUG: Freeing data for .libs/libmodule2.so
+
+[M2] Freeing module2 data "[M2] module2data"
+
+** (process:24094): DEBUG: Closing module .libs/libmodule2.so
+</pre>
+
+<p>It should be fairly easy to follow all steps, find out the module_get_data and module_free_data calls, etc.</p>
+
+<p>It's working fairly well now, I'll try to enhance it some more, test it better and document it, then maybe I'll send some email to the Glib list ;-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="21/gmoduleloader.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="21/gmoduleloader.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/21/gmoduleloader"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/21/gmoduleloader"
+  dc:title="GModuleLoader"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/199" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">19</span>
+        </div>
+<div class="bPost">
+          <span class="title">GModules and vtables</span>
+
+                        <p>After the <a href="18/gmodules_are_fun.html" title="article">article</a> I posted yesterday on GModules, I just wrote some sample code using a vtable to look up functions, which makes module handling much easier.</p>
+
+<p>I guess we better go straight to the code:</p>
+
+<p>First we need to define some structure that represents our vtable. I did this in a common header file, vtable-common.h:</p>
+<pre><code>#ifndef _VTABLE_COMMON_H
+#define _VTABLE_COMMON_H
+
+#include &lt;glib.h&gt;
+
+typedef void (* voidvoidfunc) (void);
+typedef gint (* intvoidfunc) (void);
+typedef void (* voidstringfunc) (gchar *s);
+typedef gboolean (* boolpstringfunc) (gchar **ps);
+/* This function will demonstrate NULL function pointers */
+typedef void (* foofunc) (void);
+
+typedef struct VtableTest {
+        voidvoidfunc funcone;
+        intvoidfunc functwo;
+        voidstringfunc functhree;
+        boolpstringfunc funcfour;
+        foofunc funcfive;
+} VtableTest;
+
+/* Module init function */
+typedef VtableTest * (* VtableTestInit) (void);
+
+#endif</code></pre>
+<p>First we define typedefs for all function prototypes we want in our vtable, then we define the prototype of a module init function.</p>
+
+<p>This may look a bit strange, let's take a look at the module code (in vtable-module.c) to see what we can do with this:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "vtable-common.h"
+
+/* Our vtable function implementations */
+static void one() {
+        g_print("[M] Function 1\n");
+}
+
+static gint two() {
+        g_print("[M] Function 2\n");
+        return 2;
+}
+
+static void three(gchar *s) {
+        g_print("[M] Function 3: %s\n", s);
+}
+
+static gboolean four(gchar **s) {
+        g_print("[M] Function 4\n");
+        *s = g_strdup("four");
+        return TRUE;
+}
+
+/* Our function table.
+ * As you can see, we put functions in there as if they're normal variables */
+static VtableTest table = {
+        one,
+        two,
+        three,
+        four,
+        /* This module does not implement funcfive */
+        NULL
+};
+
+/* This is the module init function.
+ * It's a "VtableTestInit" function, as defined in vtable-common.h */
+G_MODULE_EXPORT VtableTest * vtable_module_init() {
+        g_debug("[M] Initializing module");
+        /* Of course you can do a lot in this function,
+         * we don't need to do anything in this sample */
+        /* Return a reference to the function table */
+        return &amp;table;
+}</code></pre><p>The comments in the code should explain every step pretty well.<br />
+As you can see we only export one function, vtable_module_init. This function got a fixed name (so we should define this name in our API). It returns a pointer to a vtable of type VtableTest, which includes pointers to all function implementations.</p>
+
+<p>Last but not least is the main code, in vtable-main.c:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "vtable-common.h"
+
+gint main(gint argc, gchar *argv[]) {
+        /* Same handles as yesterday */
+        GModule *module = NULL;
+        VtableTest *moduletable = NULL;
+        gchar *modulepath = NULL, *dir = NULL;
+        VtableTestInit moduleinitfunc = NULL;
+        /* Function value */
+        gint two = 0;
+        gboolean fourb = FALSE;
+        gchar *fours = NULL;
+        
+        /* Same stuff as yesterday */
+        if(g_module_supported() == FALSE)
+                g_error("No module support");
+
+        dir = g_get_current_dir();
+        modulepath = g_module_build_path((const gchar *) dir, "vtabletestmodule");
+        g_debug("Module path: %s", modulepath);
+        module = g_module_open(modulepath, G_MODULE_BIND_LAZY);
+        g_free(dir);
+        g_free(modulepath);
+        if(module == NULL)
+                g_error("Unable to load module");
+
+        /* We need to lookup one function, which inits our vtable */
+        if(g_module_symbol(module, "vtable_module_init", (gpointer *) &amp;moduleinitfunc) == FALSE) {
+                g_error("Unable to get reference to the module init function: %s", g_module_error());
+        }
+
+        /* Get a reference to the module function table */
+        moduletable = moduleinitfunc();
+
+        /* Run all our functions, providing parameters or fetching return
+         * values where necessary */
+        if(moduletable->funcone != NULL) {
+                g_debug("Running module funcone");
+                moduletable->funcone();
+        }
+        else {
+                g_warning("Funcone is NULL");
+        }
+
+        if(moduletable->functwo != NULL) {
+                g_debug("Running module functwo");
+                two = moduletable->functwo();
+                g_debug("functwo returned %d", two);
+        }
+        else {
+                g_warning("Functwo is NULL");
+        }
+
+        if(moduletable->functhree != NULL) {
+                g_debug("Running module functhree");
+                moduletable->functhree("vtable-module-test");
+        }
+        else {
+                g_warning("Functhree is NULL");
+        }
+
+        if(moduletable->funcfour != NULL) {
+                g_debug("Running module funcfour");
+                fourb = moduletable->funcfour(&amp;fours);
+                g_debug("funcfour returned \"%s\", string value is \"%s\"", fourb == TRUE? "true" : "false", fours);
+        }
+        else {
+                g_warning("Funcfour is NULL");
+        }
+
+        if(moduletable->funcfive != NULL) {
+                g_debug("Running module funcfive");
+                moduletable->funcfive();
+        }
+        else {
+                g_warning("Funcfive is NULL");
+        }
+
+        /* As yesterday, close the module */
+        if(g_module_close(module) == FALSE) {
+                g_error("Unable to close module: %s", g_module_error());
+        }
+
+        return 0;
+}</code></pre><p>These are the steps we take:</p>
+<ul><li>Load the module (see the previous article for more information on this)</li>
+<li>Look up one symbol, "vtable_init_module". As mentioned before, this is the fixed name symbol that should be exported from our module.</li>
+<li>run "vtable_module_init", so we get a reference to the module's vtable</li>
+<li>Now we can use all functions refered to in the vtable. Make sure you always check for NULL pointers, or your application will crash. Even if your API/documentation states a module author <em>must</em> implement all vtable functions, checks don't hurt :-) Notice we call the functions using moduletable->foofunc(), so the vtable members are really normal function pointers, nothing fancy here.</li>
+<li>We clean up by closing the module</li></ul>
+
+<p>You can compile everything with this simple Makefile (yes I know it's a bad one):</p>
+<pre><code>default: main libvtabletestmodule.so
+all: default
+
+main: vtable-main.c vtable-common.h
+	gcc -o main -g `pkg-config --cflags --libs glib-2.0 gmodule-2.0` vtable-main.c
+
+libvtabletestmodule.so: vtable-module.c vtable-common.h
+	gcc -o libvtabletestmodule.so -g -shared `pkg-config --cflags --libs glib-2.0 gmodule-2.0` vtable-module.c</code></pre><p>or execute the commands by hand, of course.</p>
+
+<p>Here's the output:</p>
+<pre>** (process:16338): DEBUG: Module path: /home/foo/bar/vtable/libvtabletestmodule.so
+** (process:16338): DEBUG: [M] Initializing module
+** (process:16338): DEBUG: Running module funcone
+[M] Function 1
+** (process:16338): DEBUG: Running module functwo
+[M] Function 2
+** (process:16338): DEBUG: functwo returned 2
+** (process:16338): DEBUG: Running module functhree
+[M] Function 3: vtable-module-test
+** (process:16338): DEBUG: Running module funcfour
+[M] Function 4
+** (process:16338): DEBUG: funcfour returned "true", string value is "four"
+
+** (process:16338): WARNING **: Funcfive is NULL</pre>
+
+<p>As you can see, all this is quite logical and easy to write once you figure out how to. The provided functionality can be very useful though.<br />
+Notice thanks to glib, the code presented here should compile and run under Linux, Solaris and all other supported platforms (yes, even on Windows using DLL's) without any code change.</p>
+
+<p>A little exercise for the reader: currently we got the module name "vtabletestmodule" hardcoded in vtable-main.c. What to do if we have several VtableTest implementations, e.g. vtabletestmodule1 and vtabletestmodule2? We could loop through all files in ".", find out whether they're a valid module (ie try to load them), if they're a valid module, try to figure out whether it exports "vtable_module_init", if that's the case, get a reference to the module's vtable, and use it. This is eg the way Gaim loads all it's plugins (although the module files aren't stored in "." of course). It's not too difficult to implement this, but the result is quite impressive too, so give it a try :-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="19/gmodules_and_vtables.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="19/gmodules_and_vtables.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables"
+  dc:title="GModules and vtables"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/193" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">18</span>
+        </div>
+<div class="bPost">
+          <span class="title">GModules are fun</span>
+
+                        <p><a href="http://developer.gnome.org/doc/API/2.0/glib/" title="Glib">Glib</a>'s <a href="http://developer.gnome.org/doc/API/2.0/glib/glib-Dynamic-Loading-of-Modules.html" title="GModules">GModules</a> are fun :-) These functions provide a braindead interface to modular (think "plug-in based") programming. I wrote some testing code today (read the API a year ago or so but never played with it), here's a short introduction.</p>
+
+<p>When writing module based applications there are mainly 2 parts: the modules, and the application using them. So we'll have to write these 2 things.</p>
+
+<p>Getting started with the module is the easiest part:</p>
+
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+G_MODULE_EXPORT void m_helloworld() {
+        g_print("Hello modular world!\n");
+}</code></pre>
+
+<p>This code is pretty straight-forward. The only "strange" thing is G_MODULE_EXPORT, a platform-independent macro telling the compiler/linker to export the function.</p>
+
+<p>Then comes the "client" application, a little more difficult. Comments inline:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+/* A prototype of the function pointer we'll use */
+/* void function(void) */
+typedef void (*HelloWorldFunc) (void);
+
+gint main(gint argc, gchar *argv[]) {
+        /* We need:
+         * - A handle to our module
+         * - A pointer to the function we'll import
+         * - Some helper strings */
+        GModule *module = NULL;
+        HelloWorldFunc hello = NULL;
+        gchar *module_path = NULL, *curr = NULL;
+
+        /* Check whether glib is compiled with module support */
+        if(g_module_supported() == FALSE) {
+                g_error("Modules not supported :(");
+                return 1;
+        }
+        
+        /* We need to figure out the path to our module. In our test case, this
+         * is ".", so we want the current dir. */
+        curr = g_get_current_dir();
+        /* Create the path to the module. This function does quite a lot of
+         * of things, check the GModule API. */
+        module_path = g_module_build_path((const gchar *) curr, "module");
+        /* Don't we love debugging? */
+        g_debug("Module path: %s", module_path);
+
+        /* Finally we're able to open the module. We want lazy symbol resolving.
+         * This means we only want a symbol to be resolved if we request it.
+         * Once more, see the API for more information. */
+        module = g_module_open(module_path, G_MODULE_BIND_LAZY);
+
+        /* Get rid of those helper strings */
+        g_free(module_path);
+        g_free(curr);
+
+        /* Check whether the module was loaded successfully */
+        if(module == NULL) {
+                g_error("Unable to load module");
+                return 1;
+        }
+
+        /* Load the symbol and assign it to our function pointer. 
+         * Check for errors */
+        if(g_module_symbol(module, "m_helloworld", (gpointer *) &amp;hello) == FALSE) {
+                g_error("Unable to get function reference: %s", g_module_error());
+                return 1;
+        }
+
+        /* Now we can call our funtion.
+         * As you can see, we can call it as if it's a normal function.
+         * Don't we love function pointers? */
+        hello();
+
+        /* We're nice citizens and close all references when we leave */
+        if(g_module_close(module) == FALSE) {
+                g_error("Unable to close module: %s", g_module_error());
+                return 1;
+        }
+
+        return 0;
+}</code></pre><p>(this looks like a lot of code (well...) but if you strip all comments and debugging stuff/checks, you'll only have 10 lines or so)</p>
+
+<p>Should be quite easy to understand too.</p>
+
+<p>Now it's compile time. Of course, in a real-world situation, we'd use autotools to compile our libraries, we'd have a libtoolized library etc etc etc. Here we'll do it in the quick-and-dirty way:</p>
+
+<pre># gcc -o libmodule.so -shared `pkg-config --libs --cflags glib-2.0 gmodule-2.0` module.c
+# gcc -o main `pkg-config --libs --cflags glib-2.0 gmodule-2.0` main.c
+# ls
+libmodule.so  main  main.c  module.c
+# ./main
+** (process:26533): DEBUG: Module path: /home/foo/bar/libmodule.so
+Hello modular world!</pre>
+
+<p>Loading all these symbols by hand is a boring task, so most of the time you'll create some API using vtables to make your life easier. More on this later (got to study now ;-) :|)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="18/gmodules_are_fun.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="18/gmodules_are_fun.html#comments" title="Display comments / Leave a comment">3 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/18/gmodules_are_fun"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/18/gmodules_are_fun"
+  dc:title="GModules are fun"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/192" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">18</span>
+        </div>
+<div class="bPost">
+          <span class="title">Portage on Windows</span>
+
+                        <p>Maybe one day we'll be able to get lots of *nix software running under Windows using <a href="http://www.gentoo.org/" title="Gentoo">Gentoo</a>'s Portage. Read <a href="http://www.osnews.com/story.php?news_id=10616" title="this">this</a>.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikkeb5e7.html?cat=15" title="Browse category">Life</a></strong><a href="18/portage_on_windows.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="18/portage_on_windows.html#comments" title="Display comments / Leave a comment">7 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/18/portage_on_windows"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/18/portage_on_windows"
+  dc:title="Portage on Windows"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/191" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">17</span>
+        </div>
+<div class="bPost">
+          <span class="title">Sysstats.sh</span>
+
+                        <p>I wrote a little Bash script this morning, which gives a quick overview of your system.<br />
+As mentioned in the help text, this can be very usefull for server administrators, eg allowing you to let an overview be sent to your mailbox every 24h using a cronjob.</p>
+
+<p>This is a sample of the current output:</p>
+<pre>================================================================
+* System statistics for:        foo.baar.be
+* Generated on:                 Tue May 17 15:00:49 CEST 2005
+* Running as:                   root
+
+=================== Uptime =====================================
+* Uptime:                       4 days, 04:37:29
+* High score:                   151 days, 19:15:18
+* Load average:                 0.32 0.24 0.22
+
+=================== Users ======================================
+* Active users:                 2
+* User information
+        USER     TTY        LOGIN@   IDLE   JCPU   PCPU WHAT
+        someone pts/0     12:15    2.00s  0.62s  0.05s sshd: ntrangez [priv]
+        someone pts/1     13:30    5:19   1.17s  0.05s sshd: ntrangez [priv]
+
+=================== Tasks ======================================
+* Number of running tasks:      62
+* Running programs:
+agetty          events/0        kjournald       lockd           portmap         sh
+aio/0           fcron           kseriod         mysqld          ps              sshd
+apache2         init            ksoftirqd/0     mysqld_safe     rpc.mountd      su
+bash            kblockd/0       kswapd0         nfsd            rpc.statd       syslog-ng
+boa             khelper         kthread         pdflush         rpciod/0        uptimed
+
+* CPU load:                     2%
+* Process state:
+        Running:                1
+        Sleeping:               60
+        Zombie:                 0
+        Stopped:                0
+
+=================== Networking ================================
+* Routing table:
+        Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+        192.168.2.0     wifi.vtk.ugent. 255.255.255.0   UG    0      0        0 eth0
+        192.168.1.0     *               255.255.255.0   U     0      0        0 eth0
+        loopback        webvtk.vtk.ugen 255.0.0.0       UG    0      0        0 lo
+        default         fire.vtk.ugent. 0.0.0.0         UG    0      0        0 eth0
+
+=================== Hard Disc =================================
+* Disk Information:
+        Filesystem            Size  Used Avail Use% Mounted on
+        /dev/hdc4             4.5G  3.2G  1.1G  75% /
+        /dev/hdc5              14G   11G  2.4G  82% /var/www
+
+* Mounts:
+        /dev/hdc4 on / type ext3 (rw,noatime)
+        none on /proc type proc (rw)
+        none on /sys type sysfs (rw)
+        none on /dev type ramfs (rw)
+        none on /dev/pts type devpts (rw)
+        /dev/hdc5 on /var/www type ext3 (rw,noexec,nosuid,nodev,noatime,acl)
+        none on /dev/shm type tmpfs (rw)
+        nfsd on /proc/fs/nfs type nfsd (rw)
+
+=================== MD5Sum Check ==============================
+* Checking MD5 Sums
+        /etc/passwd:                            [OK]
+        /etc/shadow:                            [OK]
+        /etc/group:                             [OK]
+
+===============================================================
+* Brought to you by Ikke - <a href="http://www.eikke.com/">http://www.eikke.com</a></pre>
+
+<p>A TODO is included in the script source.</p>
+
+<p>I made the script available <a href="http://code.eikke.com/index.php?dir=bash/&amp;file=sysstats.sh" title="here">here</a> (enscript version <a href="http://code.eikke.com/index.php?dir=bash/&amp;file=sysstats.sh.html" title="here">here</a>). If you use it, please let me know something :-) Or even better, if you add more support, please send me a patch so everyone can make use of it :-)</p>
+
+<p>It has no special dependencies, next to Bash and some standard utilities like wc, bc, tail, md5sum, awk and grep.<br />
+The "record uptime" is only displayed if you got uprecords (/usr/bin/uprecords) installed.<br />
+Make sure you check the md5sum part, can be very usefull :-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikke6c5d.html?cat=18" title="Browse category">Networks</a>, <a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="17/sysstats_sh.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="17/sysstats_sh.html#comments" title="Display comments / Leave a comment">6 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/17/sysstats_sh"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/17/sysstats_sh"
+  dc:title="Sysstats.sh"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/189" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">16</span>
+        </div>
+<div class="bPost">
+          <span class="title">Anjuta 2</span>
+
+                        <p>A 2.x alpha release of <a href="http://www.anjuta.org/" title="Anjuta">Anjuta</a>, the GTK/Gnome-oriented IDE, has been released.<br />
+I must admit the <a href="http://www.anjuta.org/anjuta.php?page=screenshots" title="screenshots">screenshots</a> and <a href="http://sourceforge.net/forum/forum.php?forum_id=466744" title="features">features</a> look nice: integrated debugger (GDB based), glade3 support, GObject class building wizard, member completion,...</p>
+
+<p>Maybe time to give it another test drive. Although I doubt it can beat gVim :-) What do you think, <a href="../../../realnitro.html" title="Realnitro">Realnitro</a>?</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="16/anjuta_2.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="16/anjuta_2.html#comments" title="Display comments / Leave a comment">4 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/16/anjuta_2"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/16/anjuta_2"
+  dc:title="Anjuta 2"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/188" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">15</span>
+        </div>
+<div class="bPost">
+          <span class="title">ContactFS working</span>
+
+                        <p><center><a href="http://gallery.eikke.com/albums/userpics/Xnest-ContactFS.png" target="_blank"><img src="http://gallery.eikke.com/albums/userpics/normal_Xnest-ContactFS.png" title="ContactFS in Nautilus" /></a><br />
+(Thumbnail is link to original image)</center></p>
+
+<p>Needs no comment I guess :-)</p>
+
+<p>Still some problems left:</p><ul><li>Files with spaces in the filename (ie almost every file in this case) don't work :-( This shouldn't be too hard to solve though (edit: fixed)</li>
+<li>Read-only</li>
+<li>No VCard as output. This can be easily solved though (edit: fixed)</li>
+<li>The init func creating a Node tree from your contacts is blocking, which is bad</li>
+<li>The Icon issue. Looks like vcards can contain picture information, so I could just write a vcard-thumbnailer and add it to Nautilus.</li></ul>
+
+<p>Now guess what the problem was... Not my code, but the fact I use autotools to compile the thing. Autotools seems to add some fancy compiler flags which made the module crashy as hell, just using "gcc -Wall $(pkg-config --cflags --libs gnome-vfs-module-2.0 libebook-1.2) -shared -fPIC ContactFS.c -o libContactFS.so" worked fine. Guess I'll have to tweak my Makefile.am somehow. (edit: this wasn't autotools fault, but (of course) mine. I added some flags to Makefile.am I got from an official GnomeVFS module's Makefile.am, looks like those weren't nice)</p>
+
+<p>Huge thanks to "gicmo" for all the help.</p>
+
+<p>Oh, and XNest rocks :-)</p>
+
+<p>[update]<br />
+<center><a href="http://gallery.eikke.com/albums/userpics/Xnest-ContactFS2.png" target="_blank"><img src="http://gallery.eikke.com/albums/userpics/normal_Xnest-ContactFS2.png" title="ContactFS with VCard support" /></a></center></p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="15/contactfs_working.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="15/contactfs_working.html#comments" title="Display comments / Leave a comment">2 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_working"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_working"
+  dc:title="ContactFS working"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/187" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">15</span>
+        </div>
+<div class="bPost">
+          <span class="title">ContactFS progress</span>
+
+                        <p><center><img src="http://gallery.eikke.com/albums/userpics/ContactFS2.png" title="ContactFS 2" /></center></p>
+
+<p>Screenshot shows some progress I made with ContactFS. If I "browse" to contact:/, I get 2 "directories", Personal and Test, which are my 2 Evolution address books. I can "cd" into "Test", "ls" all "files" (contacts) in there, and if I try to "cat" one of them, I get some information on that contact (just plaintext for now, this should become a FOAF or VCard formatted string).</p>
+
+<p>In GnomeVFS' test-shell application the module works fine, but if I try to open contact: in Nautilus, it crashes. Maybe I should send an email to Alex to beg for a little help here ;-)<br />
+I'll also need his help on how to set file thumbnails once it works in Nautilus (the actual file is just plain text, but I'd like to have the contact's picture as icon in Nautilus, or if no picture is set, /usr/share/pixmaps/nobody.png).</p>
+
+<p>Moving "files" between "directories" would be nice too, but I don't know whether EDS allows writing, need to figure that out.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="15/contactfs_progress.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="15/contactfs_progress.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_progress"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/15/contactfs_progress"
+  dc:title="ContactFS progress"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/185" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">13</span>
+        </div>
+<div class="bPost">
+          <span class="title">ContactFS</span>
+
+                        <p>I got the insane (well, not really ;-)) idea today to write a GnomeVFS module that allows you to browse your Evolution EDS contacts using any GnomeVFS-capable application, like Nautilus, as a Proof Of Concept. This is the first GnomeVFS module I write.</p>
+
+<p>Started working on it, and I got a basic module working. It does not get any information from EDS yet, only contains one "file" named JohnDoe, can be very instable,... but well ;-)</p>
+
+<p><a href="http://gallery.eikke.com/displayimage.php?album=lastup&amp;cat=0&amp;pos=0" title="Here">Here</a>'s a little screenshot:<br />
+<center><img src="http://gallery.eikke.com/albums/userpics/contactfs1part.png" title="ContactFS 1" /></center></p>
+
+<p>Currently the "contact files" only have "test" as content, this <em>should</em> become a VCard string, or maybe a FOAF document.</p>
+
+<p>Other things to do:</p><ul><li>assign a proper MIME type, so I can take advantage of Evo's "Picture" contact-property (so you see the picture as "icon" of the "file", if this is possible at all).</li>
+<li>assign a proper handler to the "open" action (e.g. open a Mailto: window)</li>
+<li>Fetch real information from Evo, of course</li>
+<li>Make it stable (the current tree contains dead pointers, I need to learn using GNode's) and thread-safe</li>
+<li>...</li></ul>
+
+<p>Maybe this won't be really <em>usefull</em>, but someone suggested to have some VFS module for Soylent too, so I'm gaining some experience here :-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="13/contactfs.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="13/contactfs.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/13/contactfs"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/13/contactfs"
+  dc:title="ContactFS"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/183" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">13</span>
+        </div>
+<div class="bPost">
+          <span class="title">Regarding Microsoft</span>
+
+                        <p>Although I'm hardly using any Microsoft software anymore, I still admit they got some great things, like their .Net framework and the corresponding IDE, VS.Net (don't hate me now).<br />
+<a href="http://www.research.microsoft.com/specsharp/" title="This">This</a> could be some great proof of concept/research technology too.</p>
+
+<p>On the other hand: <a href="http://www.osnews.com/story.php?news_id=10577" title="what did they smoke">what did they smoke</a>?</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong><a href="13/regarding_microsoft.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="13/regarding_microsoft.html#comments" title="Display comments / Leave a comment">5 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/13/regarding_microsoft"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/13/regarding_microsoft"
+  dc:title="Regarding Microsoft"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/182" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">12</span>
+        </div>
+<div class="bPost">
+          <span class="title">FeedMerge mostly done</span>
+
+                        <p>JAY!!!! :-D</p>
+
+<p>As I blogged before I've been working on a <a href="http://planetplanet.org/" title="PlanetPlanet">PlanetPlanet</a> implementation in C. I got a basic RSS2 parser working before, but that code was plain ugly.</p>
+
+<p>Now I refactored all code using GObjects (learnt a lot whilst doing this), and it works :-D<br />
+Currently it can parse RSS2 feeds (as many as your memory allows you to ;-)) and combine them into one RSS2 feed. Adding more feed types should be fairly easy.</p>
+
+<p><a href="http://code.eikke.com/index.php?dir=ProjectSoylent/&amp;file=feedmerge-result1.xml" title="This">This</a> is a sample result, and <a href="http://feedvalidator.org/check.cgi?url=http%3A%2F%2Fcode.eikke.com%2Findex.php%3Fdir%3DProjectSoylent%2F%26file%3Dfeedmerge-result1.xml" title="here">here</a> you can see a <a href="http://feedvalidator.org/" title="FeedValidator">FeedValidator</a> validation result. Never mind the encoding issue, that's related to the server settings of the machine I'm hosted on (and I'm no administrator :-().</p>
+
+<p>This is the code I used to generate the feed:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;libxml/tree.h&gt;
+
+#include "src/feedmerge-feed.h"
+#include "src/feedmerge-merge.h"
+
+gint main(gint argc, gchar *argv[]) {
+        FeedMergeFeed *feed1 = NULL, *feed2 = NULL;
+        GSList *feeds = NULL;
+        xmlDoc *doc = NULL;
+
+        g_type_init();
+
+        feed1 = (FeedMergeFeed *) feedmerge_feed_new();
+        feed2 = (FeedMergeFeed *) feedmerge_feed_new();
+
+        feedmerge_feed_fetch_feed(feed1, "http://blog.eikke.com/xmlsrv/rss2.php?blog=1");
+        feedmerge_feed_fetch_feed(feed2, "http://blog.eikke.com/xmlsrv/rss2.php?blog=7");
+
+        feedmerge_feed_parse_document(feed1);
+        feedmerge_feed_parse_document(feed2);
+
+        /* feedmerge_feed_dump(feed2); */
+        feeds = g_slist_append(feeds, feed1);
+        feeds = g_slist_append(feeds, feed2);
+
+        /* output type, GSList containing the feeds, feed title, URI and description */
+        doc = feedmerge_merge_merge(FEEDMERGE_FEED_TYPE_RSS_200, feeds,
+            "Test feed", "http://blog.eikke.com/ikke", "This is a test merged feed");
+
+        g_assert(doc != NULL);
+
+        /* output to stdout */
+        xmlSaveFormatFileEnc("-", doc, "UTF-8", 1);
+
+        xmlFreeDoc(doc);
+
+        g_object_unref(feed1);
+        g_object_unref(feed2);
+        g_slist_free(feeds);
+}</code></pre>
+
+<p>Using gob2 again to write my objects, it's just a pleasure to play with :-) Strong type checking is automagically added etc, just great. I'm eager to see some GObject introspection samples.</p>
+
+<p>Of course what I got now can be further abstracted to something like this:</p>
+<pre><code>xmlDoc *doc = feedmerge_vamerge("http://a.b/feed1.xml", "file:///tmp/feed2.xml",
+    "scp://somehost:/test.xml", "Title", "http://www.eikke.com", "This is a nifty combined feed");</code></pre><p>i.e. using varargs.</p>
+
+<p>Thanks to GnomeVFS I don't have to care where the feed comes from, which is just great.</p>
+
+<p>I had to handle some nasty and stupid bugs while coding this (in my own code, of course) and propably I leak memory at several places too, but well... ;-) We got valgrind :-) And thanks to the GCC people for blessing us with the "-Werror" flag, I love that feature.<br />
+I won't publish the code yet, but maybe it'll get into Soylent (who knows?) so then it'll be in some CVS/SVN/whatever repository.</p>
+
+<p>Regarding Soylent: we're <a href="http://galago.info/wiki/Final_Name" title="looking for a new name">looking for a new name</a>. Please help us out, I can't wait to start doing some real work.</p>
+
+<p>That's it for now.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="12/feedmerge_mostly_done.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="12/feedmerge_mostly_done.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/12/feedmerge_mostly_done"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/12/feedmerge_mostly_done"
+  dc:title="FeedMerge mostly done"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/181" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">7</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://www.opensourcenieuws.nl/index.php/content/view/2258/">MSN Webcam functionality part II and minor coding</a></span>
+
+                        <p>Why didn't I hear about <a href="http://www.jblinux.net/libmimic/" title="this">this</a> any earlier, and why isn't it integrated into <a href="http://gaim.sf.net/" title="Gaim">Gaim</a>?</p>
+
+<p>Oh, for Soylent, I started working on blog feed reading. Currently I got some code that can read an XML feed from any <a href="http://developer.gnome.org/doc/API/2.0/gnome-vfs-2.0/index.html" title="GnomeVFS">GnomeVFS</a> source, and create a <a href="http://www.xmlsoft.org/" title="libxml2">libxml2</a> <a href="http://www.xmlsoft.org/html/libxml-tree.html#xmlDoc" title="xmlDoc">xmlDoc</a> out of it. Although maybe I should use SAX to merge different feeds...<br />
+Using an XSLT sheet to merge feeds would be really cool and clean, but I think it's the hardest way too ;-)<br />
+I tried to document the code well again, it's available <a href="http://code.eikke.com/index.php?dir=ProjectSoylent/&amp;file=xmlread1.c" title="here">here</a>. Can be a nice introduction to GnomeVFS coding :-) (this was my first code using it too ;-))</p>
+
+<p>TODO: add a check to see whether what we pull in is an RSS feed, before loading the whole document, to save bandwidth and memory.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="07/msn_webcam_functionality_part_ii_and_min.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="07/msn_webcam_functionality_part_ii_and_min.html#comments" title="Display comments / Leave a comment">43 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/07/msn_webcam_functionality_part_ii_and_min"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/07/msn_webcam_functionality_part_ii_and_min"
+  dc:title="MSN Webcam functionality part II and minor coding"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/179" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">6</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://code.eikke.com/index.php?dir=ProjectSoylent/">First EDS code</a></span>
+
+                        <p>I started looking into <a href="http://www.gnome.org/projects/evolution" title="evolution">evolution</a>-data-server today, to look what we could use in Project Soylent (actually, I shouldn't blog on it because we don't want any noise on it yet :-)). The result is some code that can dump all your address books, or only dump some of the contacts using a filter string.</p>
+
+<p>Because <em>libebook</em> is very poor documented (unfortunately, even the <a href="http://gnome.org/projects/evolution/developer-doc/libebook/" title="API">API</a> docs aren't complete) I tried to document the code as good as possible. Please review it, let me know when some things are not well documented, or I just make dumb mistakes in the code :-D<br />
+The last version I made is <a href="http://code.eikke.com/index.php?dir=ProjectSoylent/&amp;file=evo-addressbooks-test2.c" title="here">here</a>.</p>
+
+<p>Compile it using<br />
+<code>gcc -o evo-addressbooks-test2 `pkg-config --cflags --libs libbonobo-2.0 libebook-1.2` evo-addressbooks-test2.c</code><br />
+Dump your address books using<br />
+<code>./evo-addressbook-test2</code><br />
+or use a filter string as first argument. Beware: you should Bash-escape the argument!!!<br />
+A sample of this:<br />
+<code>./evo-addressbooks-test2 "(contains \"full_name\" \"John Doe\")"</code><br />
+will list some properties of the entry which has "John Doe" as it's full name.</p>
+
+<p>I hope I'll be able to hack on this some more, and also hope we'll get a good view of what Soylent should become soon :-)<br />
+It'll be a great oportunity to learn some more aspects of <a href="http://www.gnome.org/" title="Gnome">Gnome</a> coding, like <a href="http://www.gtk.org/" title="GTK">GTK</a>/Glade, Bonobo (|-|) and others.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <strong><a href="../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="06/first_eds_code.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="06/first_eds_code.html#comments" title="Display comments / Leave a comment">1 comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/06/first_eds_code"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/06/first_eds_code"
+  dc:title="First EDS code"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/178" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">6</span>
+        </div>
+<div class="bPost">
+          <span class="title">New blog engine and Soylent</span>
+
+                        <p>As I mentioned before, I'd like to start using another blogging engine as soon as possible. <a href="http://www.plogworld.net/" title="Plog">Plog</a> looked nice, but after giving it a test drive I got into some little annoying problems.<br />
+Now the <a href="http://www.b2evolution.net/" title="b2evolution">b2evolution</a> guys seem to prepare a maintainance version, so development hasn't <em>completely</em> stalled.</p>
+
+<p>Currently, the blogs (mine and the others I host) run fine I think, and migrating would be quite a lot of work (existing users and posts, not to mention changes of URI's towards aggregators), so I guess I'll wait some longer, unless someone knows a very good engine I could start using, actively maintained.<br />
+The main "issue" I got is the fact I host multiple blogs. Most engines don't support this...</p>
+
+<p>Project Soylent is getting started, jay :-) Just read something on using <a href="http://www.gnome.org/projects/evolution" title="Evolution">Evolution</a>'s libebook API and FOAF, this will be some fun project to work on B-)</p>
+
+<p>Oh, and please everyone vote for <a href="http://www.davyvandenbremt.be/" title="davyvandenbremt.be">davyvandenbremt.be</a> on <a href="http://www.may1reboot.com/" title="may1reboot.com">may1reboot.com</a>.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="06/new_blog_engine_and_soylent.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="06/new_blog_engine_and_soylent.html#comments" title="Display comments / Leave a comment">4 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/06/new_blog_engine_and_soylent"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/06/new_blog_engine_and_soylent"
+  dc:title="New blog engine and Soylent"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/177" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">4</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://gallery.eikke.com/displayimage.php?album=lastup&amp;cat=0&amp;pos=0">Southpark Character</a></span>
+
+                        <p><center><img src="http://gallery.eikke.com/albums/userpics/ikke.png" title="Southpark" /><br />
+<a href="http://www.planearium2.de/flash/sp-studio-e.html" title="Do">Do</a> <a href="http://planet.nl.gnome.org/" title="what">what</a> <a href="http://planet.gnome.org/" title="others">others</a> <a href="http://planet.freedesktop.org/" title="do">do</a></center><br />
+Maybe I should just use this as my hackergotchi, I'd scare people by using a "real" one ;-)<br />
+<font size="0.1">(PNG version now :-))</font></p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikkeb5e7.html?cat=15" title="Browse category">Life</a></strong><a href="04/southpark_character.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="04/southpark_character.html#comments" title="Display comments / Leave a comment">4 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/04/southpark_character"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/04/southpark_character"
+  dc:title="Southpark Character"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/172" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">2</span>
+        </div>
+<div class="bPost">
+          <span class="title"><a href="http://sourceforge.net/mailarchive/forum.php?thread_id=7163746&amp;forum_id=9980">Why</a></span>
+
+                        <p><a href="http://gnometux.blogspot.com/" title="Karel">Karel</a>, why oh why did you <a href="http://sourceforge.net/mailarchive/forum.php?thread_id=7163746&amp;forum_id=9980" title="this">this</a>? People seem not to understand I'm not intending to run MSN7 as my default Messenger at all, just trying to solve some little annoyance? Do they actually read what I wrote?</p>
+
+<p>Just tried <a href="http://amsn.sf.net/" title="amsn-cvs">amsn-cvs</a>. It crashed when I tried to start a normal conversation with someone, then worked fine. I did not try videochat support yet though, none of my contacts owning a webcam came online untill now.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke6c5d.html?cat=18" title="Browse category">Networks</a>, <strong><a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a></strong><a href="02/why.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="02/why.html#comments" title="Display comments / Leave a comment">3 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/02/why"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/02/why"
+  dc:title="Why"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/168" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">1</span>
+        </div>
+<div class="bPost">
+          <span class="title">MSN7 under Linux</span>
+
+                        <p><center><a href="http://gallery.eikke.com/albums/userpics/Wine-MSN7.png" target="_blank"><img src="http://gallery.eikke.com/albums/userpics/normal_Wine-MSN7.png" title="MSN7" /></a><br />
+(thumbnail is link to full size screenshot)</center></p>
+
+<p>I want MSN Video Chat (receipt) working. Under Linux. As soon as possible. So I tried getting MSN Messenger working under <a href="http://www.winehq.org/" title="Wine">Wine</a>.</p>
+
+<p>As you can see, it works. But only a little. This is the bloated version 7 of the official client, and Wine seems to be unable to handle it properly. It's using non-standard windows (actually, it are clipped standard windows) etc. I did not try the webcam feature either.</p>
+
+<p>Has anyone got an installer for MSN Messenger 6.x for Windows 98/Me? I'd like to try that one too, but only "beta" version 7 is available on the official website. A commercial software vendor only offering beta versions of it's software to the users... :roll:</p>
+
+<p>Maybe I should just run a stripped Windows session under that great version 5 of VMWare Workstation as <a href="http://weblog.lambda1.be/" title="RubenV">RubenV</a> just suggested, and take the easy way ;-) Or try <a href="http://amsn.sf.net/" title="aMsn">aMsn</a> which should get videochat support soon (it's already in CVS I heard, <a href="http://gnometux.blogspot.com/" title="Scapor">Scapor</a>?), but I hate that <a href="http://tcl.sourceforge.net/" title="Tcl/Tk">Tcl/Tk</a> interface :-(</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="../../../ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="../../../ikke6c5d.html?cat=18" title="Browse category">Networks</a>, <a href="../../../ikke8e7f.html?cat=19" title="Browse category">Desktop</a><a href="01/msn7_under_linux.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="01/msn7_under_linux.html#comments" title="Display comments / Leave a comment">14 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/01/msn7_under_linux"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/01/msn7_under_linux"
+  dc:title="MSN7 under Linux"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/166" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../ikke.html">All</a></li>
+<li><a href="../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 434</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../htsrv/logincb86.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2005%2F05%2F%3Fblog%3D5%26amp%3Bm%3D200505%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/05/?blog=5&m=200505&page=1 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:43:02 GMT -->
+</html>

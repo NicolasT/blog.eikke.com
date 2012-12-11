@@ -1,0 +1,878 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&page=1&paged=24 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 20:01:46 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">22</span>
+        </div>
+<div class="bPost">
+          <span class="title">C preprocessor magic</span>
+
+                        <p>Did you ever run in this situation where you need to #define some string, and use it both as a function name and as a string? As you might have discovered it is not easily possible to do this.</p>
+
+<p>I ran into this problem today, and found out you got to solve it using 2 extra macro's (thanks to <a href="http://www.ugcs.caltech.edu/info/gcc/cpp_3.html" title="this page">this page</a>):</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+
+#define xstr(s) str(s)
+#define str(s) #s
+
+#define FOO foobar
+
+void FOO() {
+        printf("In %s\n" xstr(FOO));
+}
+
+int main() {
+        /* This won't work because FOO is no string */
+        /* printf("FOO is \"%s\"\n", FOO); */
+        printf("FOO is \"%s\"\n", xstr(FOO));
+        FOO();
+        return 0;
+}</code></pre>
+
+<p>which gives the desired result:</p>
+<pre>FOO is "foobar"
+In foobar</pre>
+<p>and inspecting the output of nm, the function is correctly called "foobar", not "FOO". Jay!</p>
+
+<p>[edit] Once more I just got blown away by what glib offers you. G_STRINGIFY is defined by default when you include glib.h (in glib/gmacros.h more precisely).</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/05/22/c_preprocessor_magic.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/22/c_preprocessor_magic.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/22/c_preprocessor_magic"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/22/c_preprocessor_magic"
+  dc:title="C preprocessor magic"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/201" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">21</span>
+        </div>
+<div class="bPost">
+          <span class="title">GModuleLoader</span>
+
+                        <p>After <a href="http://www.pvanhoof.be/" title="Philip">Philip</a> was talking about his <a href="http://cvs.gnome.org/viewcvs/asyncworker" title="GQueueThread/ASyncWorker">GQueueThread/ASyncWorker</a> on #gnome-nl, I was tempted to write some Glib-extension too, and so I did.</p>
+
+<p>You might remember the extra exercise in my <a href="ikke/2005/05/19/gmodules_and_vtables.html" title="article">article</a> on GModules and vtables, about loading all modules in the current directory and use them. Well, I created a generic object to handle this, because it's a functionality needed quite frequently in plugin-based programs.</p>
+
+<p>I called this "GModuleLoader" ;-)</p>
+
+<p>Here's a sample client application, loading 2 modules:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "g-module-loader.h"
+#include "g-module-loader-module.h"
+
+gint main(gint argc, gchar *argv[]) {
+        GModuleLoader *l = NULL;
+        guint cnt = 0;
+        GPtrArray *modules = NULL;
+
+        g_type_init();
+
+        /* Create a new GModuleLoader */
+        l = (GModuleLoader *) g_module_loader_new();
+        g_assert(l != NULL);
+
+        /* Load all modules in ".libs", with "simple-test" as data.
+         * We do not want any error reporting (yet) */
+        g_module_loader_load(l, ".libs", "simple-test", NULL);
+
+        g_print("\n\nLooping through all loaded modules, printing the data\n");
+        /* Get the list of all modules */
+        modules = g_module_loader_get_modules(l);
+        if(modules == NULL) {
+                g_object_unref(l);
+                g_error("No modules in list, aborting");
+                return 1;
+        }
+        
+        /* Loop */
+        for(cnt = 0; cnt &lt; modules-&gt;len; cnt++) {
+                GModuleLoaderModule *m = NULL;
+                gchar *data = NULL;
+                GModule *mod = NULL;
+
+                /* Get the GModuleLoaderModule */
+                m = (GModuleLoaderModule *) g_ptr_array_index(modules, cnt);
+                /* Normally we don't ever need the real GModule,
+                 * because we use a vtable with all tables we need as returned
+                 * data from the init function */
+                mod = g_module_loader_module_get_module(m);
+                if(m == NULL) {
+                        g_error("Module in a GModuleLoaderModule should never be null");
+                        return 1;
+                }
+                /* This is the data returned by the module init function.
+                 * Most times this will be a vtable/struct */
+                data = g_module_loader_module_get_module_data(m);
+
+                g_print("%s:\t%s\n", g_module_name(mod), data);
+        }
+        g_print("\n");
+        
+        /* Clean up */
+        g_object_unref(l);
+        
+        return 0;
+}</code></pre><p>I hope this is understandable :-)</p>
+
+<p>Here's the code for "module1.c", the source for libmodule1.so. "module2.c" is almost the same: s/M1/M2 and s/module1/module2:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+/* This is a fixed name, the module init function
+ * It takes a pointer (given by the client code)
+ * and can return some data (most of the time a vtable/struct, we keep it 
+ * simple here) */
+G_MODULE_EXPORT gpointer module_get_data(gpointer data) {
+        gchar *s = NULL;
+        
+        s = (gchar *) data;
+        if(s != NULL) {
+                g_print("\n[M1] Module1 loaded with data \"%s\"\n\n", s);
+        }
+
+        return g_strdup("[M1] module1data");
+}
+
+/* Same thing, fixed name.
+ * This function takes a pointer to the data given by module_get_data
+ * and is called when this data should be freed */
+G_MODULE_EXPORT void module_free_data(gpointer data) {
+        gchar *s = NULL;
+        
+        s = (gchar *) data;
+        if(s != NULL) {
+                g_print("\n[M1] Freeing module1 data \"%s\"\n\n", s);
+                g_free(data);
+        }
+
+        return;
+}</code></pre>
+
+<p>As you can see I'm using fixed names in the plugins, I don't think there's any other way to do this kind of things. None of these 2 functions are required though.</p>
+
+<p>Here's the output of the test application:</p>
+<pre># ./simple-test
+** (process:24094): DEBUG: Loading all modules in .libs, suffix is so
+** (process:24094): DEBUG: Suffix for .libs/libmodule1.so is so, loading module
+** (process:24094): DEBUG: Loading data for .libs/libmodule1.so
+
+[M1] Module1 loaded with data "simple-test"
+
+** (process:24094): DEBUG: Module .libs/libmodule1.so is valid, adding
+** (process:24094): DEBUG: Suffix for .libs/libmodule2.so is so, loading module
+** (process:24094): DEBUG: Loading data for .libs/libmodule2.so
+
+[M2] Module2 loaded with data "simple-test"
+
+** (process:24094): DEBUG: Module .libs/libmodule2.so is valid, adding
+
+
+Looping through all loaded modules, printing the data
+.libs/libmodule1.so:    [M1] module1data
+.libs/libmodule2.so:    [M2] module2data
+
+** (process:24094): DEBUG: Deleting 2 modules
+** (process:24094): DEBUG: Freeing data for .libs/libmodule1.so
+
+[M1] Freeing module1 data "[M1] module1data"
+
+** (process:24094): DEBUG: Closing module .libs/libmodule1.so
+** (process:24094): DEBUG: Freeing data for .libs/libmodule2.so
+
+[M2] Freeing module2 data "[M2] module2data"
+
+** (process:24094): DEBUG: Closing module .libs/libmodule2.so
+</pre>
+
+<p>It should be fairly easy to follow all steps, find out the module_get_data and module_free_data calls, etc.</p>
+
+<p>It's working fairly well now, I'll try to enhance it some more, test it better and document it, then maybe I'll send some email to the Glib list ;-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/05/21/gmoduleloader.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/21/gmoduleloader.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/21/gmoduleloader"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/21/gmoduleloader"
+  dc:title="GModuleLoader"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/199" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">19</span>
+        </div>
+<div class="bPost">
+          <span class="title">GModules and vtables</span>
+
+                        <p>After the <a href="ikke/2005/05/18/gmodules_are_fun.html" title="article">article</a> I posted yesterday on GModules, I just wrote some sample code using a vtable to look up functions, which makes module handling much easier.</p>
+
+<p>I guess we better go straight to the code:</p>
+
+<p>First we need to define some structure that represents our vtable. I did this in a common header file, vtable-common.h:</p>
+<pre><code>#ifndef _VTABLE_COMMON_H
+#define _VTABLE_COMMON_H
+
+#include &lt;glib.h&gt;
+
+typedef void (* voidvoidfunc) (void);
+typedef gint (* intvoidfunc) (void);
+typedef void (* voidstringfunc) (gchar *s);
+typedef gboolean (* boolpstringfunc) (gchar **ps);
+/* This function will demonstrate NULL function pointers */
+typedef void (* foofunc) (void);
+
+typedef struct VtableTest {
+        voidvoidfunc funcone;
+        intvoidfunc functwo;
+        voidstringfunc functhree;
+        boolpstringfunc funcfour;
+        foofunc funcfive;
+} VtableTest;
+
+/* Module init function */
+typedef VtableTest * (* VtableTestInit) (void);
+
+#endif</code></pre>
+<p>First we define typedefs for all function prototypes we want in our vtable, then we define the prototype of a module init function.</p>
+
+<p>This may look a bit strange, let's take a look at the module code (in vtable-module.c) to see what we can do with this:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "vtable-common.h"
+
+/* Our vtable function implementations */
+static void one() {
+        g_print("[M] Function 1\n");
+}
+
+static gint two() {
+        g_print("[M] Function 2\n");
+        return 2;
+}
+
+static void three(gchar *s) {
+        g_print("[M] Function 3: %s\n", s);
+}
+
+static gboolean four(gchar **s) {
+        g_print("[M] Function 4\n");
+        *s = g_strdup("four");
+        return TRUE;
+}
+
+/* Our function table.
+ * As you can see, we put functions in there as if they're normal variables */
+static VtableTest table = {
+        one,
+        two,
+        three,
+        four,
+        /* This module does not implement funcfive */
+        NULL
+};
+
+/* This is the module init function.
+ * It's a "VtableTestInit" function, as defined in vtable-common.h */
+G_MODULE_EXPORT VtableTest * vtable_module_init() {
+        g_debug("[M] Initializing module");
+        /* Of course you can do a lot in this function,
+         * we don't need to do anything in this sample */
+        /* Return a reference to the function table */
+        return &amp;table;
+}</code></pre><p>The comments in the code should explain every step pretty well.<br />
+As you can see we only export one function, vtable_module_init. This function got a fixed name (so we should define this name in our API). It returns a pointer to a vtable of type VtableTest, which includes pointers to all function implementations.</p>
+
+<p>Last but not least is the main code, in vtable-main.c:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "vtable-common.h"
+
+gint main(gint argc, gchar *argv[]) {
+        /* Same handles as yesterday */
+        GModule *module = NULL;
+        VtableTest *moduletable = NULL;
+        gchar *modulepath = NULL, *dir = NULL;
+        VtableTestInit moduleinitfunc = NULL;
+        /* Function value */
+        gint two = 0;
+        gboolean fourb = FALSE;
+        gchar *fours = NULL;
+        
+        /* Same stuff as yesterday */
+        if(g_module_supported() == FALSE)
+                g_error("No module support");
+
+        dir = g_get_current_dir();
+        modulepath = g_module_build_path((const gchar *) dir, "vtabletestmodule");
+        g_debug("Module path: %s", modulepath);
+        module = g_module_open(modulepath, G_MODULE_BIND_LAZY);
+        g_free(dir);
+        g_free(modulepath);
+        if(module == NULL)
+                g_error("Unable to load module");
+
+        /* We need to lookup one function, which inits our vtable */
+        if(g_module_symbol(module, "vtable_module_init", (gpointer *) &amp;moduleinitfunc) == FALSE) {
+                g_error("Unable to get reference to the module init function: %s", g_module_error());
+        }
+
+        /* Get a reference to the module function table */
+        moduletable = moduleinitfunc();
+
+        /* Run all our functions, providing parameters or fetching return
+         * values where necessary */
+        if(moduletable->funcone != NULL) {
+                g_debug("Running module funcone");
+                moduletable->funcone();
+        }
+        else {
+                g_warning("Funcone is NULL");
+        }
+
+        if(moduletable->functwo != NULL) {
+                g_debug("Running module functwo");
+                two = moduletable->functwo();
+                g_debug("functwo returned %d", two);
+        }
+        else {
+                g_warning("Functwo is NULL");
+        }
+
+        if(moduletable->functhree != NULL) {
+                g_debug("Running module functhree");
+                moduletable->functhree("vtable-module-test");
+        }
+        else {
+                g_warning("Functhree is NULL");
+        }
+
+        if(moduletable->funcfour != NULL) {
+                g_debug("Running module funcfour");
+                fourb = moduletable->funcfour(&amp;fours);
+                g_debug("funcfour returned \"%s\", string value is \"%s\"", fourb == TRUE? "true" : "false", fours);
+        }
+        else {
+                g_warning("Funcfour is NULL");
+        }
+
+        if(moduletable->funcfive != NULL) {
+                g_debug("Running module funcfive");
+                moduletable->funcfive();
+        }
+        else {
+                g_warning("Funcfive is NULL");
+        }
+
+        /* As yesterday, close the module */
+        if(g_module_close(module) == FALSE) {
+                g_error("Unable to close module: %s", g_module_error());
+        }
+
+        return 0;
+}</code></pre><p>These are the steps we take:</p>
+<ul><li>Load the module (see the previous article for more information on this)</li>
+<li>Look up one symbol, "vtable_init_module". As mentioned before, this is the fixed name symbol that should be exported from our module.</li>
+<li>run "vtable_module_init", so we get a reference to the module's vtable</li>
+<li>Now we can use all functions refered to in the vtable. Make sure you always check for NULL pointers, or your application will crash. Even if your API/documentation states a module author <em>must</em> implement all vtable functions, checks don't hurt :-) Notice we call the functions using moduletable->foofunc(), so the vtable members are really normal function pointers, nothing fancy here.</li>
+<li>We clean up by closing the module</li></ul>
+
+<p>You can compile everything with this simple Makefile (yes I know it's a bad one):</p>
+<pre><code>default: main libvtabletestmodule.so
+all: default
+
+main: vtable-main.c vtable-common.h
+	gcc -o main -g `pkg-config --cflags --libs glib-2.0 gmodule-2.0` vtable-main.c
+
+libvtabletestmodule.so: vtable-module.c vtable-common.h
+	gcc -o libvtabletestmodule.so -g -shared `pkg-config --cflags --libs glib-2.0 gmodule-2.0` vtable-module.c</code></pre><p>or execute the commands by hand, of course.</p>
+
+<p>Here's the output:</p>
+<pre>** (process:16338): DEBUG: Module path: /home/foo/bar/vtable/libvtabletestmodule.so
+** (process:16338): DEBUG: [M] Initializing module
+** (process:16338): DEBUG: Running module funcone
+[M] Function 1
+** (process:16338): DEBUG: Running module functwo
+[M] Function 2
+** (process:16338): DEBUG: functwo returned 2
+** (process:16338): DEBUG: Running module functhree
+[M] Function 3: vtable-module-test
+** (process:16338): DEBUG: Running module funcfour
+[M] Function 4
+** (process:16338): DEBUG: funcfour returned "true", string value is "four"
+
+** (process:16338): WARNING **: Funcfive is NULL</pre>
+
+<p>As you can see, all this is quite logical and easy to write once you figure out how to. The provided functionality can be very useful though.<br />
+Notice thanks to glib, the code presented here should compile and run under Linux, Solaris and all other supported platforms (yes, even on Windows using DLL's) without any code change.</p>
+
+<p>A little exercise for the reader: currently we got the module name "vtabletestmodule" hardcoded in vtable-main.c. What to do if we have several VtableTest implementations, e.g. vtabletestmodule1 and vtabletestmodule2? We could loop through all files in ".", find out whether they're a valid module (ie try to load them), if they're a valid module, try to figure out whether it exports "vtable_module_init", if that's the case, get a reference to the module's vtable, and use it. This is eg the way Gaim loads all it's plugins (although the module files aren't stored in "." of course). It's not too difficult to implement this, but the result is quite impressive too, so give it a try :-)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <a href="ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="ikke/2005/05/19/gmodules_and_vtables.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/19/gmodules_and_vtables.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables"
+  dc:title="GModules and vtables"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/193" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">18</span>
+        </div>
+<div class="bPost">
+          <span class="title">GModules are fun</span>
+
+                        <p><a href="http://developer.gnome.org/doc/API/2.0/glib/" title="Glib">Glib</a>'s <a href="http://developer.gnome.org/doc/API/2.0/glib/glib-Dynamic-Loading-of-Modules.html" title="GModules">GModules</a> are fun :-) These functions provide a braindead interface to modular (think "plug-in based") programming. I wrote some testing code today (read the API a year ago or so but never played with it), here's a short introduction.</p>
+
+<p>When writing module based applications there are mainly 2 parts: the modules, and the application using them. So we'll have to write these 2 things.</p>
+
+<p>Getting started with the module is the easiest part:</p>
+
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+G_MODULE_EXPORT void m_helloworld() {
+        g_print("Hello modular world!\n");
+}</code></pre>
+
+<p>This code is pretty straight-forward. The only "strange" thing is G_MODULE_EXPORT, a platform-independent macro telling the compiler/linker to export the function.</p>
+
+<p>Then comes the "client" application, a little more difficult. Comments inline:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+/* A prototype of the function pointer we'll use */
+/* void function(void) */
+typedef void (*HelloWorldFunc) (void);
+
+gint main(gint argc, gchar *argv[]) {
+        /* We need:
+         * - A handle to our module
+         * - A pointer to the function we'll import
+         * - Some helper strings */
+        GModule *module = NULL;
+        HelloWorldFunc hello = NULL;
+        gchar *module_path = NULL, *curr = NULL;
+
+        /* Check whether glib is compiled with module support */
+        if(g_module_supported() == FALSE) {
+                g_error("Modules not supported :(");
+                return 1;
+        }
+        
+        /* We need to figure out the path to our module. In our test case, this
+         * is ".", so we want the current dir. */
+        curr = g_get_current_dir();
+        /* Create the path to the module. This function does quite a lot of
+         * of things, check the GModule API. */
+        module_path = g_module_build_path((const gchar *) curr, "module");
+        /* Don't we love debugging? */
+        g_debug("Module path: %s", module_path);
+
+        /* Finally we're able to open the module. We want lazy symbol resolving.
+         * This means we only want a symbol to be resolved if we request it.
+         * Once more, see the API for more information. */
+        module = g_module_open(module_path, G_MODULE_BIND_LAZY);
+
+        /* Get rid of those helper strings */
+        g_free(module_path);
+        g_free(curr);
+
+        /* Check whether the module was loaded successfully */
+        if(module == NULL) {
+                g_error("Unable to load module");
+                return 1;
+        }
+
+        /* Load the symbol and assign it to our function pointer. 
+         * Check for errors */
+        if(g_module_symbol(module, "m_helloworld", (gpointer *) &amp;hello) == FALSE) {
+                g_error("Unable to get function reference: %s", g_module_error());
+                return 1;
+        }
+
+        /* Now we can call our funtion.
+         * As you can see, we can call it as if it's a normal function.
+         * Don't we love function pointers? */
+        hello();
+
+        /* We're nice citizens and close all references when we leave */
+        if(g_module_close(module) == FALSE) {
+                g_error("Unable to close module: %s", g_module_error());
+                return 1;
+        }
+
+        return 0;
+}</code></pre><p>(this looks like a lot of code (well...) but if you strip all comments and debugging stuff/checks, you'll only have 10 lines or so)</p>
+
+<p>Should be quite easy to understand too.</p>
+
+<p>Now it's compile time. Of course, in a real-world situation, we'd use autotools to compile our libraries, we'd have a libtoolized library etc etc etc. Here we'll do it in the quick-and-dirty way:</p>
+
+<pre># gcc -o libmodule.so -shared `pkg-config --libs --cflags glib-2.0 gmodule-2.0` module.c
+# gcc -o main `pkg-config --libs --cflags glib-2.0 gmodule-2.0` main.c
+# ls
+libmodule.so  main  main.c  module.c
+# ./main
+** (process:26533): DEBUG: Module path: /home/foo/bar/libmodule.so
+Hello modular world!</pre>
+
+<p>Loading all these symbols by hand is a boring task, so most of the time you'll create some API using vtables to make your life easier. More on this later (got to study now ;-) :|)</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikke3f99.html?cat=16" title="Browse category">Technology</a></strong>, <a href="ikkec055.html?cat=17" title="Browse category">Linux</a>, <a href="ikke8e7f.html?cat=19" title="Browse category">Desktop</a>, <a href="ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a><a href="ikke/2005/05/18/gmodules_are_fun.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/18/gmodules_are_fun.html#comments" title="Display comments / Leave a comment">3 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/18/gmodules_are_fun"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/18/gmodules_are_fun"
+  dc:title="GModules are fun"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/192" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+                <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">18</span>
+        </div>
+<div class="bPost">
+          <span class="title">Portage on Windows</span>
+
+                        <p>Maybe one day we'll be able to get lots of *nix software running under Windows using <a href="http://www.gentoo.org/" title="Gentoo">Gentoo</a>'s Portage. Read <a href="http://www.osnews.com/story.php?news_id=10616" title="this">this</a>.</p>                              <!-- End Post -->
+                            <div class="bSmallPrint">
+                        Ikke &bull; <strong><a href="ikkeb5e7.html?cat=15" title="Browse category">Life</a></strong><a href="ikke/2005/05/18/portage_on_windows.html" title="Permanent link to full entry" class="permalink_right"><img src="../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="ikke/2005/05/18/portage_on_windows.html#comments" title="Display comments / Leave a comment">7 comments</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/18/portage_on_windows"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/18/portage_on_windows"
+  dc:title="Portage on Windows"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/191" />
+</rdf:RDF>-->
+                </div>
+</div>
+                        </div>
+      </div>
+        
+        <p class="center"><strong>
+                <a href="ikkecbf0.html?blog=5&amp;page=1&amp;paged=23">&lt;&lt; Previous Page</a> :: <a href="ikkeff25.html?blog=5&amp;page=1&amp;paged=25">Next Page &gt;&gt;</a>                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="ikke.html">All</a></li>
+<li><a href="ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="ikke/2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="ikke/2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="ikke/2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="ikke/2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke/2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="ikke/2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 527</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../htsrv/login96f4.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%3Fblog%3D5%26amp%3Bpaged%3D24%26amp%3Bpage%3D1" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke?blog=5&page=1&paged=24 by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 20:01:47 GMT -->
+</html>

@@ -1,0 +1,574 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables?blog=5&title=gmodules_and_vtables&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:49:47 GMT -->
+<head>
+                <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>Ikke's Blog - Post details: GModules and vtables</title>
+        <base  />        <meta name="description" content="Just my weBlog" />
+        <meta name="keywords" content="nicolas trangez ikke eikke blog code linux desktop gnome dbus hal freedesktop ivman css xhtml code dump gallery c programming computing" />
+        <meta name="generator" content="b2evolution 1.8.6" /> <!-- Please leave this for stats -->
+        <link rel="alternate" type="text/xml" title="RDF" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS .92" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="text/xml" title="RSS 2.0" href="http://eikke.com/feed/" />
+        <link rel="alternate" type="application/atom+xml" title="Atom" href="http://eikke.com/feed/" />
+        <link rel="pingback" href="../../../../../xmlsrv/xmlrpc.php" />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/layout.css" media="screen, projection, tv " />
+  <link rel="stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/html.css" media="screen, projection, tv " />
+
+  <!-- CSS specific to current theme -->
+  <link rel="stylesheet"           type="text/css" href="../../../../../skins/nautica05-2col/css/light.html" title="light" media="screen, projection, tv " />
+  <link rel="alternate stylesheet" type="text/css" href="../../../../../skins/nautica05-2col/css/dark.html"  title="dark"  media="screen, projection, tv " />
+        </head>
+
+<body>
+
+<!-- #content: holds all except site footer - causes footer to stick to bottom -->
+<div id="content">
+
+  <!-- #header: holds the logo and top links -->
+  <div id="header" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+<ul id="bloglist"><li><a href="../../../../all.html" class="BlogButton" title="All Blogs">Blog All</a></li>
+<li><a href="../../../../ikke.html" class="BlogButtonCurr" title="Ikke&#039;s Blog">Ikke</a></li>
+<li><a href="../../../../fedorastateless.html" class="BlogButton" title="Fedora Stateless @ UGent">FSU</a></li>
+<li><a href="../../../../realnitro.html" class="BlogButton" title="RealNitro&#039;s Blog">RealNitro</a></li>
+<li><a href="http://peterdedecker.net/blog/index.php" class="BlogButton" title="Peter&#039;s Blog">Peter</a></li>
+</ul>
+    <!-- Or, comment out the bloglist and add your own links up here
+    <ul>
+      <li><a href="index.html">Back to Main page</a></li>
+      <li><a href="">About us</a></li>
+      <li><a href="">Streaming Video</a></li>
+      <li><a href="" class="last">RSS Feeds</a></li>
+    </ul>-->
+
+  </div>
+  <!-- #header end -->
+
+
+  <!-- #headerImg: holds the main header image or flash -->
+  <div id="headerImg" class="width"></div>
+
+
+
+  <!-- #menu: the main large box site menu -->
+  <div id="menu" class="width">
+<!-- More links you could use if you want
+    <ul>
+      <li>
+        <a href="onecol.html" onfocus="blur()">
+          <span class="title ">One Column Layout</span>
+          <span class="desc">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_a.html" class="forum" onfocus="blur()">
+          <span class="title ">Two Column Layout A</span>
+          <span class="desc style3">View the included layout</span>        </a>      </li>
+      <li>
+        <a href="twocol_b.html" onfocus="blur()">
+          <span class="title ">Two Column Layout B</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" onfocus="blur()">
+          <span class="title ">Contact Us Layout</span>
+          <span class="desc">View the included layout</span>
+        </a>
+      </li>
+    </ul>
+    -->
+  </div>
+  <!-- #menu end -->
+
+
+
+  <!-- #page: holds the page content -->
+  <div id="page">
+
+
+    <!-- #columns: holds the columns of the page -->
+    <div id="columns" class="widthPad">
+
+
+    <!-- Left column -->
+    <div class="floatLeft width73">
+
+<h1 style="margin-top:5px"><span class="dark"><a href="../../../../ikke.html">Ikke's Blog</a></span></h1>
+
+
+
+<!-- =================================== START OF MAIN AREA =================================== -->
+
+<div class="action_messages"></div>
+<h2>Post details: GModules and vtables</h2>
+        <div class="bPost bPostpublished" lang="en-US">
+                      <!-- Start Post -->
+      <div class="post">
+
+        <div class="date">
+          <span class="month">May</span>
+          <span class="day">19</span>
+        </div>
+<div class="bPost">
+          <span class="title">GModules and vtables</span>
+
+                        <p>After the <a href="../18/gmodules_are_fun.html" title="article">article</a> I posted yesterday on GModules, I just wrote some sample code using a vtable to look up functions, which makes module handling much easier.</p>
+
+<p>I guess we better go straight to the code:</p>
+
+<p>First we need to define some structure that represents our vtable. I did this in a common header file, vtable-common.h:</p>
+<pre><code>#ifndef _VTABLE_COMMON_H
+#define _VTABLE_COMMON_H
+
+#include &lt;glib.h&gt;
+
+typedef void (* voidvoidfunc) (void);
+typedef gint (* intvoidfunc) (void);
+typedef void (* voidstringfunc) (gchar *s);
+typedef gboolean (* boolpstringfunc) (gchar **ps);
+/* This function will demonstrate NULL function pointers */
+typedef void (* foofunc) (void);
+
+typedef struct VtableTest {
+        voidvoidfunc funcone;
+        intvoidfunc functwo;
+        voidstringfunc functhree;
+        boolpstringfunc funcfour;
+        foofunc funcfive;
+} VtableTest;
+
+/* Module init function */
+typedef VtableTest * (* VtableTestInit) (void);
+
+#endif</code></pre>
+<p>First we define typedefs for all function prototypes we want in our vtable, then we define the prototype of a module init function.</p>
+
+<p>This may look a bit strange, let's take a look at the module code (in vtable-module.c) to see what we can do with this:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "vtable-common.h"
+
+/* Our vtable function implementations */
+static void one() {
+        g_print("[M] Function 1\n");
+}
+
+static gint two() {
+        g_print("[M] Function 2\n");
+        return 2;
+}
+
+static void three(gchar *s) {
+        g_print("[M] Function 3: %s\n", s);
+}
+
+static gboolean four(gchar **s) {
+        g_print("[M] Function 4\n");
+        *s = g_strdup("four");
+        return TRUE;
+}
+
+/* Our function table.
+ * As you can see, we put functions in there as if they're normal variables */
+static VtableTest table = {
+        one,
+        two,
+        three,
+        four,
+        /* This module does not implement funcfive */
+        NULL
+};
+
+/* This is the module init function.
+ * It's a "VtableTestInit" function, as defined in vtable-common.h */
+G_MODULE_EXPORT VtableTest * vtable_module_init() {
+        g_debug("[M] Initializing module");
+        /* Of course you can do a lot in this function,
+         * we don't need to do anything in this sample */
+        /* Return a reference to the function table */
+        return &amp;table;
+}</code></pre><p>The comments in the code should explain every step pretty well.<br />
+As you can see we only export one function, vtable_module_init. This function got a fixed name (so we should define this name in our API). It returns a pointer to a vtable of type VtableTest, which includes pointers to all function implementations.</p>
+
+<p>Last but not least is the main code, in vtable-main.c:</p>
+<pre><code>#include &lt;glib.h&gt;
+#include &lt;gmodule.h&gt;
+
+#include "vtable-common.h"
+
+gint main(gint argc, gchar *argv[]) {
+        /* Same handles as yesterday */
+        GModule *module = NULL;
+        VtableTest *moduletable = NULL;
+        gchar *modulepath = NULL, *dir = NULL;
+        VtableTestInit moduleinitfunc = NULL;
+        /* Function value */
+        gint two = 0;
+        gboolean fourb = FALSE;
+        gchar *fours = NULL;
+        
+        /* Same stuff as yesterday */
+        if(g_module_supported() == FALSE)
+                g_error("No module support");
+
+        dir = g_get_current_dir();
+        modulepath = g_module_build_path((const gchar *) dir, "vtabletestmodule");
+        g_debug("Module path: %s", modulepath);
+        module = g_module_open(modulepath, G_MODULE_BIND_LAZY);
+        g_free(dir);
+        g_free(modulepath);
+        if(module == NULL)
+                g_error("Unable to load module");
+
+        /* We need to lookup one function, which inits our vtable */
+        if(g_module_symbol(module, "vtable_module_init", (gpointer *) &amp;moduleinitfunc) == FALSE) {
+                g_error("Unable to get reference to the module init function: %s", g_module_error());
+        }
+
+        /* Get a reference to the module function table */
+        moduletable = moduleinitfunc();
+
+        /* Run all our functions, providing parameters or fetching return
+         * values where necessary */
+        if(moduletable->funcone != NULL) {
+                g_debug("Running module funcone");
+                moduletable->funcone();
+        }
+        else {
+                g_warning("Funcone is NULL");
+        }
+
+        if(moduletable->functwo != NULL) {
+                g_debug("Running module functwo");
+                two = moduletable->functwo();
+                g_debug("functwo returned %d", two);
+        }
+        else {
+                g_warning("Functwo is NULL");
+        }
+
+        if(moduletable->functhree != NULL) {
+                g_debug("Running module functhree");
+                moduletable->functhree("vtable-module-test");
+        }
+        else {
+                g_warning("Functhree is NULL");
+        }
+
+        if(moduletable->funcfour != NULL) {
+                g_debug("Running module funcfour");
+                fourb = moduletable->funcfour(&amp;fours);
+                g_debug("funcfour returned \"%s\", string value is \"%s\"", fourb == TRUE? "true" : "false", fours);
+        }
+        else {
+                g_warning("Funcfour is NULL");
+        }
+
+        if(moduletable->funcfive != NULL) {
+                g_debug("Running module funcfive");
+                moduletable->funcfive();
+        }
+        else {
+                g_warning("Funcfive is NULL");
+        }
+
+        /* As yesterday, close the module */
+        if(g_module_close(module) == FALSE) {
+                g_error("Unable to close module: %s", g_module_error());
+        }
+
+        return 0;
+}</code></pre><p>These are the steps we take:</p>
+<ul><li>Load the module (see the previous article for more information on this)</li>
+<li>Look up one symbol, "vtable_init_module". As mentioned before, this is the fixed name symbol that should be exported from our module.</li>
+<li>run "vtable_module_init", so we get a reference to the module's vtable</li>
+<li>Now we can use all functions refered to in the vtable. Make sure you always check for NULL pointers, or your application will crash. Even if your API/documentation states a module author <em>must</em> implement all vtable functions, checks don't hurt :-) Notice we call the functions using moduletable->foofunc(), so the vtable members are really normal function pointers, nothing fancy here.</li>
+<li>We clean up by closing the module</li></ul>
+
+<p>You can compile everything with this simple Makefile (yes I know it's a bad one):</p>
+<pre><code>default: main libvtabletestmodule.so
+all: default
+
+main: vtable-main.c vtable-common.h
+	gcc -o main -g `pkg-config --cflags --libs glib-2.0 gmodule-2.0` vtable-main.c
+
+libvtabletestmodule.so: vtable-module.c vtable-common.h
+	gcc -o libvtabletestmodule.so -g -shared `pkg-config --cflags --libs glib-2.0 gmodule-2.0` vtable-module.c</code></pre><p>or execute the commands by hand, of course.</p>
+
+<p>Here's the output:</p>
+<pre>** (process:16338): DEBUG: Module path: /home/foo/bar/vtable/libvtabletestmodule.so
+** (process:16338): DEBUG: [M] Initializing module
+** (process:16338): DEBUG: Running module funcone
+[M] Function 1
+** (process:16338): DEBUG: Running module functwo
+[M] Function 2
+** (process:16338): DEBUG: functwo returned 2
+** (process:16338): DEBUG: Running module functhree
+[M] Function 3: vtable-module-test
+** (process:16338): DEBUG: Running module funcfour
+[M] Function 4
+** (process:16338): DEBUG: funcfour returned "true", string value is "four"
+
+** (process:16338): WARNING **: Funcfive is NULL</pre>
+
+<p>As you can see, all this is quite logical and easy to write once you figure out how to. The provided functionality can be very useful though.<br />
+Notice thanks to glib, the code presented here should compile and run under Linux, Solaris and all other supported platforms (yes, even on Windows using DLL's) without any code change.</p>
+
+<p>A little exercise for the reader: currently we got the module name "vtabletestmodule" hardcoded in vtable-main.c. What to do if we have several VtableTest implementations, e.g. vtabletestmodule1 and vtabletestmodule2? We could loop through all files in ".", find out whether they're a valid module (ie try to load them), if they're a valid module, try to figure out whether it exports "vtable_module_init", if that's the case, get a reference to the module's vtable, and use it. This is eg the way Gaim loads all it's plugins (although the module files aren't stored in "." of course). It's not too difficult to implement this, but the result is quite impressive too, so give it a try :-)</p>                              <!-- End Post -->
+                  <div><script type="text/javascript"><!--
+      google_ad_client = "pub-7170970013053423";
+      //blog.eikke.com links
+      google_ad_slot = "9622796794";
+      google_ad_width = 468;
+      google_ad_height = 15;
+      //--></script>
+      <script type="text/javascript"
+      src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script></div>
+                      <div class="bSmallPrint">
+                        Ikke &bull; <a href="../../../../ikke3f99.html?cat=16" title="Browse category">Technology</a>, <a href="../../../../ikkec055.html?cat=17" title="Browse category">Linux</a>, <strong><a href="../../../../ikke3cd0.html?cat=49" title="Browse category">Coding Corner</a></strong><a href="gmodules_and_vtables.html" title="Permanent link to full entry" class="permalink_right"><img src="../../../../../rsc/icons/minipost.gif" border="0" align="top" width="12" height="9"  class="middle" alt="Permalink"/></a>
+                        <a href="gmodules_and_vtables.html#comments" title="Display comments / Leave a comment">Leave a comment</a>                                                                        
+                        <!--
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:trackback="http://madskills.com/public/xml/rss/module/trackback/">
+<rdf:Description
+  rdf:about="http://blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables"
+  dc:identifier="http://blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables"
+  dc:title="GModules and vtables"
+  trackback:ping="http://blog.eikke.com/htsrv/trackback.php/193" />
+</rdf:RDF>-->
+                </div>
+</div>
+                <a name="feedbacks"></a><a name="comments"></a>
+	<!-- Title for comments, tbs, pbs... -->
+	<h4>Comments:</h4>
+
+	<div class="bComment"><p>No Comments for this post yet...</p></div>		<h4 class="bCommentLeaveHead">Leave a comment:</h4>
+
+		<!-- form to add a comment -->
+		
+
+<form name="bComment_form_id_193" id="bComment_form_id_193" class="bComment" method="post" action="http://blog.eikke.com/htsrv/comment_post.php">
+<span style="float:right"></span>
+<script type="text/javascript">
+							var nb_dynamicSelects = 0;
+							var tab_dynamicSelects = Array();
+						</script><fieldset>
+<div class="label"><label for="u">Name:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="u" id="u" />
+</div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="i">Email:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="i" id="i" />
+ <span class="notes">Your email address will <strong>not</strong> be displayed on this site.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="o">Site/Url:</label></div>
+<div class="input"><input maxlength="100" class="bComment" size="40" type="text" name="o" id="o" />
+ <span class="notes">Your URL will be displayed.</span></div>
+</fieldset>
+
+<fieldset>
+<div class="label"><label for="p">Comment text:</label></div>
+<div class="input"><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><textarea cols="40" class="bComment" name="p" id="p" rows="10"></textarea><img src="../../../../../rsc/img/blank.gif" width="1" height="1" alt="" /><br/><span class="notes">Allowed XHTML tags: &lt;p, ul, ol, li, dl, dt, dd, address, blockquote, ins, del, span, bdo, br, em, strong, dfn, code, samp, kdb, var, cite, abbr, acronym, q, sub, sup, tt, i, b, big, small&gt;</span></div>
+</fieldset>
+
+<fieldset class="fieldset">
+<fieldset>
+<div class="label"><label>Options:</label></div>
+<div class="input"><input tabindex="6" name="comment_autobr" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_autobr" />
+<label for="comment_autobr">Auto-BR</label>
+ <span class="notes">(Line breaks become &lt;br /&gt;)</span>
+
+<br /><input tabindex="7" name="comment_cookies" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_cookies" />
+<label for="comment_cookies">Remember me</label>
+ <span class="notes">(Set cookies for name, email and url)</span>
+
+<br /><input tabindex="8" name="comment_allow_msgform" type="checkbox" value="1" checked="checked" class="checkbox" id="comment_allow_msgform" />
+<label for="comment_allow_msgform">Allow message form</label>
+ <span class="notes">(Allow users to contact you through a message form (your email will NOT be displayed.))</span>
+
+</div>
+</fieldset>
+
+</fieldset>
+<fieldset class="fieldset">
+<div class="input">			<input name="submit_comment_post_193[save]" class="submit" value="Send comment" tabindex="10" type="submit" />
+			<input name="submit_comment_post_193[preview]" class="preview" value="Preview" tabindex="9" type="submit" />
+</div></fieldset>
+
+		<div class="clear"></div>
+
+		<input name="comment_post_ID" type="hidden" value="193" />
+<input name="redirect_to" type="hidden" value="http://blog.eikke.com/index.php/ikke?blog=5&amp;amp;title=gmodules_and_vtables&amp;amp;page=1&amp;amp;more=1&amp;amp;c=1&amp;amp;tb=1&amp;amp;pb=1&amp;amp;disp=single" />
+
+</form>
+
+<script type="text/javascript">
+							if( typeof addEvent == "function" && typeof init_dynamicSelect == "function" )
+							{
+								addEvent( window, "load", init_dynamicSelect, false );
+								
+							}
+						</script>        </div>
+      </div>
+        
+        <p class="center"><strong>
+                                 </strong></p>
+
+    </div>
+    <!-- Left column end -->
+
+
+    <!-- Right link column -->
+    <div class="floatRight width25 lightBlueBg horzPad">
+               <div class="bSideItem">
+                <form action="http://blog.eikke.com/index.php/ikke" method="get" name="SearchForm" class="search">                        <p><input type="text" name="s" size="23" value="" class="SearchField" /><br />
+                        <input type="submit" name="submit" class="submit" value="Search" style="margin-top:3px" /></p>
+                </form>
+        </div>
+		<div class="bSideItem">
+	<div style='position: relative; left: 25px;'>
+	<script type="text/javascript"><!--
+	google_ad_client = "pub-7170970013053423";
+	//Ikke&#39;s blog
+	google_ad_slot = "5340725895";
+	google_ad_width = 120;
+	google_ad_height = 240;
+	//--></script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script></div>
+		</div>
+              <div class="catarc"><h3>Categories</h3><ul><li><a href="../../../../ikke.html">All</a></li>
+<li><a href="../../../../ikkeb5e7.html?cat=15">Life</a> <span class="notes">(56)</span></li>
+<li><a href="../../../../ikke3f99.html?cat=16">Technology</a> <span class="notes">(131)</span><ul><li><a href="../../../../ikke3cd0.html?cat=49">Coding Corner</a> <span class="notes">(64)</span><ul><li><a href="../../../../ikkebff0.html?cat=52">Docbook</a> <span class="notes">(7)</span></li>
+<li><a href="../../../../ikkee864.html?cat=63">Summer of Code 06</a> <span class="notes">(0)</span></li>
+</ul>
+</li>
+<li><a href="../../../../ikke8e7f.html?cat=19">Desktop</a> <span class="notes">(93)</span></li>
+<li><a href="../../../../ikke7f33.html?cat=31">Ivman</a> <span class="notes">(3)</span></li>
+<li><a href="../../../../ikkec055.html?cat=17">Linux</a> <span class="notes">(90)</span></li>
+<li><a href="../../../../ikke6c5d.html?cat=18">Networks</a> <span class="notes">(14)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+
+        <div class="catarc"><h3>Archives</h3><ul><li><a href="../../../2007/12/index.html">December 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/11/index.html">November 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/10/index.html">October 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/09/index.html">September 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2007/08/index.html">August 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/05/index.html">May  2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/04/index.html">April 2007</a> <span class="dimmed">(4)</span></li>
+<li><a href="../../../2007/03/index.html">March 2007</a> <span class="dimmed">(5)</span></li>
+<li><a href="../../../2007/02/index.html">February 2007</a> <span class="dimmed">(2)</span></li>
+<li><a href="../../../2007/01/index.html">January 2007</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../2006/07/index.html">July 2006</a> <span class="dimmed">(1)</span></li>
+<li><a href="../../../2006/06/index.html">June 2006</a> <span class="dimmed">(3)</span></li>
+<li><a href="../../../../ikke1579.html?disp=arcdir">More...</a></li>
+</ul>
+</div>
+
+
+	                <div class="catarc">
+                <h3 class="sideItemTitle">Who's Online?</h3>
+                <ul class="onlineUsers"><li>Guest Users: 425</li></ul>        </div>
+        
+        <div class="bSideItem">
+                <h3>Misc</h3>
+                <ul>
+                        <li><a href="../../../../../htsrv/login3997.html?redirect_to=http%3A%2F%2Fblog.eikke.com%2Findex.php%2Fikke%2F2005%2F05%2F19%2Fgmodules_and_vtables%3Fblog%3D5%26amp%3Btitle%3Dgmodules_and_vtables%26amp%3Bpage%3D1%26amp%3Bmore%3D1%26amp%3Bc%3D1%26amp%3Btb%3D1%26amp%3Bpb%3D1%26amp%3Bdisp%3Dsingle" title="Login if you have an account...">Login...</a></li>                </ul>
+        </div>
+        <div class="bSideItem">
+                <h3><img src="../../../../../rsc/icons/feed-icon-16x16.gif" width="16" height="16" class="top" alt="" /> XML Feeds</h3>
+                        <ul>
+                                <li>
+                                        RSS 0.92:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke7f88.html?tempskin=_rss&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 1.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke374e.html?tempskin=_rdf&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        RSS 2.0:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke6fea.html?tempskin=_rss2&amp;disp=comments">Comments</a>
+                                </li>
+                                <li>
+                                        Atom:
+                                        <a href="http://eikke.com/feed/">Posts</a>
+                                        <a href="../../../../ikke5609.html?tempskin=_atom&amp;disp=comments">Comments</a>
+                                </li>
+                        </ul>
+                        <a href="http://fplanque.net/Blog/itTrends/2004/01/10/rss_rdf_and_atom_in_a_nutshell" title="External - English">What is RSS?</a>
+			<div class='bSideItem'><div style='width: 120px; height: 600px; position: relative; left: 25px; padding-bottom: 10px;'>
+			<script type="text/javascript"><!--
+			google_ad_client = "pub-7170970013053423";
+			//blog.eikke.com sidebar onderaan
+			google_ad_slot = "7138271274";
+			google_ad_width = 120;
+			google_ad_height = 600;
+			//--></script>
+			<script type="text/javascript"
+			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+			</script>
+			</div></div>        </div>
+
+
+        
+
+
+    </div>
+    <!-- Right links column end -->
+
+
+
+    </div>
+    <!-- #columns end -->
+
+  </div>
+  <!-- #page end -->
+
+</div>
+<!-- #content end -->
+
+
+
+
+<!-- #footer: holds the site footer (logo and links) -->
+<div id="footer">
+
+  <!-- #bg: applies the site width and footer background -->
+  <div id="bg" class="width">
+
+    <img src="../../../../../skins/nautica05-2col/images/logo.gif" alt="Your logo goes here"/>
+
+    <ul>
+      <li><a href="http://b2evolution.net/" title="Powered by b2evolution">b<sub>2</sub>evolution</a></li>
+      <li><a href="http://www.brendoman.com/dbc" title="Evoskin by Danny Ferguson">Danny Ferguson</a></li>
+      <li><a href="http://www.studio7designs.com/" title="Design by Studio 7 Designs" class="last">studio7designs.com</a></li>
+	</ul>
+
+  </div>
+  <!-- #bg end -->
+
+</div>
+<!-- #footer end -->
+</body>
+
+
+<!-- Mirrored from blog.eikke.com/index.php/ikke/2005/05/19/gmodules_and_vtables?blog=5&title=gmodules_and_vtables&page=1&more=1&c=1&tb=1&pb=1&disp=single by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Dec 2012 19:49:47 GMT -->
+</html>
